@@ -332,27 +332,33 @@ User decision: **"do according to whatever data is provided."** `data/raw/` curr
 
 ---
 
-### M12 — Risk Map & Visualization
-- **Goal:** FR-10 + build-rule visual set: interactive risk map, country trend plots, hotspot analysis, temporal charts.
-- **Files:** `src/visualize.py`, `tests/test_visualize.py`, `reports/risk_map.html`, `reports/country_trends.png`, `reports/hotspots.png`, `reports/temporal.png`.
+### M12 — Risk Map & Visualization ✅ (2026-08-07)
+- **Goal:** FR-10 + build-rule visual set: interactive risk map, country trend plots, hotspot analysis, temporal charts — implemented as **M11** in the user's milestone numbering.
+- **Files:** `src/visualization.py`, `tests/test_visualize.py`; artifacts `reports/maps/risk_map.html`, `reports/dashboard/country_dashboard.html`, `reports/hotspots_ranking.csv`, `reports/risk_summary.md`, 11 figures in `reports/figures/`; `config.py` (risk bands/colors/dirs/DPI/hotspot/temporal constants + validation), `run_pipeline.py` (`--stage visualize`), `tests/test_config.py` (+8).
 - **Detail:**
-  - `risk_map(geo_df, predictions, top_drivers)` → Plotly **`scatter_geo`** (no token) at district centroids, colored by predicted probability on the test window, hover: district, country, probability, top-3 SHAP drivers → `reports/risk_map.html` (PRD §12).
-  - `country_trend_plot` (events/fatalities over time per country), `hotspot_analysis` (top-15 districts by events; top-15 by predicted risk), `temporal_charts` (rolling 14d event counts; label rate over time) → PNGs.
-  - All functions take an explicit `save_dir` and accept a `figure_factory`-style injection or run headless-safe (`show=False`) so unit tests pass without a display.
-- **Depends on:** M11.
-- **Done-when:** `risk_map.html` exists and opens (validated by file size + structural HTML check in test; manual open on your machine), all PNGs exist; `test_visualize.py` green.
+  - **Risk map:** folium CircleMarkers at geo-unit centroids (from `cleaned_events`), colored by config-driven risk category (Low/Medium/High/Critical from `RISK_LEVEL_BOUNDARIES`), radius ∝ predicted probability, popup = geo unit · country · probability · predicted class · top-3 SHAP drivers · recent 7d events · recent 7d fatalities + HTML legend → `reports/maps/risk_map.html` (PRD §13).
+  - **Country dashboard:** 4-metric matplotlib figure (avg risk, positive rate, mean fatalities, mean events) @300 dpi + interactive plotly HTML.
+  - **Hotspot analysis:** top-20 ranking CSV + horizontal bar + weekly risk heatmap (trailing `HOTSPOT_HEATMAP_WEEKS`).
+  - **Temporal trends:** weekly + monthly avg risk, rolling evolution timeline, country-wise monthly comparison — 4 PNGs.
+  - **Importance dashboard:** top-20 SHAP bar (full-window SHAP) + category-wise family contribution.
+  - **Prediction distribution:** histogram + scipy KDE + risk-category bars.
+  - All figures saved at `FIGURE_DPI=300` via Agg; headless-safe; every function ≤60 lines.
+  - **Leakage:** model never retrained; predictions + SHAP on the held-out test window; SHAP↔prediction log-odds reconstruction checked (tol 1e-2).
+- **Depends on:** M10 (winner + SHAP).
+- **Done-when:** 11/11 PNGs @300 dpi verified (PIL + dpi metadata); `risk_map.html` (leaflet) + `country_dashboard.html` (plotly) open-valid; ranking CSV sorted desc; `risk_summary.md` sections present; **243/243 tests, 96.52% coverage**; M1–M10 suites unaffected.
 
 ---
 
-### M13 — Documentation & Final Validation
-- **Goal:** PRD FR-11/FR-12/FR-15 + professional README + **final validation checklist (§12) fully green**.
-- **Files:** `README.md`, `data/README.md` (finalized), `notebooks/01_eda.ipynb`, `02_feature_engineering.ipynb`, `03_modeling.ipynb` (executed & committed with outputs), `scripts/validate_project.py` (automates §12 checks), `reports/model_metrics.md` (final run), `reports/multi_horizon_notes.md` (FR-15: 7d/30d noted as future work + optional quick check).
+### M13 — Documentation & Final Validation ✅ (2026-08-07, COMPLETE)
+- **Goal:** PRD FR-11/FR-12/FR-15 + professional README + **final validation checklist (§12) fully green**. Implemented as **M12 + M13** in the user's milestone numbering.
+- **Files (all done):** `README.md` (all 29 mandated sections incl. ACLED attribution — PRD §18.2), `docs/{architecture,model,usage,results}.md`, `scripts/generate_diagrams.py`, `docs/images/` (4 diagrams + 12 screenshots from real outputs), `notebooks/01_EDA.ipynb` / `02_Feature_Engineering.ipynb` / `03_Modeling.ipynb` (executed via nbconvert, 0 errors, plots embedded), `scripts/validate_project.py` (automates §12 checks), `FINAL_AUDIT.md`, `LICENSE` (MIT).
 - **Detail:**
-  - README mandated sections: **Installation · Architecture · Pipeline · Usage · Folder Structure · Model · Evaluation · Results · Future Work · Attribution** (ACLED attribution line mandatory — PRD §18.2).
-  - Notebooks: `01_eda` (coverage, event-type mix, hotspots, trends — FR-12), `02_feature_engineering` (features/labels, distribution plots, leakage sanity), `03_modeling` (split → train → evaluate → SHAP → risk map, results narrative, escalation-definition sensitivity note per PRD §11.2). All three import from `src/`; executed via `jupyter nbconvert --to notebook --execute` during validation.
-  - `scripts/validate_project.py` runs every check in §12 and prints a PASS/FAIL report.
-- **Depends on:** M12.
-- **Done-when:** every item in §12 checklist passes; README matches the implemented pipeline (no drift).
+  - README mandated sections: **Installation · Architecture · Pipeline · Usage · Folder Structure · Model · Evaluation · Results · Future Work · Attribution** (ACLED attribution line mandatory — PRD §18.2) — all present, metrics verified against `model_comparison.json`.
+  - Notebooks: `01_EDA` (coverage, event-type mix, hotspots, trends — FR-12), `02_Feature_Engineering` (features/labels, distribution plots, leakage sanity), `03_Modeling` (split → winner evaluation → SHAP → risk snapshot). All three import from `src/`; executed via `jupyter nbconvert --to notebook --execute` during validation; `%matplotlib inline` re-asserted per cell because `src/explainability.py` forces the Agg backend at import.
+  - `scripts/validate_project.py` runs 29 checks in §12 and prints a PASS/FAIL report — **29/29 PASS**.
+  - `FINAL_AUDIT.md` documents the full acceptance checklist and repository readiness.
+- **Depends on:** M12 (user numbering M11).
+- **Done-when:** validator 29/29 PASS; notebooks executed error-free with embedded plots; GitHub scan clean (no secrets, `.gitignore` correct); **243/243 tests, 96.46% coverage**; no source code changed in M13 (no critical bugs found).
 
 ---
 

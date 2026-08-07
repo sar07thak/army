@@ -213,6 +213,63 @@ SHAP_LOCAL_TOP_K: int = 3
 # Max features displayed in a single waterfall plot.
 SHAP_MAX_DISPLAY: int = 12
 
+# ---------------------------------------------------------------------------
+# Visualization (PRD §12 / FR-10 — consumed from M11)
+# ---------------------------------------------------------------------------
+MAPS_DIR: Path = REPORTS_DIR / "maps"
+FIGURES_DIR: Path = REPORTS_DIR / "figures"
+DASHBOARD_DIR: Path = REPORTS_DIR / "dashboard"
+RISK_MAP_FILE: str = "risk_map.html"
+RISK_SUMMARY_FILE: str = "risk_summary.md"
+HOTSPOT_RANKING_FILE: str = "hotspots_ranking.csv"
+# Predicted-probability bands; len(RISK_LEVEL_BOUNDARIES) + 1 risk categories:
+# RISK_LEVEL_NAMES[0] < b0, b0..b1 RISK_LEVEL_NAMES[1], ..., >= last -> final name.
+RISK_LEVEL_BOUNDARIES: tuple[float, ...] = (0.2, 0.4, 0.6)
+RISK_LEVEL_NAMES: tuple[str, ...] = ("Low", "Medium", "High", "Critical")
+RISK_LEVEL_COLORS: dict[str, str] = {
+    "Low": "#2E86AB",
+    "Medium": "#F5A623",
+    "High": "#E76F51",
+    "Critical": "#C1121F",
+}
+FIGURE_DPI: int = 300  # publication quality (PRD §12)
+HOTSPOT_TOP_K: int = 20  # top-K highest-risk geo units
+HOTSPOT_HEATMAP_WEEKS: int = 12  # trailing weeks in the hotspot heatmap
+RESAMPLE_WEEKLY: str = "W"  # pandas offset for weekly aggregation
+RESAMPLE_MONTHLY: str = "ME"  # pandas offset for monthly aggregation
+EVOLUTION_ROLLING_WEEKS: int = 4  # rolling window for the risk-evolution line
+# Feature-family order for the category-wise contribution chart.
+FEATURE_FAMILY_ORDER: tuple[str, ...] = (
+    "volume",
+    "lethality",
+    "velocity",
+    "volatility",
+    "persistence",
+    "recency",
+    "spillover",
+    "identity",
+    "calendar",
+)
+# Snapshot columns consumed by the risk map / dashboards.
+PREDICTION_PROBA_COLUMN: str = "proba"
+PREDICTION_CLASS_COLUMN: str = "predicted_class"
+PREDICTION_CATEGORY_COLUMN: str = "risk_category"
+RECENT_EVENTS_COLUMN: str = "events_w7d"  # recent event count (popup)
+RECENT_FATALITIES_COLUMN: str = "fatalities_w7d"  # recent fatalities (popup)
+MAP_CENTER: tuple[float, float] = (23.0, 78.0)  # South-Asia focus
+MAP_ZOOM_START: int = 5
+
+# ---------------------------------------------------------------------------
+# Live forecast (post-M13 --stage forecast)
+# ---------------------------------------------------------------------------
+# One-row-per-geo-unit "next 14 days" forecast artifacts, anchored at the
+# latest available feature date per unit (NOT the test window).
+FORECAST_CSV_FILE: str = "forecast_next_14_days.csv"
+FORECAST_MAP_FILE: str = "forecast_risk_map.html"
+FORECAST_SUMMARY_FILE: str = "forecast_summary.md"
+# Top-K hotspots reported in the forecast summary.
+FORECAST_TOP_K: int = 10
+
 
 def validate_config() -> None:
     """Assert that the configuration is internally consistent.
@@ -310,3 +367,31 @@ def validate_config() -> None:
         raise ConfigurationError("SHAP_WATERFALL_COUNT must be >= 1.")
     if SHAP_LOCAL_TOP_K < 1:
         raise ConfigurationError("SHAP_LOCAL_TOP_K must be >= 1.")
+    if not RISK_LEVEL_BOUNDARIES:
+        raise ConfigurationError("RISK_LEVEL_BOUNDARIES must not be empty.")
+    if tuple(RISK_LEVEL_BOUNDARIES) != tuple(sorted(RISK_LEVEL_BOUNDARIES)):
+        raise ConfigurationError("RISK_LEVEL_BOUNDARIES must be sorted ascending.")
+    if not all(0.0 < b < 1.0 for b in RISK_LEVEL_BOUNDARIES):
+        raise ConfigurationError("RISK_LEVEL_BOUNDARIES must lie within (0, 1).")
+    expected_levels = len(RISK_LEVEL_BOUNDARIES) + 1
+    if len(RISK_LEVEL_NAMES) != expected_levels:
+        raise ConfigurationError(
+            f"RISK_LEVEL_NAMES must define exactly {expected_levels} categories, "
+            f"got {len(RISK_LEVEL_NAMES)}."
+        )
+    if len(RISK_LEVEL_NAMES) != len(set(RISK_LEVEL_NAMES)):
+        raise ConfigurationError("RISK_LEVEL_NAMES must be unique.")
+    if set(RISK_LEVEL_NAMES) != set(RISK_LEVEL_COLORS):
+        raise ConfigurationError(
+            "RISK_LEVEL_COLORS keys must match RISK_LEVEL_NAMES exactly."
+        )
+    if FIGURE_DPI < 72:
+        raise ConfigurationError("FIGURE_DPI must be >= 72.")
+    if HOTSPOT_TOP_K < 1:
+        raise ConfigurationError("HOTSPOT_TOP_K must be >= 1.")
+    if HOTSPOT_HEATMAP_WEEKS < 1:
+        raise ConfigurationError("HOTSPOT_HEATMAP_WEEKS must be >= 1.")
+    if EVOLUTION_ROLLING_WEEKS < 1:
+        raise ConfigurationError("EVOLUTION_ROLLING_WEEKS must be >= 1.")
+    if FORECAST_TOP_K < 1:
+        raise ConfigurationError("FORECAST_TOP_K must be >= 1.")

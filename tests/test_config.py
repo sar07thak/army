@@ -47,6 +47,16 @@ def test_scope_constants() -> None:
     assert config.SHAP_WATERFALL_COUNT >= 1
     assert config.SHAP_REPORT_DIR.name == "shap"
     assert config.SHAP_SUMMARY_FILE == "shap_summary.md"
+    assert config.MAPS_DIR.name == "maps"
+    assert config.FIGURES_DIR.name == "figures"
+    assert config.DASHBOARD_DIR.name == "dashboard"
+    assert config.RISK_MAP_FILE == "risk_map.html"
+    assert config.RISK_SUMMARY_FILE == "risk_summary.md"
+    assert len(config.RISK_LEVEL_BOUNDARIES) + 1 == len(config.RISK_LEVEL_COLORS)
+    assert len(config.RISK_LEVEL_NAMES) == len(config.RISK_LEVEL_BOUNDARIES) + 1
+    assert set(config.RISK_LEVEL_NAMES) == set(config.RISK_LEVEL_COLORS)
+    assert config.FIGURE_DPI >= 72
+    assert config.HOTSPOT_TOP_K >= 1
 
 
 def test_validate_config_passes() -> None:
@@ -80,6 +90,17 @@ def test_validate_config_passes() -> None:
         ("SHAP_TOP_N", 0),
         ("SHAP_DEPENDENCE_TOP_K", 0),
         ("SHAP_WATERFALL_COUNT", 0),
+        ("RISK_LEVEL_BOUNDARIES", ()),
+        ("RISK_LEVEL_BOUNDARIES", (0.6, 0.2)),  # not sorted
+        ("RISK_LEVEL_BOUNDARIES", (1.2, 0.4, 0.6)),  # outside (0,1)
+        ("RISK_LEVEL_COLORS", {"Low": "#fff"}),  # wrong count
+        ("RISK_LEVEL_NAMES", ("Low", "Medium", "High")),  # wrong count
+        ("RISK_LEVEL_NAMES", ("Low", "Low", "High", "Critical")),  # not unique
+        ("RISK_LEVEL_NAMES", ("X", "Medium", "High", "Critical")),  # mismatched keys
+        ("FIGURE_DPI", 60),
+        ("HOTSPOT_TOP_K", 0),
+        ("HOTSPOT_HEATMAP_WEEKS", 0),
+        ("EVOLUTION_ROLLING_WEEKS", 0),
     ],
 )
 def test_validate_config_rejects_invalid(

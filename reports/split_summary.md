@@ -1,6 +1,6 @@
 # Split Summary
 
-- Generated: 2026-08-07T17:10:48
+- Generated: 2026-08-07T21:19:48
 - Method: strict chronological cut over the date axis (no shuffle)
 - Ratios: {'train': 0.7, 'val': 0.15, 'test': 0.15}
 - Total rows: 43981

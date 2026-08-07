@@ -50,3 +50,7 @@ class ExplainabilityError(ConflictForecastError):
 
 class VisualizationError(ConflictForecastError):
     """Raised when a plot or interactive artifact cannot be produced (used from M12)."""
+
+
+class ForecastError(ConflictForecastError):
+    """Raised when the live 14-day forecast cannot be produced (used from --stage forecast)."""

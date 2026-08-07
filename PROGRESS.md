@@ -1,14 +1,14 @@
 # Project Progress Summary
 
 > Conflict Escalation Forecasting — 6 countries (South Asia + Sudan & South Sudan), 14-day horizon
-> Generated: 2026-08-07 · Milestone 10 (SHAP Explainability) complete
+> Generated: 2026-08-07 · **PROJECT COMPLETE — M1–M13 all delivered**
 
 ---
 
 ## Overall Progress
 
-- **Current milestone:** M10 — SHAP Explainability (complete, awaiting approval)
-- **Overall completion:** **~77%** (10 of 13 milestones; M1–M10 fully built, gated, and verified)
+- **Current milestone:** M13 — Final Audit & Submission Readiness ✅ COMPLETE
+- **Overall completion:** **100%** (13 of 13 milestones built, gated, reviewed, and verified)
 
 | Milestone | Status |
 |---|---|
@@ -21,8 +21,10 @@
 | M7 Train/Val/Test Split | ✅ Complete |
 | M8 LightGBM Training | ✅ Complete |
 | M9 XGBoost + Comparison | ✅ Complete |
-| M10 SHAP Explainability | ✅ Complete — this report |
-| M11–M13 | ⏳ Not started |
+| M10 SHAP Explainability | ✅ Complete |
+| M11 Risk Map & Visualization | ✅ Complete |
+| M12 Documentation & Packaging | ✅ Complete |
+| M13 Final Audit & Submission | ✅ Complete — this report |
 
 ---
 
@@ -31,7 +33,10 @@
 ```
 army/
 ├── config.py                  # Single source of truth (paths, scope, rules, thresholds, seeds)
-├── run_pipeline.py            # CLI: --stage ingest | features | labels | split | train | compare | explain
+├── run_pipeline.py            # CLI: --stage ingest | features | labels | split | train | compare | explain | visualize | all
+├── README.md                  # Professional project README (M12) + 'Running the Project' section
+├── docs/                      # architecture.md · model.md · usage.md · results.md · RUN_PROJECT.md + images/ (4 diagrams + 12 screenshots)
+├── scripts/generate_diagrams.py  # Regenerates docs/images diagrams (M12)
 ├── requirements.txt           # Exact-pinned deps
 ├── pytest.ini                 # pythonpath + test config
 ├── .gitignore / .env.example  # Hygiene / secrets template
@@ -72,6 +77,7 @@ army/
 │   ├── split.py               # Strict chronological train/val/test (PRD §11.5)
 │   ├── models.py              # LGBM + XGB train/save/load, imbalance, metrics, baselines, winner
 │   ├── explainability.py      # SHAP: importance, summary/bar/waterfall/dependence plots, local explanations
+│   ├── visualization.py       # Risk map, dashboards, hotspots, temporal trends, distributions (M11)
 │   └── pipeline.py            # Orchestration: train_stage + compare_stage + explain_stage
 ├── tests/
 │   ├── conftest.py            # Deterministic fixtures (aggregated + event-level shapes)
@@ -83,12 +89,16 @@ army/
 │   ├── test_label_engineer.py # 19
 │   ├── test_split.py          # 22
 │   ├── test_models.py         # 66
-│   └── test_explainability.py # 16
+│   ├── test_explainability.py # 16
+│   ├── test_visualize.py      # 16 (M11)
+│   └── test_run_pipeline.py   # 5 (post-M13: --stage all ordering)
 └── logs/project.log
 ```
 
-**Files created:** 24 source/test/config files + 11 generated artifacts + 4 reports + 21 SHAP plots.
-**Files modified:** `IMPLEMENTATION_PLAN.md` (twice: §3.4 adaptation + M6 note), `config.py`, `requirements.txt`, `src/exceptions.py`, `run_pipeline.py` (per milestone).
+**Post-M13 additions (Running the Project guide):** `docs/RUN_PROJECT.md` (beginner guide: requirements, clone, venv per-OS, deps, env, dataset placement, all 9 CLI stages incl. `--stage all`, expected outputs, verification, troubleshooting, clean re-run); `run_pipeline.py` (+`--stage all` running all 8 stages in dependency order via a single `runners` dispatch dict); `tests/test_run_pipeline.py` (5 tests); `scripts/validate_project.py` (+`all` in the CLI contract check); `README.md` (+"Running the Project" section linking the guide).
+
+**Files created (M12):** `README.md` · `docs/architecture.md` · `docs/model.md` · `docs/usage.md` · `docs/results.md` · `scripts/generate_diagrams.py` · `docs/images/` (4 diagrams + 12 screenshots copied from `reports/figures` + `reports/shap`).
+**Files modified overall:** `IMPLEMENTATION_PLAN.md`, `config.py`, `requirements.txt`, `src/exceptions.py`, `run_pipeline.py` (per milestone).
 
 ---
 
@@ -150,7 +160,29 @@ army/
 - **Validation:** Trained on 30,790 rows × 33 features; **validation F1 0.793** (precision 0.843, recall 0.748, AUC-PR 0.900) at threshold 0.5; save/load round-trip produces identical predictions; retrain reproduces identical metrics (determinism proven).
 - **Tests:** 30 (feature resolution, imbalance math, determinism, round-trip, hand-computed metrics, all error paths, end-to-end smoke) · **Coverage:** models 96%, pipeline 100%.
 
-### M10 — SHAP Explainability (this milestone)
+### M11 — Risk Map & Visualization (this milestone)
+- **Objective:** Full presentation-grade visualization layer on the winning model's predictions + SHAP (PRD §13 / FR-10); never retrain.
+- **Files created:** `src/visualization.py`, `tests/test_visualize.py`, `reports/maps/risk_map.html`, `reports/dashboard/country_dashboard.html`, 11 figures in `reports/figures/`, `reports/hotspots_ranking.csv`, `reports/risk_summary.md`; `config.py` (+risk bands/colors, dirs, DPI, hotspot/temporal constants + validation), `run_pipeline.py` (`--stage visualize`), `tests/test_config.py` (+8).
+- **Core functionality:** Loads `escalation_best.pkl` + test window; full-window predictions + TreeExplainer SHAP (6,669 rows, ~2.3 s); SHAP↔prediction consistency check (log-odds reconstruction, tolerance 1e-2); per-geo-unit latest-row snapshot (proba, class, risk category, top-3 SHAP drivers, recent 7d events/fatalities, centroid coords from `cleaned_events`); **folium risk map** (markers colored by category, radius ∝ probability, 7-field popups, HTML legend); **country dashboard** (4-metric matplotlib PNG + interactive plotly HTML); **hotspot analysis** (top-20 ranking CSV + bar + weekly heatmap); **temporal trends** (weekly/monthly avg risk, rolling evolution timeline, country-wise comparison); **importance dashboard** (top-20 SHAP bar + category-wise family contribution); **prediction distribution** (histogram + KDE + risk-category bars); `reports/risk_summary.md` (highest/safest regions, country averages, top drivers, interpretation, observations).
+- **Validation:** 11/11 PNGs @ 300 dpi verified (PIL + dpi metadata); `risk_map.html` (184 KB, leaflet + markers) and `country_dashboard.html` (plotly) open-valid; ranking CSV top-20 sorted desc; all risk-summary sections present; risk probabilities ∈ [0,1]; SHAP drivers match prediction rows (consistency check); all functions ≤60 lines; no leakage — model never retrained, all artifacts on out-of-sample test window.
+- **Key results (test window, 122 geo units):** categories Critical 42 · Low 36 · High 23 · Medium 21; **highest risk = Khyber Pakhtunkhwa (Pakistan, 0.999)**; top-5 hotspots: Khyber Pakhtunkhwa, Sagaing, Balochistan, North Kordofan, Magway; **safest = Zabul (Afghanistan, 0.026)**; country avg risk: Pakistan 0.749 · Myanmar 0.688 · India 0.527 · South Sudan 0.505 · Sudan 0.445 · Afghanistan 0.176; top driver `events_w30d` (0.477) — consistent with M10.
+- **Tests:** 16 new (risk bands incl. boundaries/out-of-range, prediction-table snapshot + driver format, SHAP consistency, folium HTML structure, country aggregates, dashboard PNG+HTML, hotspot ranking/bar/heatmap, temporal plots, family mapping, category sums, importance/distribution PNGs, summary contents, end-to-end stage, missing-model error) · **Coverage:** visualization 99%.
+
+### M12 — Documentation & Project Packaging (this milestone)
+- **Objective:** Professional documentation suitable for hackathon judges, recruiters, GitHub visitors, and future contributors (PRD FR-11/FR-12).
+- **Files created:** `README.md` (all mandated sections: title, overview, problem, motivation, features, architecture, pipeline, folder structure, dataset, feature engineering, labels, split methodology, model comparison, final selection, SHAP, risk visualization, results, metrics, installation, environment setup, running the pipeline, running stages, configuration, screenshots, future work, limitations, contributors, license, ACLED attribution); `docs/architecture.md` (architecture, module interaction, data flow, pipeline stages, design decisions); `docs/model.md` (features, labels, selection, threshold, metrics, baselines, SHAP); `docs/usage.md` (install, CLI, stages, config, expected outputs, troubleshooting); `docs/results.md` (metrics, comparison, screenshots, hotspots, findings); `scripts/generate_diagrams.py`; `docs/images/` — 4 diagrams (pipeline, data flow, ML workflow, folder architecture @ 300 dpi) + 12 screenshots copied from real generated outputs.
+- **Core functionality:** Docs are **consistently generated from the implementation** — every metric/command/path was pulled from `model_comparison.json`, `split_summary.md`, `risk_summary.md`, and the CLI; nothing documented that doesn't exist (notebooks correctly marked M13-reserved since `notebooks/` is empty). Diagrams are regenerable via `scripts/generate_diagrams.py`.
+- **Validation:** automated script verified 9 required docs + 12 screenshots exist, every internal markdown link/image resolves, all 8 CLI stages documented, and headline metrics (winner F1 0.8423, PR-AUC 0.9031, threshold 0.25, baselines 0.8261/0.8076) match `model_comparison.json`; all 16 PNGs valid (PIL verify); diagrams render at 2940–3516 px; README renders with correct relative paths.
+- **Tests:** no source code changed — full suite re-run: **243/243 passed, 96.46% coverage** (M1–M11 unaffected).
+
+### M13 — Final Audit & Submission Readiness (this milestone)
+- **Objective:** Complete end-to-end audit: reproducible, deterministic, documented, production-quality, hackathon- and GitHub-ready. Nothing new invented — only validate, polish, verify, package.
+- **Files created:** `notebooks/01_EDA.ipynb`, `notebooks/02_Feature_Engineering.ipynb`, `notebooks/03_Modeling.ipynb` (all executed via `jupyter nbconvert`, 0 errors, plots embedded); `scripts/validate_project.py` (automated PRD §12 PASS/FAIL validator); `FINAL_AUDIT.md` (final acceptance report); `LICENSE` (MIT).
+- **Core functionality:** Three notebooks reuse `src/` modules only (no duplicated business logic) — EDA (coverage, event-type mix, hotspots, trends), feature engineering (distributions, label balance, **live leakage demo** that re-runs the real `build_features` with a 5,000-event future spike and proves zero past rows change), modeling (splits, winner evaluation, SHAP, risk snapshot). The validator runs 30 checks: structure, required files, config, imports, dataset/artifact integrity, metrics consistency vs `model_comparison.json`, CLI contract (all 8 stages accepted), documentation links/commands/screenshots, code-quality gates (syntax, no TODO/debug), executed-notebook error-free.
+- **Validation:** `scripts/validate_project.py` → **30/30 PASS**; all 3 notebooks execute via nbconvert with 0 errors and embedded plots (7+7+7 image/stream outputs, leakage demo prints `identical: True`); GitHub-readiness scan (no secrets tracked, `.gitignore` covers data/models-pkl/logs/`.env`); final regression suite **243/243 tests, 96.46% coverage**; M1–M12 untouched (no source changes needed — no critical bugs found).
+- **Tests:** full suite re-run green; coverage maintained at 96.46%.
+
+### M10 — SHAP Explainability
 - **Objective:** Production-quality explainability for the winning model (PRD FR-9 / §12); never retrain.
 - **Files created:** `src/explainability.py`, `tests/test_explainability.py`, `reports/shap_summary.md`, `reports/shap/` (21 plots); `src/exceptions.py` (+`ExplainabilityError`), `config.py` (SHAP constants + validation), `run_pipeline.py` (`--stage explain`), `tests/test_config.py` (+2).
 - **Core functionality:** Loads `escalation_best.pkl` + held-out test window; deterministic even-spaced sampling cap (2,000 rows); TreeExplainer with positive-class extraction + base-value handling (list/ndarray); mean-|SHAP| importance ranking; summary (beeswarm) + bar plots; waterfall plots for representative correct-positive, correct-negative, and borderline predictions (confidence-ranked); dependence plots for top-10 features; pattern-based feature interpretation glossary; **data-driven** model-behaviour observations (family sums computed from the full ranking so totals are exact); local top-K driver explanations; operating threshold read from `model_comparison.json`; `reports/shap_summary.md` (top-20 + interpretations + drivers + local explanations).
@@ -198,9 +230,16 @@ escalation_xgb.pkl · escalation_best.pkl (= XGBoost) ──► model_comparison
    ▼
 reports/shap_summary.md + reports/shap/ (21 plots: summary · bar · 10 dependence · 9 waterfalls)
    │  top drivers: events_w30d · fatalities_w30d · velocity_events_w30d · spillover_w14d
-   │  (M11: risk map → M12: docs → M13: final audit)
+   │  visualization.visualize_stage()  # full-window predictions + SHAP (~2.3 s),
+   │                                   # latest-row snapshot per geo unit, consistency check
    ▼
-ready for risk visualization
+reports/maps/risk_map.html (folium) · reports/dashboard/country_dashboard.html (plotly)
+reports/figures/ (11 @ 300 dpi: country · hotspots ×2 · temporal ×4 · importance ×2 · distribution ×2)
+reports/hotspots_ranking.csv · reports/risk_summary.md
+   │  highest risk: Khyber Pakhtunkhwa (0.999) · categories: Critical 42 / High 23 / Medium 21 / Low 36
+   │  (M12: docs → M13: final audit)
+   ▼
+ready for documentation & final audit
 ```
 
 ---
@@ -266,9 +305,10 @@ ready for risk visualization
 
 ## Tests
 
-- **Total:** 215 · **Passing:** 215 · **Coverage:** 95.98% (gate ≥80%)
-  - logging_config 100% · exceptions 100% · config 100% · pipeline 99% · data_validation 99% · feature_engineer 98% · models 95% · data_loader 95% · split 95% · label_engineer 94% · explainability 92%
-- **Key edge cases covered:** format-fallback date parsing, empty-string-as-missing, out-of-bounds coordinates, composite-key duplicates, mixed-format dates, min-events filter, single-row units, empty windows, sentinel recency, spillover neighbors, half-open-window boundaries, spike-injection leakage proof, seeded randomized leakage property test, empty future window, incomplete-window drop, vanished units, geo-unit isolation, threshold boundaries, XGB determinism/round-trip, full-metrics hand-computation, threshold grid bounds, best-point selection, all four baselines, winner tie-breaks (F1→PR-AUC→Brier→simplicity), LGBM drift detection, test-split isolation, SHAP shape/mismatch errors, representative-category selection (incl. missing categories), PNG validity, explain-stage end-to-end, operating-threshold fallback.
+- **Total:** 248 · **Passing:** 248 · **Coverage:** 96.46% (gate ≥80%)
+  - logging_config 100% · exceptions 100% · config 100% · pipeline 99% · data_validation 99% · visualization 99% · feature_engineer 98% · models 95% · data_loader 95% · split 95% · label_engineer 94% · explainability 92%
+  - Post-M13: `test_run_pipeline.py` +5 (stage parsing incl. `all`, all-stage ordering via monkeypatched runners, idempotent stage dispatch)
+- **Key edge cases covered:** format-fallback date parsing, empty-string-as-missing, out-of-bounds coordinates, composite-key duplicates, mixed-format dates, min-events filter, single-row units, empty windows, sentinel recency, spillover neighbors, half-open-window boundaries, spike-injection leakage proof, seeded randomized leakage property test, empty future window, incomplete-window drop, vanished units, geo-unit isolation, threshold boundaries, XGB determinism/round-trip, full-metrics hand-computation, threshold grid bounds, best-point selection, all four baselines, winner tie-breaks (F1→PR-AUC→Brier→simplicity), LGBM drift detection, test-split isolation, SHAP shape/mismatch errors, representative-category selection (incl. missing categories), PNG validity, explain-stage end-to-end, operating-threshold fallback, **risk-band boundaries, prediction-table snapshot + driver format, SHAP↔prediction consistency, folium HTML structure, country aggregates, hotspot ranking order, temporal resampling, feature-family mapping, category sums, visualize-stage end-to-end** (M11).
 
 ---
 
@@ -298,13 +338,32 @@ ready for risk visualization
 | Feature-name consistency | ✅ SHAP feature names == training features (mismatch raises `ExplainabilityError`) |
 | Report generation | ✅ `reports/shap_summary.md`: top-20 + interpretations + risk drivers + local explanations |
 | Data-driven observations | ✅ family sums computed from full ranking (identity 0.228 vs calendar 0.114; 30d > 14d > 7d) |
-| Regressions M1–M9 | ✅ all prior suites still pass (215/215) |
+| Docs exist (M12) | ✅ README.md + docs/{architecture,model,usage,results}.md + 4 diagrams + 12 screenshots |
+| Running guide (post-M13) | ✅ `docs/RUN_PROJECT.md` — all 11 mandated sections, all 9 `--stage` values, every inline-code repo path + link resolves (automated checker) |
+| `--stage all` (post-M13) | ✅ accepted by CLI + validator (9-stage contract); **verified from a clean state** — full clean re-run regenerated every artifact in ~40 s |
+| Determinism (post-M13) | ✅ model hashes **byte-identical** to pre-clean backups (`7f58e188` best/xgb, `7d9c9264` lgbm); metrics unchanged (F1 0.8423 @ 0.25, PR-AUC 0.9031) |
+| Stage idempotency (post-M13) | ✅ every single `--stage` command re-runs cleanly on existing artifacts |
+| README↔guide links (post-M13) | ✅ README "Running the Project" section ↔ `docs/RUN_PROJECT.md` cross-link verified |
+| Internal links (M12) | ✅ automated checker — every markdown link/image target resolves |
+| Commands documented (M12) | ✅ all 8 `--stage` choices present in README/docs |
+| Metrics match implementation (M12) | ✅ winner F1 0.8423, PR-AUC 0.9031, threshold 0.25, baselines 0.8261/0.8076 verified vs `model_comparison.json` |
+| Diagrams render (M12) | ✅ 4 diagrams (2940–3516 px) + 12 screenshots, all valid PNGs (PIL verify) |
+| Risk map (M11) | ✅ `reports/maps/risk_map.html` — folium, 122 markers, category colors, popups (leaflet + legend verified) |
+| Country dashboard (M11) | ✅ `country_dashboard.png` (4-panel @300 dpi) + `country_dashboard.html` (plotly, opens) |
+| Hotspot analysis (M11) | ✅ top-20 ranking CSV (sorted desc) + bar chart + weekly heatmap |
+| Temporal trends (M11) | ✅ weekly / monthly / evolution timeline / country-wise comparison PNGs |
+| Importance dashboard (M11) | ✅ top-20 SHAP bar + category-wise contribution |
+| Prediction distribution (M11) | ✅ histogram + KDE + risk-category distribution |
+| Figure quality (M11) | ✅ 11/11 PNGs @ **300 dpi** (dpi metadata verified), labeled, styled |
+| SHAP↔prediction consistency (M11) | ✅ full-window log-odds reconstruction error < 1e-2 |
+| Risk summary (M11) | ✅ `reports/risk_summary.md`: highest/safest regions, country averages, top drivers, interpretation, observations |
+| Regressions M1–M10 | ✅ all prior suites still pass (243/243) |
 
 ---
 
 ## PRD Compliance
 
-**Implemented (fully):** repo structure · config-driven everything · logging · exception hierarchy · adaptive data loader (no API per instruction) · 9 validation rules · district master · rolling windows (7/14/30d) · velocity · fatality stats · persistence · Shannon entropy · recency · calendar · spillover (FR-13) · leakage-safe labels (FR-8) · per-unit chronological processing · incomplete-window policy · label summary + timeline · chronological split (FR-6) · LightGBM training with imbalance handling + save/load + determinism (FR-7, NFR determinism) · XGBoost on identical data · full metric suite incl. ROC-AUC/Brier/log-loss/confusion (FR-15) · threshold sweep + operating-point selection (FR-14) · four baselines with comparison (FR-8) · PRD-priority winner selection · `escalation_best.pkl` + comparison report/JSON · **SHAP explainability (FR-9, PRD §12):** global importance, summary + bar plots, waterfall (pos/neg/borderline), dependence plots (top-10), local explanations, top-20 drivers, `reports/shap_summary.md`.
+**Implemented (fully):** repo structure · config-driven everything · logging · exception hierarchy · adaptive data loader (no API per instruction) · 9 validation rules · district master · rolling windows (7/14/30d) · velocity · fatality stats · persistence · Shannon entropy · recency · calendar · spillover (FR-13) · leakage-safe labels (FR-8) · per-unit chronological processing · incomplete-window policy · label summary + timeline · chronological split (FR-6) · LightGBM training with imbalance handling + save/load + determinism (FR-7, NFR determinism) · XGBoost on identical data · full metric suite incl. ROC-AUC/Brier/log-loss/confusion (FR-15) · threshold sweep + operating-point selection (FR-14) · four baselines with comparison (FR-8) · PRD-priority winner selection · `escalation_best.pkl` + comparison report/JSON · **SHAP explainability (FR-9, PRD §12):** global importance, summary + bar plots, waterfall (pos/neg/borderline), dependence plots (top-10), local explanations, top-20 drivers, `reports/shap_summary.md` · **Risk map & visualization (FR-10, PRD §13):** interactive folium risk map with per-geo-unit popups (probability, class, top SHAP drivers, recent events/fatalities), country risk dashboard (PNG + plotly HTML), hotspot analysis (top-20 ranking + heatmap), temporal trends (weekly/monthly/evolution/country-wise), SHAP importance dashboard (top-20 + category contribution), prediction distribution (histogram + KDE + category bars), `reports/risk_summary.md` — all at 300 dpi · **Documentation & packaging (FR-11/FR-12):** professional `README.md` (all 29 mandated sections incl. ACLED attribution), `docs/{architecture,model,usage,results}.md`, 4 regenerable architecture diagrams (`scripts/generate_diagrams.py`), 12 real-output screenshots — every documented metric/command verified against the implementation.
 
 **Deviations (all user-approved, documented in IMPLEMENTATION_PLAN.md §3.4):**
 1. **Granularity:** source is ACLED **weekly admin-1 aggregated counts** (not event-level district rows) → forecasts are **province-level, weekly**; `event_id` is a composite key (no `event_id_cnty`); actor-diversity features skipped ("if available").
@@ -326,9 +385,7 @@ ready for risk visualization
 
 ## Remaining Milestones
 
-- **M11** — Risk map & visualization (interactive map, country trends, hotspot analysis, temporal charts)
-- **M12** — Documentation & README
-- **M13** — Final audit & hackathon-submission readiness (full checklist)
+- **None.** M1–M13 complete. The repository is the final submission.
 
 ---
 
@@ -336,14 +393,16 @@ ready for risk visualization
 
 1. **Class imbalance (68.7% positive) — resolved for operating point:** threshold tuning moved the operating threshold from 0.5 to **0.25** (max-F1), lifting validation F1 from 0.793 → **0.842** (winner) and beating all baselines. Remaining caveat: F1 lift vs majority is ≈1.04×; PR-AUC (0.903) is the strongest headline metric. Optional M13 experiment: `scale_pos_weight = n_pos/n_neg` or 1.0.
 2. **XGBoost wins narrowly (F1 0.8423 vs 0.8400) and has slightly worse Brier (0.1755 vs 0.1743):** the F1→PR-AUC→Brier priority picks XGBoost, but the margin is thin; both models remain saved so downstream milestones can switch the winner with a config-only change if test-window evidence favors LightGBM.
-3. **SHAP on a 2,000-row even-spaced sample** of the test window (memory cap, configurable via `SHAP_SAMPLE_CAP`); importance ranking is stable across the window, but per-row waterfalls describe sampled representative rows only.
-4. **Province-level scope:** the product is "early warning" at admin-1 granularity; an event-level ACLED export would drop-in and restore district-level + actor features without pipeline changes.
-5. **Python 3.14 / pandas 3.0.5 (PyArrow str dtype):** handled throughout; wheel availability verified for all pinned deps.
-6. **Collinearity:** `geo_unit_code` and `admin1_code` are identical on this dataset (geo_unit == admin1); harmless for tree models, kept for generality.
+3. **M11 map uses each geo unit's latest test-window row** (the model's most recent assessment) as its snapshot; earlier rows are still represented in the temporal/hotspot charts. The map's tiles (OpenStreetMap) need internet at view time; markers/popups render offline.
+4. **SHAP on a 2,000-row even-spaced sample** of the test window in M10 (memory cap, configurable via `SHAP_SAMPLE_CAP`); M11 computes full-window SHAP (6,669 rows, ~2.3 s) so every snapshot row has exact drivers.
+5. **Province-level scope:** the product is "early warning" at admin-1 granularity; an event-level ACLED export would drop-in and restore district-level + actor features without pipeline changes.
+6. **Python 3.14 / pandas 3.0.5 (PyArrow str dtype):** handled throughout; wheel availability verified for all pinned deps.
+7. **Collinearity:** `geo_unit_code` and `admin1_code` are identical on this dataset (geo_unit == admin1); harmless for tree models, kept for generality.
 
 ---
 
 ## Final Readiness
 
-**Ready for Milestone 11 (Risk Map & Visualization): Yes.**
-M1–M10 are complete, gated, reviewed, and regression-free (215/215 tests, 95.98% coverage). The winner (XGBoost) is explained end-to-end with SHAP: global importance, summary/bar/waterfall/dependence plots (all verified non-corrupt), local explanations for positive/negative/borderline predictions, and a data-driven `reports/shap_summary.md` (top-20 drivers led by `events_w30d`/`fatalities_w30d`, 30-day windows dominate, spillover ranks #5). The model was never retrained; all explanations are on the held-out test window. M11 will turn the winner's risk scores into the interactive risk map, country trends, hotspot analysis, and temporal charts per PRD §13.
+**✅ PROJECT COMPLETE — READY FOR SUBMISSION.**
+
+All 13 milestones are delivered, gated, reviewed, and regression-free (**248/248 tests, 96.46% coverage**). The automated validator (`scripts/validate_project.py`) reports **30/30 PASS**; the three notebooks execute with zero errors and embedded plots; `FINAL_AUDIT.md` documents the full acceptance checklist; GitHub readiness confirmed (no secrets tracked, `.gitignore` correct, LICENSE + attribution present). A fresh clone following `docs/RUN_PROJECT.md` (linked from README) reproduces the entire pipeline deterministically — verified by a full clean re-run via `python run_pipeline.py --stage all` that regenerated byte-identical model artifacts.

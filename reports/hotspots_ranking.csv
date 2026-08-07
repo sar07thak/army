@@ -1,0 +1,21 @@
+geo_unit,country,proba,predicted_class,risk_category,top_drivers,rank
+Khyber Pakhtunkhwa,Pakistan,0.9990174770355225,1,Critical,"events_w30d: +1.901, fatalities_w30d: +1.517, events_w14d: +0.834",1
+Sagaing,Myanmar,0.9979674220085144,1,Critical,"events_w30d: +1.399, fatalities_w30d: +1.044, events_w7d: +0.955",2
+Balochistan,Pakistan,0.9934240579605103,1,Critical,"fatalities_w30d: +1.409, events_w30d: +1.103, events_w7d: +0.922",3
+North Kordofan,Sudan,0.9909082651138306,1,Critical,"fatalities_w30d: +1.382, events_w30d: +1.136, velocity_fatalities_w30d: +0.688",4
+Magway,Myanmar,0.9905773401260376,1,Critical,"fatalities_w30d: +1.287, events_w30d: +0.927, events_w7d: +0.638",5
+Sindh,Pakistan,0.9856296181678772,1,Critical,"events_w7d: +0.899, events_w30d: +0.807, spillover_w14d: +0.620",6
+Rakhine,Myanmar,0.9697486758232117,1,Critical,"fatalities_w30d: +0.756, events_w30d: +0.599, velocity_fatalities_w30d: +0.583",7
+Mandalay,Myanmar,0.9431043863296509,1,Critical,"events_w30d: +0.842, fatalities_w30d: +0.755, velocity_fatalities_w30d: +0.580",8
+Punjab,India,0.9380152225494385,1,Critical,"events_w7d: +0.910, events_w30d: +0.599, velocity_events_w30d: +0.531",9
+Manipur,India,0.9353734850883484,1,Critical,"events_w30d: +1.194, events_w7d: +0.645, velocity_fatalities_w30d: +0.349",10
+Bago-West,Myanmar,0.9309505224227905,1,Critical,"fatalities_w30d: +0.704, events_w30d: +0.444, velocity_events_w30d: +0.392",11
+Tanintharyi,Myanmar,0.9080281853675842,1,Critical,"velocity_events_w30d: +0.746, events_w30d: +0.512, fatalities_w30d: +0.255",12
+Kayin,Myanmar,0.8701184988021851,1,Critical,"events_w30d: +0.872, fatalities_w30d: +0.715, velocity_fatalities_w7d: -0.291",13
+Jammu and Kashmir,India,0.8535409569740295,1,Critical,"velocity_events_w30d: +0.795, events_w7d: +0.321, spillover_w14d: +0.256",14
+Kachin,Myanmar,0.8480427265167236,1,Critical,"fatalities_w30d: +0.927, events_w30d: +0.798, velocity_fatalities_w7d: -0.331",15
+Kabul,Afghanistan,0.8181172013282776,1,Critical,"velocity_events_w30d: +0.705, events_w30d: +0.384, admin1_code: +0.245",16
+West Bengal,India,0.8156957030296326,1,Critical,"events_w7d: +0.401, velocity_events_w14d: +0.308, admin1_code: +0.295",17
+Chin,Myanmar,0.8146874904632568,1,Critical,"velocity_events_w30d: +0.474, spillover_w14d: +0.253, events_w30d: +0.228",18
+Shan-North,Myanmar,0.791716992855072,1,Critical,"velocity_events_w30d: +0.603, velocity_fatalities_w30d: +0.443, events_w30d: +0.368",19
+South Darfur,Sudan,0.7792995572090149,1,Critical,"velocity_events_w30d: +0.429, events_w30d: +0.370, admin1_code: +0.312",20

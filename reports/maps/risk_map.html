@@ -1,0 +1,4128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6e9e32b2c8f0dbf7a018d1ba570c8937 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style='position:fixed;bottom:30px;left:30px;z-index:9999;background:white;padding:8px 12px;border-radius:6px;box-shadow:0 0 6px rgba(0,0,0,.3);font-family:sans-serif;font-size:13px'><b>Risk level</b><ul style='list-style:none;margin:4px 0 0;padding:0'><li><span style='background:#2E86AB;width:12px;height:12px;display:inline-block;margin-right:6px'></span>Low</li><li><span style='background:#F5A623;width:12px;height:12px;display:inline-block;margin-right:6px'></span>Medium</li><li><span style='background:#E76F51;width:12px;height:12px;display:inline-block;margin-right:6px'></span>High</li><li><span style='background:#C1121F;width:12px;height:12px;display:inline-block;margin-right:6px'></span>Critical</li></ul></div>
+    
+            <div class="folium-map" id="map_6e9e32b2c8f0dbf7a018d1ba570c8937" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6e9e32b2c8f0dbf7a018d1ba570c8937 = L.map(
+                "map_6e9e32b2c8f0dbf7a018d1ba570c8937",
+                {
+                    center: [23.0, 78.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_149830b86cad1c543d1da20ff0707c1b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_149830b86cad1c543d1da20ff0707c1b.addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+            var circle_marker_700573f5f78ad500f6d48274fabcd82a = L.circleMarker(
+                [9.733, 28.471],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5190819427371025, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_ccbcc648391bf27fbc3b03d4d5fb279a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_512deffd785732aca0eaea05f0433e9b = $(`<div id="html_512deffd785732aca0eaea05f0433e9b" style="width: 100.0%; height: 100.0%;"><b>Abyei</b><br>Country: Sudan<br>Risk probability: 0.037<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.507, events_w7d: -0.413, events_w14d: -0.386<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_ccbcc648391bf27fbc3b03d4d5fb279a.setContent(html_512deffd785732aca0eaea05f0433e9b);
+            
+        
+
+        circle_marker_700573f5f78ad500f6d48274fabcd82a.bindPopup(popup_ccbcc648391bf27fbc3b03d4d5fb279a)
+        ;
+
+        
+    
+    
+            circle_marker_700573f5f78ad500f6d48274fabcd82a.bindTooltip(
+                `<div>
+                     Abyei (0.04)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82219d20f62acfa781f6d679a1421086 = L.circleMarker(
+                [14.659000000000002, 33.229],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.630984365940094, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_5aa5d58a184915e0912ceb85fd0578b9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_17085039ebe594b89261aefd25b9cc69 = $(`<div id="html_17085039ebe594b89261aefd25b9cc69" style="width: 100.0%; height: 100.0%;"><b>Al Jazirah</b><br>Country: Sudan<br>Risk probability: 0.188<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.619, events_w14d: -0.209, country_code: -0.154<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_5aa5d58a184915e0912ceb85fd0578b9.setContent(html_17085039ebe594b89261aefd25b9cc69);
+            
+        
+
+        circle_marker_82219d20f62acfa781f6d679a1421086.bindPopup(popup_5aa5d58a184915e0912ceb85fd0578b9)
+        ;
+
+        
+    
+    
+            circle_marker_82219d20f62acfa781f6d679a1421086.bindTooltip(
+                `<div>
+                     Al Jazirah (0.19)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_310112ab73d02bedabd9081343191782 = L.circleMarker(
+                [12.603, 92.825],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.887022495269775, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_d04dc53b789887661c92be8a9a4886a1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_be7b0a208255b2d73e4ef980cf7d45d3 = $(`<div id="html_be7b0a208255b2d73e4ef980cf7d45d3" style="width: 100.0%; height: 100.0%;"><b>Andaman and Nicobar Islands</b><br>Country: India<br>Risk probability: 0.135<br>Predicted class: 0<br>Top SHAP: admin1_code: -0.826, velocity_events_w30d: -0.556, fatalities_w30d: -0.257<br>Recent events (7d): 2<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_d04dc53b789887661c92be8a9a4886a1.setContent(html_be7b0a208255b2d73e4ef980cf7d45d3);
+            
+        
+
+        circle_marker_310112ab73d02bedabd9081343191782.bindPopup(popup_d04dc53b789887661c92be8a9a4886a1)
+        ;
+
+        
+    
+    
+            circle_marker_310112ab73d02bedabd9081343191782.bindTooltip(
+                `<div>
+                     Andaman and Nicobar Islands (0.13)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08812e88e0f3a10a8c0cf5e28dd81bb4 = L.circleMarker(
+                [15.897, 79.622],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.74964439868927, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_ffbadfdaf446ca89d804771922af3991 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7b108c020173b978a157b2fa75e2536b = $(`<div id="html_7b108c020173b978a157b2fa75e2536b" style="width: 100.0%; height: 100.0%;"><b>Andhra Pradesh</b><br>Country: India<br>Risk probability: 0.768<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.551, velocity_events_w14d: +0.343, spillover_w14d: +0.253<br>Recent events (7d): 26<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_ffbadfdaf446ca89d804771922af3991.setContent(html_7b108c020173b978a157b2fa75e2536b);
+            
+        
+
+        circle_marker_08812e88e0f3a10a8c0cf5e28dd81bb4.bindPopup(popup_ffbadfdaf446ca89d804771922af3991)
+        ;
+
+        
+    
+    
+            circle_marker_08812e88e0f3a10a8c0cf5e28dd81bb4.bindTooltip(
+                `<div>
+                     Andhra Pradesh (0.77)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71da57070bad87b7747c8813e0201294 = L.circleMarker(
+                [28.028, 95.055],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.108559727668762, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_6d47e213e024f9975a776775da8f614e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_33df026a9ca32c53760bdd1aecbfcf14 = $(`<div id="html_33df026a9ca32c53760bdd1aecbfcf14" style="width: 100.0%; height: 100.0%;"><b>Arunachal Pradesh</b><br>Country: India<br>Risk probability: 0.508<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.288, fatalities_w30d: -0.249, admin1_code: -0.197<br>Recent events (7d): 2<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_6d47e213e024f9975a776775da8f614e.setContent(html_33df026a9ca32c53760bdd1aecbfcf14);
+            
+        
+
+        circle_marker_71da57070bad87b7747c8813e0201294.bindPopup(popup_6d47e213e024f9975a776775da8f614e)
+        ;
+
+        
+    
+    
+            circle_marker_71da57070bad87b7747c8813e0201294.bindTooltip(
+                `<div>
+                     Arunachal Pradesh (0.51)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45822fc1b4698803ac161cf39cbef500 = L.circleMarker(
+                [26.053000000000004, 90.76200000000001],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.71956992149353, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_296ab66b348dfef6305d6fb4f5e41586 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7de079c4f78644ee973de3deede6f0a5 = $(`<div id="html_7de079c4f78644ee973de3deede6f0a5" style="width: 100.0%; height: 100.0%;"><b>Assam</b><br>Country: India<br>Risk probability: 0.694<br>Predicted class: 1<br>Top SHAP: events_w7d: +1.296, fatalities_w30d: -0.404, velocity_events_w30d: -0.300<br>Recent events (7d): 57<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_296ab66b348dfef6305d6fb4f5e41586.setContent(html_7de079c4f78644ee973de3deede6f0a5);
+            
+        
+
+        circle_marker_45822fc1b4698803ac161cf39cbef500.bindPopup(popup_296ab66b348dfef6305d6fb4f5e41586)
+        ;
+
+        
+    
+    
+            circle_marker_45822fc1b4698803ac161cf39cbef500.bindTooltip(
+                `<div>
+                     Assam (0.69)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9dd4a101f8976829e86951f4660d5a55 = L.circleMarker(
+                [17.107, 95.144],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.000492334365845, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_5916f04d2e8f5a16a4f87065d97eccae = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6ac55c6176f7a52e64e7b482fe442991 = $(`<div id="html_6ac55c6176f7a52e64e7b482fe442991" style="width: 100.0%; height: 100.0%;"><b>Ayeyarwady</b><br>Country: Myanmar<br>Risk probability: 0.500<br>Predicted class: 1<br>Top SHAP: admin1_code: -0.724, events_w30d: +0.611, velocity_events_w30d: -0.376<br>Recent events (7d): 18<br>Recent fatalities (7d): 4</div>`)[0];
+                popup_5916f04d2e8f5a16a4f87065d97eccae.setContent(html_6ac55c6176f7a52e64e7b482fe442991);
+            
+        
+
+        circle_marker_9dd4a101f8976829e86951f4660d5a55.bindPopup(popup_5916f04d2e8f5a16a4f87065d97eccae)
+        ;
+
+        
+    
+    
+            circle_marker_9dd4a101f8976829e86951f4660d5a55.bindTooltip(
+                `<div>
+                     Ayeyarwady (0.50)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_562425edbc9a9884c133406fed63df70 = L.circleMarker(
+                [33.943, 73.891],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.091201424598694, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_106a7044df087a3bf43da2545dbf7c40 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3ba0f1007158e9232c112f288e72a9cb = $(`<div id="html_3ba0f1007158e9232c112f288e72a9cb" style="width: 100.0%; height: 100.0%;"><b>Azad Jammu and Kashmir</b><br>Country: Pakistan<br>Risk probability: 0.721<br>Predicted class: 1<br>Top SHAP: admin1_code: -0.496, events_w30d: +0.370, velocity_events_w30d: +0.351<br>Recent events (7d): 21<br>Recent fatalities (7d): 6</div>`)[0];
+                popup_106a7044df087a3bf43da2545dbf7c40.setContent(html_3ba0f1007158e9232c112f288e72a9cb);
+            
+        
+
+        circle_marker_562425edbc9a9884c133406fed63df70.bindPopup(popup_106a7044df087a3bf43da2545dbf7c40)
+        ;
+
+        
+    
+    
+            circle_marker_562425edbc9a9884c133406fed63df70.bindTooltip(
+                `<div>
+                     Azad Jammu and Kashmir (0.72)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69b115febc373f7abb01f7f81799f0f5 = L.circleMarker(
+                [36.966, 73.342],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.451605081558228, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_35793d40621dbb948df92cb0df6b7cf8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4b480c3ce7fcd9ca3054fd7db6184d39 = $(`<div id="html_4b480c3ce7fcd9ca3054fd7db6184d39" style="width: 100.0%; height: 100.0%;"><b>Badakhshan</b><br>Country: Afghanistan<br>Risk probability: 0.389<br>Predicted class: 1<br>Top SHAP: spillover_w14d: -0.286, velocity_events_w30d: -0.281, fatalities_w30d: -0.243<br>Recent events (7d): 3<br>Recent fatalities (7d): 2</div>`)[0];
+                popup_35793d40621dbb948df92cb0df6b7cf8.setContent(html_4b480c3ce7fcd9ca3054fd7db6184d39);
+            
+        
+
+        circle_marker_69b115febc373f7abb01f7f81799f0f5.bindPopup(popup_35793d40621dbb948df92cb0df6b7cf8)
+        ;
+
+        
+    
+    
+            circle_marker_69b115febc373f7abb01f7f81799f0f5.bindTooltip(
+                `<div>
+                     Badakhshan (0.39)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1735f384ccac6b17bf20c8f5e855080c = L.circleMarker(
+                [35.257, 63.581],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.890110805630684, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_969882b4e02b9449eaae205000610ff6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_cc12846133d4c7dc6217bc2b2f974dc9 = $(`<div id="html_cc12846133d4c7dc6217bc2b2f974dc9" style="width: 100.0%; height: 100.0%;"><b>Badghis</b><br>Country: Afghanistan<br>Risk probability: 0.064<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.035, events_w7d: -0.411, spillover_w14d: -0.329<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_969882b4e02b9449eaae205000610ff6.setContent(html_cc12846133d4c7dc6217bc2b2f974dc9);
+            
+        
+
+        circle_marker_1735f384ccac6b17bf20c8f5e855080c.bindPopup(popup_969882b4e02b9449eaae205000610ff6)
+        ;
+
+        
+    
+    
+            circle_marker_1735f384ccac6b17bf20c8f5e855080c.bindTooltip(
+                `<div>
+                     Badghis (0.06)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2a4c342d456d6348ba286b8cadc540f4 = L.circleMarker(
+                [35.79, 69.109],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.723409153521061, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_2344c4c99edb39d9b9d82f4e0b6cfa0f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0d6de0f126f1bbbdb757faea2477384a = $(`<div id="html_0d6de0f126f1bbbdb757faea2477384a" style="width: 100.0%; height: 100.0%;"><b>Baghlan</b><br>Country: Afghanistan<br>Risk probability: 0.052<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.703, spillover_w14d: -0.396, events_w14d: -0.369<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_2344c4c99edb39d9b9d82f4e0b6cfa0f.setContent(html_0d6de0f126f1bbbdb757faea2477384a);
+            
+        
+
+        circle_marker_2a4c342d456d6348ba286b8cadc540f4.bindPopup(popup_2344c4c99edb39d9b9d82f4e0b6cfa0f)
+        ;
+
+        
+    
+    
+            circle_marker_2a4c342d456d6348ba286b8cadc540f4.bindTooltip(
+                `<div>
+                     Baghlan (0.05)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37a3299d17beef37e1b2446744e00e98 = L.circleMarker(
+                [18.193, 96.618],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.047815918922424, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_55ffd676aa9a56f1c54189c7d0282801 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c2a3e35b8d81aa8e4f2999c1f7127900 = $(`<div id="html_c2a3e35b8d81aa8e4f2999c1f7127900" style="width: 100.0%; height: 100.0%;"><b>Bago-East</b><br>Country: Myanmar<br>Risk probability: 0.718<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.576, velocity_fatalities_w30d: +0.226, spillover_w14d: +0.203<br>Recent events (7d): 3<br>Recent fatalities (7d): 3</div>`)[0];
+                popup_55ffd676aa9a56f1c54189c7d0282801.setContent(html_c2a3e35b8d81aa8e4f2999c1f7127900);
+            
+        
+
+        circle_marker_37a3299d17beef37e1b2446744e00e98.bindPopup(popup_55ffd676aa9a56f1c54189c7d0282801)
+        ;
+
+        
+    
+    
+            circle_marker_37a3299d17beef37e1b2446744e00e98.bindTooltip(
+                `<div>
+                     Bago-East (0.72)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_608f5a75ad0d11d3c4e74d68733bba5b = L.circleMarker(
+                [18.328, 95.642],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.033307313919067, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_7474abedb917e1ee573d963eee9929aa = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7666f3c326d7ebfacd073d268281ca0b = $(`<div id="html_7666f3c326d7ebfacd073d268281ca0b" style="width: 100.0%; height: 100.0%;"><b>Bago-West</b><br>Country: Myanmar<br>Risk probability: 0.931<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.704, events_w30d: +0.444, velocity_events_w30d: +0.392<br>Recent events (7d): 3<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_7474abedb917e1ee573d963eee9929aa.setContent(html_7666f3c326d7ebfacd073d268281ca0b);
+            
+        
+
+        circle_marker_608f5a75ad0d11d3c4e74d68733bba5b.bindPopup(popup_7474abedb917e1ee573d963eee9929aa)
+        ;
+
+        
+    
+    
+            circle_marker_608f5a75ad0d11d3c4e74d68733bba5b.bindTooltip(
+                `<div>
+                     Bago-West (0.93)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dbf92184eed650115e0b22c790926263 = L.circleMarker(
+                [36.529, 66.912],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.076403856277466, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_8ca0624671b5def6e46c3c658938a553 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d71c4703ff925434ccddf2fe625e2560 = $(`<div id="html_d71c4703ff925434ccddf2fe625e2560" style="width: 100.0%; height: 100.0%;"><b>Balkh</b><br>Country: Afghanistan<br>Risk probability: 0.220<br>Predicted class: 0<br>Top SHAP: spillover_w14d: -0.641, events_w30d: -0.544, admin1_code: +0.256<br>Recent events (7d): 3<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_8ca0624671b5def6e46c3c658938a553.setContent(html_d71c4703ff925434ccddf2fe625e2560);
+            
+        
+
+        circle_marker_dbf92184eed650115e0b22c790926263.bindPopup(popup_8ca0624671b5def6e46c3c658938a553)
+        ;
+
+        
+    
+    
+            circle_marker_dbf92184eed650115e0b22c790926263.bindTooltip(
+                `<div>
+                     Balkh (0.22)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c2f14a5362e983de497aec9e2d307da = L.circleMarker(
+                [28.459999999999997, 65.815],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.907936811447144, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_0652c894d0a10df9d636ea9462225f45 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_927301266baa5fc216b87e06deb4d321 = $(`<div id="html_927301266baa5fc216b87e06deb4d321" style="width: 100.0%; height: 100.0%;"><b>Balochistan</b><br>Country: Pakistan<br>Risk probability: 0.993<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +1.409, events_w30d: +1.103, events_w7d: +0.922<br>Recent events (7d): 64<br>Recent fatalities (7d): 189</div>`)[0];
+                popup_0652c894d0a10df9d636ea9462225f45.setContent(html_927301266baa5fc216b87e06deb4d321);
+            
+        
+
+        circle_marker_8c2f14a5362e983de497aec9e2d307da.bindPopup(popup_0652c894d0a10df9d636ea9462225f45)
+        ;
+
+        
+    
+    
+            circle_marker_8c2f14a5362e983de497aec9e2d307da.bindTooltip(
+                `<div>
+                     Balochistan (0.99)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4dd52ec3f838afc34d5db5b0781f2508 = L.circleMarker(
+                [34.695, 67.338],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.293282568454742, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_9a7b1efe0bc15c07b1eff77f70a3e381 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_06bd2d004db6dee08982bd227c031dcd = $(`<div id="html_06bd2d004db6dee08982bd227c031dcd" style="width: 100.0%; height: 100.0%;"><b>Bamyan</b><br>Country: Afghanistan<br>Risk probability: 0.235<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.113, velocity_events_w30d: +0.618, spillover_w14d: -0.283<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_9a7b1efe0bc15c07b1eff77f70a3e381.setContent(html_06bd2d004db6dee08982bd227c031dcd);
+            
+        
+
+        circle_marker_4dd52ec3f838afc34d5db5b0781f2508.bindPopup(popup_9a7b1efe0bc15c07b1eff77f70a3e381)
+        ;
+
+        
+    
+    
+            circle_marker_4dd52ec3f838afc34d5db5b0781f2508.bindTooltip(
+                `<div>
+                     Bamyan (0.24)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ca050d30f3484151ef0d8318a256327 = L.circleMarker(
+                [25.903, 86.125],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.430992007255554, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_6727c8c02c57d9ee1234430a311f1d0b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3fb646b1056b2ffdbd28b90ee1769ead = $(`<div id="html_3fb646b1056b2ffdbd28b90ee1769ead" style="width: 100.0%; height: 100.0%;"><b>Bihar</b><br>Country: India<br>Risk probability: 0.531<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.316, fatalities_w30d: -0.186, fatalities_w14d: -0.108<br>Recent events (7d): 6<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_6727c8c02c57d9ee1234430a311f1d0b.setContent(html_3fb646b1056b2ffdbd28b90ee1769ead);
+            
+        
+
+        circle_marker_3ca050d30f3484151ef0d8318a256327.bindPopup(popup_6727c8c02c57d9ee1234430a311f1d0b)
+        ;
+
+        
+    
+    
+            circle_marker_3ca050d30f3484151ef0d8318a256327.bindTooltip(
+                `<div>
+                     Bihar (0.53)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_749079a6b66aad019b9ac2bb933fc5ee = L.circleMarker(
+                [11.008, 34.095],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.392602682113647, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_acf0200c7b9f6c93fff324c9afd0b4e7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_971338eaaeb59a13767896677568f15a = $(`<div id="html_971338eaaeb59a13767896677568f15a" style="width: 100.0%; height: 100.0%;"><b>Blue Nile</b><br>Country: Sudan<br>Risk probability: 0.742<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.866, events_w30d: +0.469, country_code: -0.393<br>Recent events (7d): 11<br>Recent fatalities (7d): 40</div>`)[0];
+                popup_acf0200c7b9f6c93fff324c9afd0b4e7.setContent(html_971338eaaeb59a13767896677568f15a);
+            
+        
+
+        circle_marker_749079a6b66aad019b9ac2bb933fc5ee.bindPopup(popup_acf0200c7b9f6c93fff324c9afd0b4e7)
+        ;
+
+        
+    
+    
+            circle_marker_749079a6b66aad019b9ac2bb933fc5ee.bindTooltip(
+                `<div>
+                     Blue Nile (0.74)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4400f15aef900727d770bb319a4c5d4c = L.circleMarker(
+                [12.308, 23.234],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.45069706439972, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_d90e3b04ad35a35bd4d470ac59cd5a53 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5793b1682601863ed50cc085d3a26a54 = $(`<div id="html_5793b1682601863ed50cc085d3a26a54" style="width: 100.0%; height: 100.0%;"><b>Central Darfur</b><br>Country: Sudan<br>Risk probability: 0.532<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: -0.224, spillover_w14d: +0.217, fatalities_w30d: -0.163<br>Recent events (7d): 1<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_d90e3b04ad35a35bd4d470ac59cd5a53.setContent(html_5793b1682601863ed50cc085d3a26a54);
+            
+        
+
+        circle_marker_4400f15aef900727d770bb319a4c5d4c.bindPopup(popup_d90e3b04ad35a35bd4d470ac59cd5a53)
+        ;
+
+        
+    
+    
+            circle_marker_4400f15aef900727d770bb319a4c5d4c.bindTooltip(
+                `<div>
+                     Central Darfur (0.53)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3e014ad630c24f66c623b65beff42dc = L.circleMarker(
+                [4.89, 31.459],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.7745920419693, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_6d302b10d9a9011927f878d9b339b446 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9d0b0b476c830435e18feda33250762e = $(`<div id="html_9d0b0b476c830435e18feda33250762e" style="width: 100.0%; height: 100.0%;"><b>Central Equatoria</b><br>Country: South Sudan<br>Risk probability: 0.698<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.577, velocity_fatalities_w30d: +0.226, events_w30d: +0.172<br>Recent events (7d): 7<br>Recent fatalities (7d): 3</div>`)[0];
+                popup_6d302b10d9a9011927f878d9b339b446.setContent(html_9d0b0b476c830435e18feda33250762e);
+            
+        
+
+        circle_marker_b3e014ad630c24f66c623b65beff42dc.bindPopup(popup_6d302b10d9a9011927f878d9b339b446)
+        ;
+
+        
+    
+    
+            circle_marker_b3e014ad630c24f66c623b65beff42dc.bindTooltip(
+                `<div>
+                     Central Equatoria (0.70)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68a0ec4677db118f725850013dff4e46 = L.circleMarker(
+                [30.726, 76.787],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.59308385848999, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_9fd1b638f439a67907625e5afaaccf36 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_339883fc857fefbeac6144dea00db130 = $(`<div id="html_339883fc857fefbeac6144dea00db130" style="width: 100.0%; height: 100.0%;"><b>Chandigarh</b><br>Country: India<br>Risk probability: 0.614<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.436, fatalities_w30d: -0.327, spillover_w14d: +0.228<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_9fd1b638f439a67907625e5afaaccf36.setContent(html_339883fc857fefbeac6144dea00db130);
+            
+        
+
+        circle_marker_68a0ec4677db118f725850013dff4e46.bindPopup(popup_9fd1b638f439a67907625e5afaaccf36)
+        ;
+
+        
+    
+    
+            circle_marker_68a0ec4677db118f725850013dff4e46.bindTooltip(
+                `<div>
+                     Chandigarh (0.61)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91d9dc413529f3312af184e85e1f070d = L.circleMarker(
+                [20.95, 81.509],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.067686855793, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_9f176506298bda3fd48569c8fc461733 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5dbe07c6fa56eb43df39b50dc985ec18 = $(`<div id="html_5dbe07c6fa56eb43df39b50dc985ec18" style="width: 100.0%; height: 100.0%;"><b>Chhattisgarh</b><br>Country: India<br>Risk probability: 0.433<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.296, velocity_events_w30d: -0.279, fatalities_w30d: -0.271<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_9f176506298bda3fd48569c8fc461733.setContent(html_5dbe07c6fa56eb43df39b50dc985ec18);
+            
+        
+
+        circle_marker_91d9dc413529f3312af184e85e1f070d.bindPopup(popup_9f176506298bda3fd48569c8fc461733)
+        ;
+
+        
+    
+    
+            circle_marker_91d9dc413529f3312af184e85e1f070d.bindTooltip(
+                `<div>
+                     Chhattisgarh (0.43)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0fdedb82ff5feaa4a31a6aa5894da879 = L.circleMarker(
+                [22.374, 93.604],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.405624866485596, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_c4459c1b479029f15976587826121e91 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8cce42ad3bec05e00f03a7ed49f8ec61 = $(`<div id="html_8cce42ad3bec05e00f03a7ed49f8ec61" style="width: 100.0%; height: 100.0%;"><b>Chin</b><br>Country: Myanmar<br>Risk probability: 0.815<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.474, spillover_w14d: +0.253, events_w30d: +0.228<br>Recent events (7d): 12<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_c4459c1b479029f15976587826121e91.setContent(html_8cce42ad3bec05e00f03a7ed49f8ec61);
+            
+        
+
+        circle_marker_0fdedb82ff5feaa4a31a6aa5894da879.bindPopup(popup_c4459c1b479029f15976587826121e91)
+        ;
+
+        
+    
+    
+            circle_marker_0fdedb82ff5feaa4a31a6aa5894da879.bindTooltip(
+                `<div>
+                     Chin (0.81)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12ada82faf31aaef5a6ecf279c868141 = L.circleMarker(
+                [33.647, 66.346],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.549452394247055, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_ad614eb77d35e0422daabc5323144385 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6bd5ba8452d60ab9aad62ba679835d28 = $(`<div id="html_6bd5ba8452d60ab9aad62ba679835d28" style="width: 100.0%; height: 100.0%;"><b>Daykundi</b><br>Country: Afghanistan<br>Risk probability: 0.111<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.951, spillover_w14d: -0.408, events_w7d: -0.350<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_ad614eb77d35e0422daabc5323144385.setContent(html_6bd5ba8452d60ab9aad62ba679835d28);
+            
+        
+
+        circle_marker_12ada82faf31aaef5a6ecf279c868141.bindPopup(popup_ad614eb77d35e0422daabc5323144385)
+        ;
+
+        
+    
+    
+            circle_marker_12ada82faf31aaef5a6ecf279c868141.bindTooltip(
+                `<div>
+                     Daykundi (0.11)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c824c7966b8a6d22f99932d5c41d84da = L.circleMarker(
+                [28.645000000000003, 77.123],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.548206686973572, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_4db61e28b542bbdefec51e56ea76cc7f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_912ca9d128e5483dedbb5f59b7e2be01 = $(`<div id="html_912ca9d128e5483dedbb5f59b7e2be01" style="width: 100.0%; height: 100.0%;"><b>Delhi</b><br>Country: India<br>Risk probability: 0.682<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.523, events_w30d: +0.248, fatalities_w30d: -0.238<br>Recent events (7d): 7<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_4db61e28b542bbdefec51e56ea76cc7f.setContent(html_912ca9d128e5483dedbb5f59b7e2be01);
+            
+        
+
+        circle_marker_c824c7966b8a6d22f99932d5c41d84da.bindPopup(popup_4db61e28b542bbdefec51e56ea76cc7f)
+        ;
+
+        
+    
+    
+            circle_marker_c824c7966b8a6d22f99932d5c41d84da.bindTooltip(
+                `<div>
+                     Delhi (0.68)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_946fe78cc20b5d351cb2f3f4df735485 = L.circleMarker(
+                [11.23, 26.397],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.484805941581726, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_f4a716500a24cfe7155f8a60600a0ed9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d3fc70f91871a987b5b82289898a16b1 = $(`<div id="html_d3fc70f91871a987b5b82289898a16b1" style="width: 100.0%; height: 100.0%;"><b>East Darfur</b><br>Country: Sudan<br>Risk probability: 0.392<br>Predicted class: 1<br>Top SHAP: events_w30d: -0.469, velocity_events_w30d: +0.372, fatalities_w30d: -0.182<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_f4a716500a24cfe7155f8a60600a0ed9.setContent(html_d3fc70f91871a987b5b82289898a16b1);
+            
+        
+
+        circle_marker_946fe78cc20b5d351cb2f3f4df735485.bindPopup(popup_f4a716500a24cfe7155f8a60600a0ed9)
+        ;
+
+        
+    
+    
+            circle_marker_946fe78cc20b5d351cb2f3f4df735485.bindTooltip(
+                `<div>
+                     East Darfur (0.39)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7050ab4c8773f10ed6198577ee03650f = L.circleMarker(
+                [4.755, 33.397],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.999520897865295, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_a674bbccbcb3f28fb8540d9ebbcf80c1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ce592e6a1cee0cf250654024cd9c4182 = $(`<div id="html_ce592e6a1cee0cf250654024cd9c4182" style="width: 100.0%; height: 100.0%;"><b>Eastern Equatoria</b><br>Country: South Sudan<br>Risk probability: 0.643<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.303, events_w30d: +0.261, velocity_fatalities_w30d: +0.095<br>Recent events (7d): 4<br>Recent fatalities (7d): 2</div>`)[0];
+                popup_a674bbccbcb3f28fb8540d9ebbcf80c1.setContent(html_ce592e6a1cee0cf250654024cd9c4182);
+            
+        
+
+        circle_marker_7050ab4c8773f10ed6198577ee03650f.bindPopup(popup_a674bbccbcb3f28fb8540d9ebbcf80c1)
+        ;
+
+        
+    
+    
+            circle_marker_7050ab4c8773f10ed6198577ee03650f.bindTooltip(
+                `<div>
+                     Eastern Equatoria (0.64)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0e12588e208b18e82d43196277cdfd6 = L.circleMarker(
+                [32.497, 62.41],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.129499942064285, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_2b4566e8cd9575b9579267679a9c767a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8cf42d8c32430633c848022054d21363 = $(`<div id="html_8cf42d8c32430633c848022054d21363" style="width: 100.0%; height: 100.0%;"><b>Farah</b><br>Country: Afghanistan<br>Risk probability: 0.081<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.512, events_w14d: -0.389, events_w7d: -0.357<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_2b4566e8cd9575b9579267679a9c767a.setContent(html_8cf42d8c32430633c848022054d21363);
+            
+        
+
+        circle_marker_f0e12588e208b18e82d43196277cdfd6.bindPopup(popup_2b4566e8cd9575b9579267679a9c767a)
+        ;
+
+        
+    
+    
+            circle_marker_f0e12588e208b18e82d43196277cdfd6.bindTooltip(
+                `<div>
+                     Farah (0.08)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a0716b83360509720228c688e4aea64a = L.circleMarker(
+                [36.209, 64.769],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.153607740998268, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_68e67f02e5f3cefba5d0ddbc935333e8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d0ecf404e06e3eb8f9900a302b5bb31b = $(`<div id="html_d0ecf404e06e3eb8f9900a302b5bb31b" style="width: 100.0%; height: 100.0%;"><b>Faryab</b><br>Country: Afghanistan<br>Risk probability: 0.082<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.028, spillover_w14d: -0.384, events_w7d: -0.298<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_68e67f02e5f3cefba5d0ddbc935333e8.setContent(html_d0ecf404e06e3eb8f9900a302b5bb31b);
+            
+        
+
+        circle_marker_a0716b83360509720228c688e4aea64a.bindPopup(popup_68e67f02e5f3cefba5d0ddbc935333e8)
+        ;
+
+        
+    
+    
+            circle_marker_a0716b83360509720228c688e4aea64a.bindTooltip(
+                `<div>
+                     Faryab (0.08)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_164d6870f66bd5ffc370a92cba0e9963 = L.circleMarker(
+                [33.649, 73.013],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.711546659469604, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_d2dc37189ea5cbcc9116b0d767679b92 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9fcc53d38c1431d261034c54c526fefd = $(`<div id="html_9fcc53d38c1431d261034c54c526fefd" style="width: 100.0%; height: 100.0%;"><b>Federal Capital Territory</b><br>Country: Pakistan<br>Risk probability: 0.551<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: -0.270, events_w30d: +0.225, events_w14d: +0.140<br>Recent events (7d): 2<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_d2dc37189ea5cbcc9116b0d767679b92.setContent(html_9fcc53d38c1431d261034c54c526fefd);
+            
+        
+
+        circle_marker_164d6870f66bd5ffc370a92cba0e9963.bindPopup(popup_d2dc37189ea5cbcc9116b0d767679b92)
+        ;
+
+        
+    
+    
+            circle_marker_164d6870f66bd5ffc370a92cba0e9963.bindTooltip(
+                `<div>
+                     Federal Capital Territory (0.55)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_160f2bb99f5c69c0202b6ef32c7e41ea = L.circleMarker(
+                [14.214000000000002, 35.022],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.226550817489624, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_bbd95e1b7c64abe0c7ca3c18b88b7127 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c559c61d955bb367e07a2c908341080c = $(`<div id="html_c559c61d955bb367e07a2c908341080c" style="width: 100.0%; height: 100.0%;"><b>Gedaref</b><br>Country: Sudan<br>Risk probability: 0.230<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.732, spillover_w14d: -0.284, fatalities_w30d: -0.171<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_bbd95e1b7c64abe0c7ca3c18b88b7127.setContent(html_c559c61d955bb367e07a2c908341080c);
+            
+        
+
+        circle_marker_160f2bb99f5c69c0202b6ef32c7e41ea.bindPopup(popup_bbd95e1b7c64abe0c7ca3c18b88b7127)
+        ;
+
+        
+    
+    
+            circle_marker_160f2bb99f5c69c0202b6ef32c7e41ea.bindTooltip(
+                `<div>
+                     Gedaref (0.23)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c587090995a0b20e4e957f675486bc7 = L.circleMarker(
+                [33.155, 67.754],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.3259104788303375, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_8553b3585abba8da8b6a8c87321b0ad8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e73ddffcbbee66b2e3b67e1635180158 = $(`<div id="html_e73ddffcbbee66b2e3b67e1635180158" style="width: 100.0%; height: 100.0%;"><b>Ghazni</b><br>Country: Afghanistan<br>Risk probability: 0.095<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.985, spillover_w14d: -0.427, events_w7d: -0.389<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_8553b3585abba8da8b6a8c87321b0ad8.setContent(html_e73ddffcbbee66b2e3b67e1635180158);
+            
+        
+
+        circle_marker_3c587090995a0b20e4e957f675486bc7.bindPopup(popup_8553b3585abba8da8b6a8c87321b0ad8)
+        ;
+
+        
+    
+    
+            circle_marker_3c587090995a0b20e4e957f675486bc7.bindTooltip(
+                `<div>
+                     Ghazni (0.09)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2dfb7c07518a1ed0209e76639a2472d4 = L.circleMarker(
+                [34.206, 64.582],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.7749728336930275, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_7664ceab0f7d6fcb422a2a4690936171 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e9044966f1b73f8a08af5d4dbdf55701 = $(`<div id="html_e9044966f1b73f8a08af5d4dbdf55701" style="width: 100.0%; height: 100.0%;"><b>Ghor</b><br>Country: Afghanistan<br>Risk probability: 0.055<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.201, spillover_w14d: -0.648, events_w14d: -0.298<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_7664ceab0f7d6fcb422a2a4690936171.setContent(html_e9044966f1b73f8a08af5d4dbdf55701);
+            
+        
+
+        circle_marker_2dfb7c07518a1ed0209e76639a2472d4.bindPopup(popup_7664ceab0f7d6fcb422a2a4690936171)
+        ;
+
+        
+    
+    
+            circle_marker_2dfb7c07518a1ed0209e76639a2472d4.bindTooltip(
+                `<div>
+                     Ghor (0.06)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30650e705f675edd643ba4fa22182ee5 = L.circleMarker(
+                [35.801, 74.856],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.441437035799026, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_81c6a3e6e76b196ffffeb8a7f6969b91 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5160d1982a46870fb0eb205fdb4bbeef = $(`<div id="html_5160d1982a46870fb0eb205fdb4bbeef" style="width: 100.0%; height: 100.0%;"><b>Gilgit-Baltistan</b><br>Country: Pakistan<br>Risk probability: 0.246<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.302, fatalities_w30d: -0.212, events_w14d: -0.189<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_81c6a3e6e76b196ffffeb8a7f6969b91.setContent(html_5160d1982a46870fb0eb205fdb4bbeef);
+            
+        
+
+        circle_marker_30650e705f675edd643ba4fa22182ee5.bindPopup(popup_81c6a3e6e76b196ffffeb8a7f6969b91)
+        ;
+
+        
+    
+    
+            circle_marker_30650e705f675edd643ba4fa22182ee5.bindTooltip(
+                `<div>
+                     Gilgit-Baltistan (0.25)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_edb0d46eccde2dba643b97662291d1d5 = L.circleMarker(
+                [15.351, 74.104],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.34234893321991, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_a0d9da10a4ffb5a7e36278d94285cd31 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ce179d6696b33a643647d3fde36295b3 = $(`<div id="html_ce179d6696b33a643647d3fde36295b3" style="width: 100.0%; height: 100.0%;"><b>Goa</b><br>Country: India<br>Risk probability: 0.453<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: -0.319, events_w30d: +0.306, velocity_events_w30d: -0.099<br>Recent events (7d): 3<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_a0d9da10a4ffb5a7e36278d94285cd31.setContent(html_ce179d6696b33a643647d3fde36295b3);
+            
+        
+
+        circle_marker_edb0d46eccde2dba643b97662291d1d5.bindPopup(popup_a0d9da10a4ffb5a7e36278d94285cd31)
+        ;
+
+        
+    
+    
+            circle_marker_edb0d46eccde2dba643b97662291d1d5.bindTooltip(
+                `<div>
+                     Goa (0.45)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5edb1cc951ada793896b280132a74750 = L.circleMarker(
+                [22.416, 72.043],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.34783661365509, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_ee30ba019284bc2a0a6e8f34d0e51047 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2374e159f9064315a819d2afaec5a66d = $(`<div id="html_2374e159f9064315a819d2afaec5a66d" style="width: 100.0%; height: 100.0%;"><b>Gujarat</b><br>Country: India<br>Risk probability: 0.668<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.816, admin1_code: -0.251, fatalities_w30d: -0.244<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_ee30ba019284bc2a0a6e8f34d0e51047.setContent(html_2374e159f9064315a819d2afaec5a66d);
+            
+        
+
+        circle_marker_5edb1cc951ada793896b280132a74750.bindPopup(popup_ee30ba019284bc2a0a6e8f34d0e51047)
+        ;
+
+        
+    
+    
+            circle_marker_5edb1cc951ada793896b280132a74750.bindTooltip(
+                `<div>
+                     Gujarat (0.67)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de522c1c4d856d11f99870e16591b7c8 = L.circleMarker(
+                [29.294000000000004, 76.053],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.865920901298523, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_c85908fa5daa2704f505821928cc1383 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_951390d0205a7123e43c0c9f9568a083 = $(`<div id="html_951390d0205a7123e43c0c9f9568a083" style="width: 100.0%; height: 100.0%;"><b>Haryana</b><br>Country: India<br>Risk probability: 0.705<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.733, events_w30d: +0.373, fatalities_w30d: -0.295<br>Recent events (7d): 12<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_c85908fa5daa2704f505821928cc1383.setContent(html_951390d0205a7123e43c0c9f9568a083);
+            
+        
+
+        circle_marker_de522c1c4d856d11f99870e16591b7c8.bindPopup(popup_c85908fa5daa2704f505821928cc1383)
+        ;
+
+        
+    
+    
+            circle_marker_de522c1c4d856d11f99870e16591b7c8.bindTooltip(
+                `<div>
+                     Haryana (0.70)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_10bc979880da4c4bbc81165cdeaa1308 = L.circleMarker(
+                [31.396999999999995, 64.043],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.847560338675976, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_eb83224683fd82d533301352657adab1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a9704a3f4e7574ca3cf7c23dd5425c86 = $(`<div id="html_a9704a3f4e7574ca3cf7c23dd5425c86" style="width: 100.0%; height: 100.0%;"><b>Helmand</b><br>Country: Afghanistan<br>Risk probability: 0.061<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.998, spillover_w14d: -0.471, events_w7d: -0.381<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_eb83224683fd82d533301352657adab1.setContent(html_a9704a3f4e7574ca3cf7c23dd5425c86);
+            
+        
+
+        circle_marker_10bc979880da4c4bbc81165cdeaa1308.bindPopup(popup_eb83224683fd82d533301352657adab1)
+        ;
+
+        
+    
+    
+            circle_marker_10bc979880da4c4bbc81165cdeaa1308.bindTooltip(
+                `<div>
+                     Helmand (0.06)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af365c642daa9639e94605e45132db43 = L.circleMarker(
+                [34.239, 62.068],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.712335586547852, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_52c1459d25201463067f6e86ba6255c6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d91b0bf30d6dc8420d9d8e66d7172ba7 = $(`<div id="html_d91b0bf30d6dc8420d9d8e66d7172ba7" style="width: 100.0%; height: 100.0%;"><b>Herat</b><br>Country: Afghanistan<br>Risk probability: 0.622<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.587, spillover_w14d: -0.333, events_w30d: +0.228<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_52c1459d25201463067f6e86ba6255c6.setContent(html_d91b0bf30d6dc8420d9d8e66d7172ba7);
+            
+        
+
+        circle_marker_af365c642daa9639e94605e45132db43.bindPopup(popup_52c1459d25201463067f6e86ba6255c6)
+        ;
+
+        
+    
+    
+            circle_marker_af365c642daa9639e94605e45132db43.bindTooltip(
+                `<div>
+                     Herat (0.62)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dfbbed0e9aeafabd2cc5a810d2ab48ac = L.circleMarker(
+                [31.816, 77.322],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.064372658729553, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_072b7fbd5af25cf1a2b213b6be15414d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7e6ff9ca902de9ffd03a29464c3e0801 = $(`<div id="html_7e6ff9ca902de9ffd03a29464c3e0801" style="width: 100.0%; height: 100.0%;"><b>Himachal Pradesh</b><br>Country: India<br>Risk probability: 0.576<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: -0.284, events_w30d: +0.278, velocity_events_w30d: +0.271<br>Recent events (7d): 7<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_072b7fbd5af25cf1a2b213b6be15414d.setContent(html_7e6ff9ca902de9ffd03a29464c3e0801);
+            
+        
+
+        circle_marker_dfbbed0e9aeafabd2cc5a810d2ab48ac.bindPopup(popup_072b7fbd5af25cf1a2b213b6be15414d)
+        ;
+
+        
+    
+    
+            circle_marker_dfbbed0e9aeafabd2cc5a810d2ab48ac.bindTooltip(
+                `<div>
+                     Himachal Pradesh (0.58)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cc825e541c3afe6017ca891d43b7a32b = L.circleMarker(
+                [33.531, 75.181],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.949573397636414, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_11cb1fc6ba09dcf41c2ab6d975faea98 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c2b61f77a83fa19c2d5cc0e81c69faac = $(`<div id="html_c2b61f77a83fa19c2d5cc0e81c69faac" style="width: 100.0%; height: 100.0%;"><b>Jammu and Kashmir</b><br>Country: India<br>Risk probability: 0.854<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.795, events_w7d: +0.321, spillover_w14d: +0.256<br>Recent events (7d): 39<br>Recent fatalities (7d): 2</div>`)[0];
+                popup_11cb1fc6ba09dcf41c2ab6d975faea98.setContent(html_c2b61f77a83fa19c2d5cc0e81c69faac);
+            
+        
+
+        circle_marker_cc825e541c3afe6017ca891d43b7a32b.bindPopup(popup_11cb1fc6ba09dcf41c2ab6d975faea98)
+        ;
+
+        
+    
+    
+            circle_marker_cc825e541c3afe6017ca891d43b7a32b.bindTooltip(
+                `<div>
+                     Jammu and Kashmir (0.85)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84bba800637834fc3c58217ba9847e81 = L.circleMarker(
+                [23.652000000000005, 85.16699999999999],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.47172999382019, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_69a9700632e9add44db2389c2b765b77 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a71b3599f5cd24e26d1cc4e92ac32cd4 = $(`<div id="html_a71b3599f5cd24e26d1cc4e92ac32cd4" style="width: 100.0%; height: 100.0%;"><b>Jharkhand</b><br>Country: India<br>Risk probability: 0.748<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.371, spillover_w14d: +0.285, events_w30d: +0.239<br>Recent events (7d): 10<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_69a9700632e9add44db2389c2b765b77.setContent(html_a71b3599f5cd24e26d1cc4e92ac32cd4);
+            
+        
+
+        circle_marker_84bba800637834fc3c58217ba9847e81.bindPopup(popup_69a9700632e9add44db2389c2b765b77)
+        ;
+
+        
+    
+    
+            circle_marker_84bba800637834fc3c58217ba9847e81.bindTooltip(
+                `<div>
+                     Jharkhand (0.75)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b7bb33aa5bb33adecdea4017a21d9c1 = L.circleMarker(
+                [7.630999999999999, 32.141],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.389734625816345, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_95be01c4ea07b211c80a1767ebba14fd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f669ffef65a935550a3d8323d9c1336d = $(`<div id="html_f669ffef65a935550a3d8323d9c1336d" style="width: 100.0%; height: 100.0%;"><b>Jonglei</b><br>Country: South Sudan<br>Risk probability: 0.742<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +1.118, velocity_fatalities_w14d: -0.442, fat_mean_w14d: +0.282<br>Recent events (7d): 8<br>Recent fatalities (7d): 109</div>`)[0];
+                popup_95be01c4ea07b211c80a1767ebba14fd.setContent(html_f669ffef65a935550a3d8323d9c1336d);
+            
+        
+
+        circle_marker_8b7bb33aa5bb33adecdea4017a21d9c1.bindPopup(popup_95be01c4ea07b211c80a1767ebba14fd)
+        ;
+
+        
+    
+    
+            circle_marker_8b7bb33aa5bb33adecdea4017a21d9c1.bindTooltip(
+                `<div>
+                     Jonglei (0.74)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1516930710d1c94f8e73191b06a1f8de = L.circleMarker(
+                [36.711, 65.938],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.483500242233276, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_a318bf2682111018563431b86e87b879 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1c3af6bc11bcba126da069b1275bbc6c = $(`<div id="html_1c3af6bc11bcba126da069b1275bbc6c" style="width: 100.0%; height: 100.0%;"><b>Jowzjan</b><br>Country: Afghanistan<br>Risk probability: 0.106<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.941, spillover_w14d: -0.455, events_w7d: -0.371<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_a318bf2682111018563431b86e87b879.setContent(html_1c3af6bc11bcba126da069b1275bbc6c);
+            
+        
+
+        circle_marker_1516930710d1c94f8e73191b06a1f8de.bindPopup(popup_a318bf2682111018563431b86e87b879)
+        ;
+
+        
+    
+    
+            circle_marker_1516930710d1c94f8e73191b06a1f8de.bindTooltip(
+                `<div>
+                     Jowzjan (0.11)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e56b65eed88c2b67572306e8f3f62e4 = L.circleMarker(
+                [34.525, 69.343],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.453640818595886, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_5b240decbbcc50cdd3f4403ba304c4f9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bc86d278139413375b945e2fd671742b = $(`<div id="html_bc86d278139413375b945e2fd671742b" style="width: 100.0%; height: 100.0%;"><b>Kabul</b><br>Country: Afghanistan<br>Risk probability: 0.818<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.705, events_w30d: +0.384, admin1_code: +0.245<br>Recent events (7d): 3<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_5b240decbbcc50cdd3f4403ba304c4f9.setContent(html_bc86d278139413375b945e2fd671742b);
+            
+        
+
+        circle_marker_4e56b65eed88c2b67572306e8f3f62e4.bindPopup(popup_5b240decbbcc50cdd3f4403ba304c4f9)
+        ;
+
+        
+    
+    
+            circle_marker_4e56b65eed88c2b67572306e8f3f62e4.bindTooltip(
+                `<div>
+                     Kabul (0.82)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_14a1a10461d486205a2e929fedbec1ae = L.circleMarker(
+                [26.089, 97.374],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.87259817123413, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_fab535be56f5fa1979b9abac8d56d130 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_cb5dc85edf8e04a64c870666f6621a8f = $(`<div id="html_cb5dc85edf8e04a64c870666f6621a8f" style="width: 100.0%; height: 100.0%;"><b>Kachin</b><br>Country: Myanmar<br>Risk probability: 0.848<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.927, events_w30d: +0.798, velocity_fatalities_w7d: -0.331<br>Recent events (7d): 14<br>Recent fatalities (7d): 23</div>`)[0];
+                popup_fab535be56f5fa1979b9abac8d56d130.setContent(html_cb5dc85edf8e04a64c870666f6621a8f);
+            
+        
+
+        circle_marker_14a1a10461d486205a2e929fedbec1ae.bindPopup(popup_fab535be56f5fa1979b9abac8d56d130)
+        ;
+
+        
+    
+    
+            circle_marker_14a1a10461d486205a2e929fedbec1ae.bindTooltip(
+                `<div>
+                     Kachin (0.85)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_02131728ef803209b841d3f5afa7f86d = L.circleMarker(
+                [31.076, 65.693],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.17948094010353, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_645f203a28a7506140b48cadb45c3beb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e0a4e44eb15f2ca11a69a6567c9606a3 = $(`<div id="html_e0a4e44eb15f2ca11a69a6567c9606a3" style="width: 100.0%; height: 100.0%;"><b>Kandahar</b><br>Country: Afghanistan<br>Risk probability: 0.227<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.449, spillover_w14d: -0.394, events_w14d: -0.220<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_645f203a28a7506140b48cadb45c3beb.setContent(html_e0a4e44eb15f2ca11a69a6567c9606a3);
+            
+        
+
+        circle_marker_02131728ef803209b841d3f5afa7f86d.bindPopup(popup_645f203a28a7506140b48cadb45c3beb)
+        ;
+
+        
+    
+    
+            circle_marker_02131728ef803209b841d3f5afa7f86d.bindTooltip(
+                `<div>
+                     Kandahar (0.23)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1357c340219a58de35975895fc4fe87 = L.circleMarker(
+                [34.909, 69.747],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.941901668906212, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_6bdf27b568ec5f3e9340ec80a0410588 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0f22e2db6c1d1d0453c266c3f3a37b31 = $(`<div id="html_0f22e2db6c1d1d0453c266c3f3a37b31" style="width: 100.0%; height: 100.0%;"><b>Kapisa</b><br>Country: Afghanistan<br>Risk probability: 0.067<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.569, events_w14d: -0.382, events_w7d: -0.380<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_6bdf27b568ec5f3e9340ec80a0410588.setContent(html_0f22e2db6c1d1d0453c266c3f3a37b31);
+            
+        
+
+        circle_marker_c1357c340219a58de35975895fc4fe87.bindPopup(popup_6bdf27b568ec5f3e9340ec80a0410588)
+        ;
+
+        
+    
+    
+            circle_marker_c1357c340219a58de35975895fc4fe87.bindTooltip(
+                `<div>
+                     Kapisa (0.07)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b7f269c57333f7026f2aa400bd20524 = L.circleMarker(
+                [15.021, 75.534],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.364328384399414, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_3e1e71e7c01f67514f9135b585c6fe44 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ff8e580252b34cdaa9095114460a7662 = $(`<div id="html_ff8e580252b34cdaa9095114460a7662" style="width: 100.0%; height: 100.0%;"><b>Karnataka</b><br>Country: India<br>Risk probability: 0.383<br>Predicted class: 1<br>Top SHAP: velocity_fatalities_w30d: +0.430, fatalities_w30d: -0.427, fatalities_w14d: -0.182<br>Recent events (7d): 21<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_3e1e71e7c01f67514f9135b585c6fe44.setContent(html_ff8e580252b34cdaa9095114460a7662);
+            
+        
+
+        circle_marker_7b7f269c57333f7026f2aa400bd20524.bindPopup(popup_3e1e71e7c01f67514f9135b585c6fe44)
+        ;
+
+        
+    
+    
+            circle_marker_7b7f269c57333f7026f2aa400bd20524.bindTooltip(
+                `<div>
+                     Karnataka (0.38)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b16443081bb6f70aa3104818d8b84ab6 = L.circleMarker(
+                [15.71, 35.536],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.612185835838318, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_7e2d3dbe895784227f7e54e410c94ef1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1d48c2aaf992ccdec7637afc374c2e06 = $(`<div id="html_1d48c2aaf992ccdec7637afc374c2e06" style="width: 100.0%; height: 100.0%;"><b>Kassala</b><br>Country: Sudan<br>Risk probability: 0.329<br>Predicted class: 1<br>Top SHAP: events_w30d: -0.710, velocity_events_w30d: +0.461, velocity_fatalities_w30d: +0.350<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_7e2d3dbe895784227f7e54e410c94ef1.setContent(html_1d48c2aaf992ccdec7637afc374c2e06);
+            
+        
+
+        circle_marker_b16443081bb6f70aa3104818d8b84ab6.bindPopup(popup_7e2d3dbe895784227f7e54e410c94ef1)
+        ;
+
+        
+    
+    
+            circle_marker_b16443081bb6f70aa3104818d8b84ab6.bindTooltip(
+                `<div>
+                     Kassala (0.33)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27f0c487ad4ddbd66ca52c923fd2e547 = L.circleMarker(
+                [19.245, 97.319],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.469533443450928, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_1bd032e8d266e403e7d06cf0d3530168 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0ceddeb6eeeba70b62207fbce18dad69 = $(`<div id="html_0ceddeb6eeeba70b62207fbce18dad69" style="width: 100.0%; height: 100.0%;"><b>Kayah</b><br>Country: Myanmar<br>Risk probability: 0.534<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.329, fatalities_w30d: -0.257, fatalities_w14d: -0.094<br>Recent events (7d): 3<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_1bd032e8d266e403e7d06cf0d3530168.setContent(html_0ceddeb6eeeba70b62207fbce18dad69);
+            
+        
+
+        circle_marker_27f0c487ad4ddbd66ca52c923fd2e547.bindPopup(popup_1bd032e8d266e403e7d06cf0d3530168)
+        ;
+
+        
+    
+    
+            circle_marker_27f0c487ad4ddbd66ca52c923fd2e547.bindTooltip(
+                `<div>
+                     Kayah (0.53)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af19c48a9a8e4b1cba001bd95829343c = L.circleMarker(
+                [17.369, 97.787],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.18165898323059, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_e484a882549aa4b6bab72121998c566e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_223bf92a2e0f4ff2fc1c6868ca16c976 = $(`<div id="html_223bf92a2e0f4ff2fc1c6868ca16c976" style="width: 100.0%; height: 100.0%;"><b>Kayin</b><br>Country: Myanmar<br>Risk probability: 0.870<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.872, fatalities_w30d: +0.715, velocity_fatalities_w7d: -0.291<br>Recent events (7d): 28<br>Recent fatalities (7d): 37</div>`)[0];
+                popup_e484a882549aa4b6bab72121998c566e.setContent(html_223bf92a2e0f4ff2fc1c6868ca16c976);
+            
+        
+
+        circle_marker_af19c48a9a8e4b1cba001bd95829343c.bindPopup(popup_e484a882549aa4b6bab72121998c566e)
+        ;
+
+        
+    
+    
+            circle_marker_af19c48a9a8e4b1cba001bd95829343c.bindTooltip(
+                `<div>
+                     Kayin (0.87)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d83f02d5d2bde1f4172f28e45df4d352 = L.circleMarker(
+                [10.54, 76.454],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.15411788225174, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_3908d545336ed57da9cc0d3afde2c2a5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5b8469a1b19dd896401d5f8cfeb9486a = $(`<div id="html_5b8469a1b19dd896401d5f8cfeb9486a" style="width: 100.0%; height: 100.0%;"><b>Kerala</b><br>Country: India<br>Risk probability: 0.368<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: -0.446, events_w30d: +0.412, fatalities_w30d: -0.375<br>Recent events (7d): 20<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_3908d545336ed57da9cc0d3afde2c2a5.setContent(html_5b8469a1b19dd896401d5f8cfeb9486a);
+            
+        
+
+        circle_marker_d83f02d5d2bde1f4172f28e45df4d352.bindPopup(popup_3908d545336ed57da9cc0d3afde2c2a5)
+        ;
+
+        
+    
+    
+            circle_marker_d83f02d5d2bde1f4172f28e45df4d352.bindTooltip(
+                `<div>
+                     Kerala (0.37)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_95667a20e46d06776a5b88c9dd232d2c = L.circleMarker(
+                [15.915, 33.135],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.064685225486755, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_61b3f17d31de9a026a5c49c4146a39ee = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_43d61f282ee71452932f817dcd6f983d = $(`<div id="html_43d61f282ee71452932f817dcd6f983d" style="width: 100.0%; height: 100.0%;"><b>Khartoum</b><br>Country: Sudan<br>Risk probability: 0.505<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.235, fatalities_w30d: -0.157, admin1_code: +0.145<br>Recent events (7d): 8<br>Recent fatalities (7d): 7</div>`)[0];
+                popup_61b3f17d31de9a026a5c49c4146a39ee.setContent(html_43d61f282ee71452932f817dcd6f983d);
+            
+        
+
+        circle_marker_95667a20e46d06776a5b88c9dd232d2c.bindPopup(popup_61b3f17d31de9a026a5c49c4146a39ee)
+        ;
+
+        
+    
+    
+            circle_marker_95667a20e46d06776a5b88c9dd232d2c.bindTooltip(
+                `<div>
+                     Khartoum (0.50)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89e85e0c12c4468faf89f92b9c9d9e27 = L.circleMarker(
+                [33.377, 69.897],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.095758229494095, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_dcdfb5bc6c08577686a45f1fbbdca8ea = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fb0b02116e6821986333f562e9eec1c2 = $(`<div id="html_fb0b02116e6821986333f562e9eec1c2" style="width: 100.0%; height: 100.0%;"><b>Khost</b><br>Country: Afghanistan<br>Risk probability: 0.221<br>Predicted class: 0<br>Top SHAP: velocity_fatalities_w30d: +0.636, events_w30d: -0.487, events_w7d: -0.335<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_dcdfb5bc6c08577686a45f1fbbdca8ea.setContent(html_fb0b02116e6821986333f562e9eec1c2);
+            
+        
+
+        circle_marker_89e85e0c12c4468faf89f92b9c9d9e27.bindPopup(popup_dcdfb5bc6c08577686a45f1fbbdca8ea)
+        ;
+
+        
+    
+    
+            circle_marker_89e85e0c12c4468faf89f92b9c9d9e27.bindTooltip(
+                `<div>
+                     Khost (0.22)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45e17cd07d180067099a559e5f434bfb = L.circleMarker(
+                [33.993, 71.672],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.986244678497314, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_183dc2096c9581d68a0007c7452d292e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c384e7cdd405cec5038d14138547ffa7 = $(`<div id="html_c384e7cdd405cec5038d14138547ffa7" style="width: 100.0%; height: 100.0%;"><b>Khyber Pakhtunkhwa</b><br>Country: Pakistan<br>Risk probability: 0.999<br>Predicted class: 1<br>Top SHAP: events_w30d: +1.901, fatalities_w30d: +1.517, events_w14d: +0.834<br>Recent events (7d): 35<br>Recent fatalities (7d): 19</div>`)[0];
+                popup_183dc2096c9581d68a0007c7452d292e.setContent(html_c384e7cdd405cec5038d14138547ffa7);
+            
+        
+
+        circle_marker_45e17cd07d180067099a559e5f434bfb.bindPopup(popup_183dc2096c9581d68a0007c7452d292e)
+        ;
+
+        
+    
+    
+            circle_marker_45e17cd07d180067099a559e5f434bfb.bindTooltip(
+                `<div>
+                     Khyber Pakhtunkhwa (1.00)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc388f8229fceda89d2c0d5736d1b494 = L.circleMarker(
+                [35.005, 71.041],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.984434604644775, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_fccc52bf38cd9a3a3c5e392eb1aa42fa = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9aa39c8e4bafa095f04e4c9831194068 = $(`<div id="html_9aa39c8e4bafa095f04e4c9831194068" style="width: 100.0%; height: 100.0%;"><b>Kunar</b><br>Country: Afghanistan<br>Risk probability: 0.142<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.887, velocity_fatalities_w30d: +0.482, events_w7d: -0.354<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_fccc52bf38cd9a3a3c5e392eb1aa42fa.setContent(html_9aa39c8e4bafa095f04e4c9831194068);
+            
+        
+
+        circle_marker_dc388f8229fceda89d2c0d5736d1b494.bindPopup(popup_fccc52bf38cd9a3a3c5e392eb1aa42fa)
+        ;
+
+        
+    
+    
+            circle_marker_dc388f8229fceda89d2c0d5736d1b494.bindTooltip(
+                `<div>
+                     Kunar (0.14)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_48b2789d48ac88cbfd583a6969e1ca8a = L.circleMarker(
+                [36.804, 68.666],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.38980221375823, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_01cb68c14e61aacaba6bc4033fec6fb6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c83f10936cc3e6a8934ac4094bc6fdd1 = $(`<div id="html_c83f10936cc3e6a8934ac4094bc6fdd1" style="width: 100.0%; height: 100.0%;"><b>Kunduz</b><br>Country: Afghanistan<br>Risk probability: 0.028<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.654, spillover_w14d: -0.496, events_w14d: -0.399<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_01cb68c14e61aacaba6bc4033fec6fb6.setContent(html_c83f10936cc3e6a8934ac4094bc6fdd1);
+            
+        
+
+        circle_marker_48b2789d48ac88cbfd583a6969e1ca8a.bindPopup(popup_01cb68c14e61aacaba6bc4033fec6fb6)
+        ;
+
+        
+    
+    
+            circle_marker_48b2789d48ac88cbfd583a6969e1ca8a.bindTooltip(
+                `<div>
+                     Kunduz (0.03)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2cf6805178475e518b9d898720b81eb = L.circleMarker(
+                [33.928, 77.389],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.434439480304718, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_d884cf5e1719ba9600f67cdfedb16689 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_11b6321abbf1b74b2d5955cee89fbce4 = $(`<div id="html_11b6321abbf1b74b2d5955cee89fbce4" style="width: 100.0%; height: 100.0%;"><b>Ladakh</b><br>Country: India<br>Risk probability: 0.174<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.464, events_w7d: -0.449, fatalities_w30d: -0.283<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_d884cf5e1719ba9600f67cdfedb16689.setContent(html_11b6321abbf1b74b2d5955cee89fbce4);
+            
+        
+
+        circle_marker_e2cf6805178475e518b9d898720b81eb.bindPopup(popup_d884cf5e1719ba9600f67cdfedb16689)
+        ;
+
+        
+    
+    
+            circle_marker_e2cf6805178475e518b9d898720b81eb.bindTooltip(
+                `<div>
+                     Ladakh (0.17)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c2e409ccf3a734c036fc91db287e238 = L.circleMarker(
+                [34.809, 70.27],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.307021006941795, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_9a5ab39d9601f4958a059fdcc7567698 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ff9aad425f05bd40742a0bff5ea063b0 = $(`<div id="html_ff9aad425f05bd40742a0bff5ea063b0" style="width: 100.0%; height: 100.0%;"><b>Laghman</b><br>Country: Afghanistan<br>Risk probability: 0.093<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.191, spillover_w14d: -0.324, events_w14d: -0.240<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_9a5ab39d9601f4958a059fdcc7567698.setContent(html_ff9aad425f05bd40742a0bff5ea063b0);
+            
+        
+
+        circle_marker_8c2e409ccf3a734c036fc91db287e238.bindPopup(popup_9a5ab39d9601f4958a059fdcc7567698)
+        ;
+
+        
+    
+    
+            circle_marker_8c2e409ccf3a734c036fc91db287e238.bindTooltip(
+                `<div>
+                     Laghman (0.09)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6bd0294b2a6a03800f711dc0579713d3 = L.circleMarker(
+                [6.695, 30.126],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.975131511688232, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_fc99e8719631a3077dcab6894a89972e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_46338f4e313b83c3fa11c5b90bd81df5 = $(`<div id="html_46338f4e313b83c3fa11c5b90bd81df5" style="width: 100.0%; height: 100.0%;"><b>Lakes</b><br>Country: South Sudan<br>Risk probability: 0.713<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.445, velocity_fatalities_w30d: +0.240, fatalities_w30d: +0.156<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_fc99e8719631a3077dcab6894a89972e.setContent(html_46338f4e313b83c3fa11c5b90bd81df5);
+            
+        
+
+        circle_marker_6bd0294b2a6a03800f711dc0579713d3.bindPopup(popup_fc99e8719631a3077dcab6894a89972e)
+        ;
+
+        
+    
+    
+            circle_marker_6bd0294b2a6a03800f711dc0579713d3.bindTooltip(
+                `<div>
+                     Lakes (0.71)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_560704694175c81c7725ca907320ef4d = L.circleMarker(
+                [10.81, 73.677],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.447941243648529, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_a24743fb075044d23cad6c7489b62458 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d6578747ccc1c4c65ac2536caea2129b = $(`<div id="html_d6578747ccc1c4c65ac2536caea2129b" style="width: 100.0%; height: 100.0%;"><b>Lakshadweep</b><br>Country: India<br>Risk probability: 0.032<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.616, events_w7d: -0.441, events_w14d: -0.386<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_a24743fb075044d23cad6c7489b62458.setContent(html_d6578747ccc1c4c65ac2536caea2129b);
+            
+        
+
+        circle_marker_560704694175c81c7725ca907320ef4d.bindPopup(popup_a24743fb075044d23cad6c7489b62458)
+        ;
+
+        
+    
+    
+            circle_marker_560704694175c81c7725ca907320ef4d.bindTooltip(
+                `<div>
+                     Lakshadweep (0.03)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ce7d5a07eb370e18a25f5ef92c99c58 = L.circleMarker(
+                [33.982, 69.195],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.219652503728867, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_c3a59b6d0b2d9c29c8e754a018a30dc7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b0fd3b8ed1c94b45bf1f22734048542a = $(`<div id="html_b0fd3b8ed1c94b45bf1f22734048542a" style="width: 100.0%; height: 100.0%;"><b>Logar</b><br>Country: Afghanistan<br>Risk probability: 0.230<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.109, events_w14d: -0.222, fatalities_w30d: -0.206<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_c3a59b6d0b2d9c29c8e754a018a30dc7.setContent(html_b0fd3b8ed1c94b45bf1f22734048542a);
+            
+        
+
+        circle_marker_7ce7d5a07eb370e18a25f5ef92c99c58.bindPopup(popup_c3a59b6d0b2d9c29c8e754a018a30dc7)
+        ;
+
+        
+    
+    
+            circle_marker_7ce7d5a07eb370e18a25f5ef92c99c58.bindTooltip(
+                `<div>
+                     Logar (0.23)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b1a218d1b7ef4d2270ed53df73b6c73a = L.circleMarker(
+                [23.972, 79.393],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.727488160133362, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_eb629d87776b02708a060d8a1f5fd727 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9336519198f960ff6d02eee70cd7b752 = $(`<div id="html_9336519198f960ff6d02eee70cd7b752" style="width: 100.0%; height: 100.0%;"><b>Madhya Pradesh</b><br>Country: India<br>Risk probability: 0.695<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.486, events_w30d: +0.315, fatalities_w30d: -0.268<br>Recent events (7d): 21<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_eb629d87776b02708a060d8a1f5fd727.setContent(html_9336519198f960ff6d02eee70cd7b752);
+            
+        
+
+        circle_marker_b1a218d1b7ef4d2270ed53df73b6c73a.bindPopup(popup_eb629d87776b02708a060d8a1f5fd727)
+        ;
+
+        
+    
+    
+            circle_marker_b1a218d1b7ef4d2270ed53df73b6c73a.bindTooltip(
+                `<div>
+                     Madhya Pradesh (0.69)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f86c62e7a1ff5449a0ccc2ebbcb22ec = L.circleMarker(
+                [20.81, 94.543],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.868082761764526, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_3cff9a8de6f8f4bebe118a109107a3c2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c00b958e538fba098d59d10dc24b9311 = $(`<div id="html_c00b958e538fba098d59d10dc24b9311" style="width: 100.0%; height: 100.0%;"><b>Magway</b><br>Country: Myanmar<br>Risk probability: 0.991<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +1.287, events_w30d: +0.927, events_w7d: +0.638<br>Recent events (7d): 40<br>Recent fatalities (7d): 32</div>`)[0];
+                popup_3cff9a8de6f8f4bebe118a109107a3c2.setContent(html_c00b958e538fba098d59d10dc24b9311);
+            
+        
+
+        circle_marker_1f86c62e7a1ff5449a0ccc2ebbcb22ec.bindPopup(popup_3cff9a8de6f8f4bebe118a109107a3c2)
+        ;
+
+        
+    
+    
+            circle_marker_1f86c62e7a1ff5449a0ccc2ebbcb22ec.bindTooltip(
+                `<div>
+                     Magway (0.99)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_61284e8b6b5f682181e96be9b21101cb = L.circleMarker(
+                [18.817, 75.426],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.102243542671204, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_ab586c30f7e39205459fd98fab15fff3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1f6083a3fa5e051eb46346e537062ba4 = $(`<div id="html_1f6083a3fa5e051eb46346e537062ba4" style="width: 100.0%; height: 100.0%;"><b>Maharashtra</b><br>Country: India<br>Risk probability: 0.650<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.447, fatalities_w30d: -0.274, events_w30d: +0.203<br>Recent events (7d): 18<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_ab586c30f7e39205459fd98fab15fff3.setContent(html_1f6083a3fa5e051eb46346e537062ba4);
+            
+        
+
+        circle_marker_61284e8b6b5f682181e96be9b21101cb.bindPopup(popup_ab586c30f7e39205459fd98fab15fff3)
+        ;
+
+        
+    
+    
+            circle_marker_61284e8b6b5f682181e96be9b21101cb.bindTooltip(
+                `<div>
+                     Maharashtra (0.65)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f99317e58304a2700c9250b4a73a4f4 = L.circleMarker(
+                [21.937, 96.412],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.203461408615112, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_5358ae2450e30cfe18fb2f60e59c2452 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_05ccb11c53760564e1c7a49d8fffd5eb = $(`<div id="html_05ccb11c53760564e1c7a49d8fffd5eb" style="width: 100.0%; height: 100.0%;"><b>Mandalay</b><br>Country: Myanmar<br>Risk probability: 0.943<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.842, fatalities_w30d: +0.755, velocity_fatalities_w30d: +0.580<br>Recent events (7d): 11<br>Recent fatalities (7d): 2</div>`)[0];
+                popup_5358ae2450e30cfe18fb2f60e59c2452.setContent(html_05ccb11c53760564e1c7a49d8fffd5eb);
+            
+        
+
+        circle_marker_2f99317e58304a2700c9250b4a73a4f4.bindPopup(popup_5358ae2450e30cfe18fb2f60e59c2452)
+        ;
+
+        
+    
+    
+            circle_marker_2f99317e58304a2700c9250b4a73a4f4.bindTooltip(
+                `<div>
+                     Mandalay (0.94)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c521b6477cd74d8b03a3913cc96e6b6 = L.circleMarker(
+                [24.764, 93.865],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.095228791236877, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_b468f421e7f5cbab8d5ebe4121a62b79 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1f577a0d8d91fc7cc5b9b762ccdfabc3 = $(`<div id="html_1f577a0d8d91fc7cc5b9b762ccdfabc3" style="width: 100.0%; height: 100.0%;"><b>Manipur</b><br>Country: India<br>Risk probability: 0.935<br>Predicted class: 1<br>Top SHAP: events_w30d: +1.194, events_w7d: +0.645, velocity_fatalities_w30d: +0.349<br>Recent events (7d): 41<br>Recent fatalities (7d): 2</div>`)[0];
+                popup_b468f421e7f5cbab8d5ebe4121a62b79.setContent(html_1f577a0d8d91fc7cc5b9b762ccdfabc3);
+            
+        
+
+        circle_marker_3c521b6477cd74d8b03a3913cc96e6b6.bindPopup(popup_b468f421e7f5cbab8d5ebe4121a62b79)
+        ;
+
+        
+    
+    
+            circle_marker_3c521b6477cd74d8b03a3913cc96e6b6.bindTooltip(
+                `<div>
+                     Manipur (0.94)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_428fca5ca5df27b4ac489186cb360ade = L.circleMarker(
+                [25.578, 91.269],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.102444291114807, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_b3e13fb23c5e38990009ac6d1c06a76c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f1b59493a35bd31c55eb05a31898a973 = $(`<div id="html_f1b59493a35bd31c55eb05a31898a973" style="width: 100.0%; height: 100.0%;"><b>Meghalaya</b><br>Country: India<br>Risk probability: 0.579<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.449, velocity_events_w30d: +0.290, fatalities_w30d: -0.270<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_b3e13fb23c5e38990009ac6d1c06a76c.setContent(html_f1b59493a35bd31c55eb05a31898a973);
+            
+        
+
+        circle_marker_428fca5ca5df27b4ac489186cb360ade.bindPopup(popup_b3e13fb23c5e38990009ac6d1c06a76c)
+        ;
+
+        
+    
+    
+            circle_marker_428fca5ca5df27b4ac489186cb360ade.bindTooltip(
+                `<div>
+                     Meghalaya (0.58)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c93b212d06b76af835fca8d33a4f8d4 = L.circleMarker(
+                [23.24, 92.89],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.071293115615845, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_4efb6ab51ea5f9921ba7c11d2e26078b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4db3e8fd27b9dc6240a1ee0e81c80fe0 = $(`<div id="html_4db3e8fd27b9dc6240a1ee0e81c80fe0" style="width: 100.0%; height: 100.0%;"><b>Mizoram</b><br>Country: India<br>Risk probability: 0.291<br>Predicted class: 1<br>Top SHAP: events_w30d: -0.746, velocity_events_w30d: +0.315, admin1_code: -0.244<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_4efb6ab51ea5f9921ba7c11d2e26078b.setContent(html_4db3e8fd27b9dc6240a1ee0e81c80fe0);
+            
+        
+
+        circle_marker_7c93b212d06b76af835fca8d33a4f8d4.bindPopup(popup_4efb6ab51ea5f9921ba7c11d2e26078b)
+        ;
+
+        
+    
+    
+            circle_marker_7c93b212d06b76af835fca8d33a4f8d4.bindTooltip(
+                `<div>
+                     Mizoram (0.29)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec25a527c1631ea72f9f56982416f61a = L.circleMarker(
+                [17.11, 97.355],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.27097499370575, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_e973818fe88ae5ca3c245554c20eb829 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4e27fc4a8e3e2ab46aac9c81022815ea = $(`<div id="html_4e27fc4a8e3e2ab46aac9c81022815ea" style="width: 100.0%; height: 100.0%;"><b>Mon</b><br>Country: Myanmar<br>Risk probability: 0.519<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.169, admin1_code: -0.154, velocity_events_w30d: -0.147<br>Recent events (7d): 8<br>Recent fatalities (7d): 5</div>`)[0];
+                popup_e973818fe88ae5ca3c245554c20eb829.setContent(html_4e27fc4a8e3e2ab46aac9c81022815ea);
+            
+        
+
+        circle_marker_ec25a527c1631ea72f9f56982416f61a.bindPopup(popup_e973818fe88ae5ca3c245554c20eb829)
+        ;
+
+        
+    
+    
+            circle_marker_ec25a527c1631ea72f9f56982416f61a.bindTooltip(
+                `<div>
+                     Mon (0.52)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d22cd36dc50a3cace59d1208edc3e28 = L.circleMarker(
+                [26.107, 94.56],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.942904353141785, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_f1441d7702dbdec00a9715ba64137481 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bc2403c3a863c96b4e351f70ffd3cd86 = $(`<div id="html_bc2403c3a863c96b4e351f70ffd3cd86" style="width: 100.0%; height: 100.0%;"><b>Nagaland</b><br>Country: India<br>Risk probability: 0.353<br>Predicted class: 1<br>Top SHAP: admin1_code: -0.328, fatalities_w30d: -0.318, events_w30d: +0.231<br>Recent events (7d): 2<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_f1441d7702dbdec00a9715ba64137481.setContent(html_bc2403c3a863c96b4e351f70ffd3cd86);
+            
+        
+
+        circle_marker_7d22cd36dc50a3cace59d1208edc3e28.bindPopup(popup_f1441d7702dbdec00a9715ba64137481)
+        ;
+
+        
+    
+    
+            circle_marker_7d22cd36dc50a3cace59d1208edc3e28.bindTooltip(
+                `<div>
+                     Nagaland (0.35)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4650e970b093c36f154273abbe4aeff = L.circleMarker(
+                [34.373, 70.366],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.123900711536407, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_ebbfb8fa54e85f58367278af4d74c26e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5ac9e5d9656d0a81933dab8def8295e5 = $(`<div id="html_5ac9e5d9656d0a81933dab8def8295e5" style="width: 100.0%; height: 100.0%;"><b>Nangarhar</b><br>Country: Afghanistan<br>Risk probability: 0.295<br>Predicted class: 1<br>Top SHAP: spillover_w14d: -0.512, velocity_events_w30d: -0.235, events_w30d: +0.234<br>Recent events (7d): 3<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_ebbfb8fa54e85f58367278af4d74c26e.setContent(html_5ac9e5d9656d0a81933dab8def8295e5);
+            
+        
+
+        circle_marker_a4650e970b093c36f154273abbe4aeff.bindPopup(popup_ebbfb8fa54e85f58367278af4d74c26e)
+        ;
+
+        
+    
+    
+            circle_marker_a4650e970b093c36f154273abbe4aeff.bindTooltip(
+                `<div>
+                     Nangarhar (0.29)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7de10fc2579f89c5e353c3f1d3192439 = L.circleMarker(
+                [19.867, 96.129],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.891823798418045, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_a842ba33c73e86bfe8c3da9aa0c6d208 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c62ce338a1cdcc7c2bf6a1c8ea1f5ac9 = $(`<div id="html_c62ce338a1cdcc7c2bf6a1c8ea1f5ac9" style="width: 100.0%; height: 100.0%;"><b>Nay Pyi Taw</b><br>Country: Myanmar<br>Risk probability: 0.135<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.947, events_w14d: -0.256, fatalities_w30d: -0.203<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_a842ba33c73e86bfe8c3da9aa0c6d208.setContent(html_c62ce338a1cdcc7c2bf6a1c8ea1f5ac9);
+            
+        
+
+        circle_marker_7de10fc2579f89c5e353c3f1d3192439.bindPopup(popup_a842ba33c73e86bfe8c3da9aa0c6d208)
+        ;
+
+        
+    
+    
+            circle_marker_7de10fc2579f89c5e353c3f1d3192439.bindTooltip(
+                `<div>
+                     Nay Pyi Taw (0.14)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cae7e972a3fa0274252f6f1aad60ab8f = L.circleMarker(
+                [30.841, 62.475],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.369910567998886, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_f286cf9b8942ea2d20128d00e7d552c0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_df577bb3ecc7e0b0f3b0bebbef87caa0 = $(`<div id="html_df577bb3ecc7e0b0f3b0bebbef87caa0" style="width: 100.0%; height: 100.0%;"><b>Nimruz</b><br>Country: Afghanistan<br>Risk probability: 0.098<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.910, spillover_w14d: -0.315, velocity_events_w30d: -0.223<br>Recent events (7d): 2<br>Recent fatalities (7d): 6</div>`)[0];
+                popup_f286cf9b8942ea2d20128d00e7d552c0.setContent(html_df577bb3ecc7e0b0f3b0bebbef87caa0);
+            
+        
+
+        circle_marker_cae7e972a3fa0274252f6f1aad60ab8f.bindPopup(popup_f286cf9b8942ea2d20128d00e7d552c0)
+        ;
+
+        
+    
+    
+            circle_marker_cae7e972a3fa0274252f6f1aad60ab8f.bindTooltip(
+                `<div>
+                     Nimruz (0.10)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_98132dbc17b252b7f6317a221ae1d7a0 = L.circleMarker(
+                [15.86, 25.501000000000005],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.897730231285095, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_7b720b356348161baa40f0fc15bbb928 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_36ae6e1b824caf84206dc40861137a26 = $(`<div id="html_36ae6e1b824caf84206dc40861137a26" style="width: 100.0%; height: 100.0%;"><b>North Darfur</b><br>Country: Sudan<br>Risk probability: 0.778<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +1.306, events_w30d: +0.419, velocity_fatalities_w30d: -0.391<br>Recent events (7d): 5<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_7b720b356348161baa40f0fc15bbb928.setContent(html_36ae6e1b824caf84206dc40861137a26);
+            
+        
+
+        circle_marker_98132dbc17b252b7f6317a221ae1d7a0.bindPopup(popup_7b720b356348161baa40f0fc15bbb928)
+        ;
+
+        
+    
+    
+            circle_marker_98132dbc17b252b7f6317a221ae1d7a0.bindTooltip(
+                `<div>
+                     North Darfur (0.78)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_77e62f920a8dd40cd46a2f920e6ca768 = L.circleMarker(
+                [14.388999999999998, 29.437000000000005],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.872715711593628, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_2bcb3ef0f2390972d14d47edb75b8e65 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f0eeac84b21a3487cb84502106f9321e = $(`<div id="html_f0eeac84b21a3487cb84502106f9321e" style="width: 100.0%; height: 100.0%;"><b>North Kordofan</b><br>Country: Sudan<br>Risk probability: 0.991<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +1.382, events_w30d: +1.136, velocity_fatalities_w30d: +0.688<br>Recent events (7d): 12<br>Recent fatalities (7d): 59</div>`)[0];
+                popup_2bcb3ef0f2390972d14d47edb75b8e65.setContent(html_f0eeac84b21a3487cb84502106f9321e);
+            
+        
+
+        circle_marker_77e62f920a8dd40cd46a2f920e6ca768.bindPopup(popup_2bcb3ef0f2390972d14d47edb75b8e65)
+        ;
+
+        
+    
+    
+            circle_marker_77e62f920a8dd40cd46a2f920e6ca768.bindTooltip(
+                `<div>
+                     North Kordofan (0.99)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f53ca847510ea1e8d39273eae28faeec = L.circleMarker(
+                [19.366, 29.895999999999997],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.880004942417145, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_dd7d30fefc4fb4dc4fb22d2bc57650c0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bf84679e064a9c10b8ddf2b32aaddce8 = $(`<div id="html_bf84679e064a9c10b8ddf2b32aaddce8" style="width: 100.0%; height: 100.0%;"><b>Northern</b><br>Country: Sudan<br>Risk probability: 0.277<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.527, events_w7d: -0.358, admin1_code: -0.354<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_dd7d30fefc4fb4dc4fb22d2bc57650c0.setContent(html_bf84679e064a9c10b8ddf2b32aaddce8);
+            
+        
+
+        circle_marker_f53ca847510ea1e8d39273eae28faeec.bindPopup(popup_dd7d30fefc4fb4dc4fb22d2bc57650c0)
+        ;
+
+        
+    
+    
+            circle_marker_f53ca847510ea1e8d39273eae28faeec.bindTooltip(
+                `<div>
+                     Northern (0.28)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e33b582225747146b47bd1fd3d862b5e = L.circleMarker(
+                [8.917, 27.038000000000004],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.870482563972473, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_26ee8839182382f965190e76291b8821 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c1cfc43f91c92517a11c1da85fc7b220 = $(`<div id="html_c1cfc43f91c92517a11c1da85fc7b220" style="width: 100.0%; height: 100.0%;"><b>Northern Bahr el Ghazal</b><br>Country: South Sudan<br>Risk probability: 0.134<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.229, velocity_fatalities_w30d: +0.466, admin1_code: -0.329<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_26ee8839182382f965190e76291b8821.setContent(html_c1cfc43f91c92517a11c1da85fc7b220);
+            
+        
+
+        circle_marker_e33b582225747146b47bd1fd3d862b5e.bindPopup(popup_26ee8839182382f965190e76291b8821)
+        ;
+
+        
+    
+    
+            circle_marker_e33b582225747146b47bd1fd3d862b5e.bindTooltip(
+                `<div>
+                     Northern Bahr el Ghazal (0.13)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d85a317e9263af33b45bb81352c42a1 = L.circleMarker(
+                [35.47, 71.117],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.70150251686573, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_b6d73f38b4e7fafb8efc3b52233bf3e8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d70555eba2db69814e9dcb607e1fc3bc = $(`<div id="html_d70555eba2db69814e9dcb607e1fc3bc" style="width: 100.0%; height: 100.0%;"><b>Nuristan</b><br>Country: Afghanistan<br>Risk probability: 0.050<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.917, events_w7d: -0.423, events_w14d: -0.394<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_b6d73f38b4e7fafb8efc3b52233bf3e8.setContent(html_d70555eba2db69814e9dcb607e1fc3bc);
+            
+        
+
+        circle_marker_6d85a317e9263af33b45bb81352c42a1.bindPopup(popup_b6d73f38b4e7fafb8efc3b52233bf3e8)
+        ;
+
+        
+    
+    
+            circle_marker_6d85a317e9263af33b45bb81352c42a1.bindTooltip(
+                `<div>
+                     Nuristan (0.05)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f2c2b1d4718968039d5b75bede3aa17 = L.circleMarker(
+                [20.189, 84.472],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.19284677505493, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_9516ceaa89c9c31be0a881727b930589 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4edc354130bb68b9dbadbfd16c0f58f0 = $(`<div id="html_4edc354130bb68b9dbadbfd16c0f58f0" style="width: 100.0%; height: 100.0%;"><b>Odisha</b><br>Country: India<br>Risk probability: 0.728<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.470, admin1_code: +0.278, fatalities_w30d: -0.188<br>Recent events (7d): 12<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_9516ceaa89c9c31be0a881727b930589.setContent(html_4edc354130bb68b9dbadbfd16c0f58f0);
+            
+        
+
+        circle_marker_9f2c2b1d4718968039d5b75bede3aa17.bindPopup(popup_9516ceaa89c9c31be0a881727b930589)
+        ;
+
+        
+    
+    
+            circle_marker_9f2c2b1d4718968039d5b75bede3aa17.bindTooltip(
+                `<div>
+                     Odisha (0.73)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b960d76108437cd0c4672d3e7a6855ff = L.circleMarker(
+                [33.617, 69.284],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.200144827365875, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_37f33b3ae6330da565176f9627555b9a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f337eb9830da6c8fac6d9ecc8c0db770 = $(`<div id="html_f337eb9830da6c8fac6d9ecc8c0db770" style="width: 100.0%; height: 100.0%;"><b>Paktia</b><br>Country: Afghanistan<br>Risk probability: 0.443<br>Predicted class: 1<br>Top SHAP: events_w30d: -0.474, velocity_fatalities_w7d: +0.276, spillover_w14d: -0.269<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_37f33b3ae6330da565176f9627555b9a.setContent(html_f337eb9830da6c8fac6d9ecc8c0db770);
+            
+        
+
+        circle_marker_b960d76108437cd0c4672d3e7a6855ff.bindPopup(popup_37f33b3ae6330da565176f9627555b9a)
+        ;
+
+        
+    
+    
+            circle_marker_b960d76108437cd0c4672d3e7a6855ff.bindTooltip(
+                `<div>
+                     Paktia (0.44)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a04eecc169e36ec5f059050ee2367fd6 = L.circleMarker(
+                [32.512, 68.655],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.236846879124641, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_e88f7a7945b63174923340e21acde6f8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7d0c36e516afc565a8ce88d392191033 = $(`<div id="html_7d0c36e516afc565a8ce88d392191033" style="width: 100.0%; height: 100.0%;"><b>Paktika</b><br>Country: Afghanistan<br>Risk probability: 0.088<br>Predicted class: 0<br>Top SHAP: spillover_w14d: -0.501, events_w30d: -0.455, events_w7d: -0.408<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_e88f7a7945b63174923340e21acde6f8.setContent(html_7d0c36e516afc565a8ce88d392191033);
+            
+        
+
+        circle_marker_a04eecc169e36ec5f059050ee2367fd6.bindPopup(popup_e88f7a7945b63174923340e21acde6f8)
+        ;
+
+        
+    
+    
+            circle_marker_a04eecc169e36ec5f059050ee2367fd6.bindTooltip(
+                `<div>
+                     Paktika (0.09)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e10a66b2ca13d44e41a31d7e174553d5 = L.circleMarker(
+                [35.489, 69.887],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.93575370311737, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_c0d0a95c108e9eb97a7b34bdb342f8d7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f7b3507f02219207fbc148aae23aaa93 = $(`<div id="html_f7b3507f02219207fbc148aae23aaa93" style="width: 100.0%; height: 100.0%;"><b>Panjshir</b><br>Country: Afghanistan<br>Risk probability: 0.495<br>Predicted class: 1<br>Top SHAP: fat_std_w14d: +0.334, velocity_events_w30d: -0.229, events_w30d: +0.212<br>Recent events (7d): 1<br>Recent fatalities (7d): 4</div>`)[0];
+                popup_c0d0a95c108e9eb97a7b34bdb342f8d7.setContent(html_f7b3507f02219207fbc148aae23aaa93);
+            
+        
+
+        circle_marker_e10a66b2ca13d44e41a31d7e174553d5.bindPopup(popup_c0d0a95c108e9eb97a7b34bdb342f8d7)
+        ;
+
+        
+    
+    
+            circle_marker_e10a66b2ca13d44e41a31d7e174553d5.bindTooltip(
+                `<div>
+                     Panjshir (0.50)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2e816ccf2fb044305be74833989e520 = L.circleMarker(
+                [35.002, 68.758],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.87141153216362, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_a500ef0df52e0c96e2cd9d4af92059bc = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bf7731b86401ff1c7224512d853d7165 = $(`<div id="html_bf7731b86401ff1c7224512d853d7165" style="width: 100.0%; height: 100.0%;"><b>Parwan</b><br>Country: Afghanistan<br>Risk probability: 0.134<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.803, events_w7d: -0.388, events_w14d: -0.300<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_a500ef0df52e0c96e2cd9d4af92059bc.setContent(html_bf7731b86401ff1c7224512d853d7165);
+            
+        
+
+        circle_marker_a2e816ccf2fb044305be74833989e520.bindPopup(popup_a500ef0df52e0c96e2cd9d4af92059bc)
+        ;
+
+        
+    
+    
+            circle_marker_a2e816ccf2fb044305be74833989e520.bindTooltip(
+                `<div>
+                     Parwan (0.13)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a246515bb5886486fcb723d09599772a = L.circleMarker(
+                [11.927, 79.78],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.43913209438324, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_e0638e2c408c7408e1f914652ed6c33e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_74a0017a3a1f29c333d3a671b988e1c6 = $(`<div id="html_74a0017a3a1f29c333d3a671b988e1c6" style="width: 100.0%; height: 100.0%;"><b>Puducherry</b><br>Country: India<br>Risk probability: 0.174<br>Predicted class: 0<br>Top SHAP: admin1_code: -0.326, events_w30d: -0.314, velocity_events_w30d: -0.249<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_e0638e2c408c7408e1f914652ed6c33e.setContent(html_74a0017a3a1f29c333d3a671b988e1c6);
+            
+        
+
+        circle_marker_a246515bb5886486fcb723d09599772a.bindPopup(popup_e0638e2c408c7408e1f914652ed6c33e)
+        ;
+
+        
+    
+    
+            circle_marker_a246515bb5886486fcb723d09599772a.bindTooltip(
+                `<div>
+                     Puducherry (0.17)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a66d4bf43d4238225e5351e35aa2b8c9 = L.circleMarker(
+                [30.949410115303984, 73.96620309224319],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.13221311569214, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_ee315e821a22e5a1efc0475625822da4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_50de068a138a0a23a7c8503089a8861c = $(`<div id="html_50de068a138a0a23a7c8503089a8861c" style="width: 100.0%; height: 100.0%;"><b>Punjab</b><br>Country: India<br>Risk probability: 0.938<br>Predicted class: 1<br>Top SHAP: events_w7d: +0.910, events_w30d: +0.599, velocity_events_w30d: +0.531<br>Recent events (7d): 79<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_ee315e821a22e5a1efc0475625822da4.setContent(html_50de068a138a0a23a7c8503089a8861c);
+            
+        
+
+        circle_marker_a66d4bf43d4238225e5351e35aa2b8c9.bindPopup(popup_ee315e821a22e5a1efc0475625822da4)
+        ;
+
+        
+    
+    
+            circle_marker_a66d4bf43d4238225e5351e35aa2b8c9.bindTooltip(
+                `<div>
+                     Punjab (0.94)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_463cb18f2b82f9f6fe43e60a7980909c = L.circleMarker(
+                [26.628, 73.826],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.901778101921082, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_0f4cd483263347b1397a449594d1e090 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c5b39c100758bfe51968320e2194a3d0 = $(`<div id="html_c5b39c100758bfe51968320e2194a3d0" style="width: 100.0%; height: 100.0%;"><b>Rajasthan</b><br>Country: India<br>Risk probability: 0.422<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: -0.442, fatalities_w30d: -0.333, events_w30d: +0.322<br>Recent events (7d): 13<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_0f4cd483263347b1397a449594d1e090.setContent(html_c5b39c100758bfe51968320e2194a3d0);
+            
+        
+
+        circle_marker_463cb18f2b82f9f6fe43e60a7980909c.bindPopup(popup_0f4cd483263347b1397a449594d1e090)
+        ;
+
+        
+    
+    
+            circle_marker_463cb18f2b82f9f6fe43e60a7980909c.bindTooltip(
+                `<div>
+                     Rajasthan (0.42)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b5c66426358498c17e2e90d2937ce53 = L.circleMarker(
+                [19.409, 94.232],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.576481461524963, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_b084b54ccc6263230827a1b3a3f6535f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_15728ec8e36b8874d9218db143ca6f6b = $(`<div id="html_15728ec8e36b8874d9218db143ca6f6b" style="width: 100.0%; height: 100.0%;"><b>Rakhine</b><br>Country: Myanmar<br>Risk probability: 0.970<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.756, events_w30d: +0.599, velocity_fatalities_w30d: +0.583<br>Recent events (7d): 24<br>Recent fatalities (7d): 13</div>`)[0];
+                popup_b084b54ccc6263230827a1b3a3f6535f.setContent(html_15728ec8e36b8874d9218db143ca6f6b);
+            
+        
+
+        circle_marker_7b5c66426358498c17e2e90d2937ce53.bindPopup(popup_b084b54ccc6263230827a1b3a3f6535f)
+        ;
+
+        
+    
+    
+            circle_marker_7b5c66426358498c17e2e90d2937ce53.bindTooltip(
+                `<div>
+                     Rakhine (0.97)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0bd9e881f18bf0386a80c59c5922a9d9 = L.circleMarker(
+                [20.074, 35.413],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.185361057519913, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_97cfe85a34dfda32769befe792f3bfe7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_61d10944adec45a4af15095627f18b49 = $(`<div id="html_61d10944adec45a4af15095627f18b49" style="width: 100.0%; height: 100.0%;"><b>Red Sea</b><br>Country: Sudan<br>Risk probability: 0.156<br>Predicted class: 0<br>Top SHAP: velocity_events_w30d: -0.448, fatalities_w30d: +0.345, events_w7d: -0.281<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_97cfe85a34dfda32769befe792f3bfe7.setContent(html_61d10944adec45a4af15095627f18b49);
+            
+        
+
+        circle_marker_0bd9e881f18bf0386a80c59c5922a9d9.bindPopup(popup_97cfe85a34dfda32769befe792f3bfe7)
+        ;
+
+        
+    
+    
+            circle_marker_0bd9e881f18bf0386a80c59c5922a9d9.bindTooltip(
+                `<div>
+                     Red Sea (0.16)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0bb6e54d5c3a2881c7e342af23dcb381 = L.circleMarker(
+                [18.835, 33.123],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.77578142285347, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_14cf860ef2ea5684b9c00bdd5a338f82 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_45eb2ae1bc591efcebb24403e7853964 = $(`<div id="html_45eb2ae1bc591efcebb24403e7853964" style="width: 100.0%; height: 100.0%;"><b>River Nile</b><br>Country: Sudan<br>Risk probability: 0.127<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.841, events_w7d: -0.340, velocity_events_w30d: +0.309<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_14cf860ef2ea5684b9c00bdd5a338f82.setContent(html_45eb2ae1bc591efcebb24403e7853964);
+            
+        
+
+        circle_marker_0bb6e54d5c3a2881c7e342af23dcb381.bindPopup(popup_14cf860ef2ea5684b9c00bdd5a338f82)
+        ;
+
+        
+    
+    
+            circle_marker_0bb6e54d5c3a2881c7e342af23dcb381.bindTooltip(
+                `<div>
+                     River Nile (0.13)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe23965d7749d8e8570d1ed73fa9c9e0 = L.circleMarker(
+                [24.476000000000003, 95.477],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.9715439081192, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_99885ed16503f03b7cd31ed9bf984e37 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_078a716f60cac89035f3920354da2b93 = $(`<div id="html_078a716f60cac89035f3920354da2b93" style="width: 100.0%; height: 100.0%;"><b>Sagaing</b><br>Country: Myanmar<br>Risk probability: 0.998<br>Predicted class: 1<br>Top SHAP: events_w30d: +1.399, fatalities_w30d: +1.044, events_w7d: +0.955<br>Recent events (7d): 58<br>Recent fatalities (7d): 11</div>`)[0];
+                popup_99885ed16503f03b7cd31ed9bf984e37.setContent(html_078a716f60cac89035f3920354da2b93);
+            
+        
+
+        circle_marker_fe23965d7749d8e8570d1ed73fa9c9e0.bindPopup(popup_99885ed16503f03b7cd31ed9bf984e37)
+        ;
+
+        
+    
+    
+            circle_marker_fe23965d7749d8e8570d1ed73fa9c9e0.bindTooltip(
+                `<div>
+                     Sagaing (1.00)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ad0e490f205e8bf46d13fe25dd7256f = L.circleMarker(
+                [35.992, 67.728],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.525205038487911, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_94cb2dc1071bf73fc61ac2169db58ec2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b2359d3b80c2cd6391331be71aef5112 = $(`<div id="html_b2359d3b80c2cd6391331be71aef5112" style="width: 100.0%; height: 100.0%;"><b>Samangan</b><br>Country: Afghanistan<br>Risk probability: 0.038<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.953, spillover_w14d: -0.495, events_w7d: -0.407<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_94cb2dc1071bf73fc61ac2169db58ec2.setContent(html_b2359d3b80c2cd6391331be71aef5112);
+            
+        
+
+        circle_marker_5ad0e490f205e8bf46d13fe25dd7256f.bindPopup(popup_94cb2dc1071bf73fc61ac2169db58ec2)
+        ;
+
+        
+    
+    
+            circle_marker_5ad0e490f205e8bf46d13fe25dd7256f.bindTooltip(
+                `<div>
+                     Samangan (0.04)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_680ba4a96bb1b9e1a1301179d248935a = L.circleMarker(
+                [35.715, 66.088],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.398387521505356, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_d5a5c329fc3dcb08c82a882452c7caef = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0dcfb091fdf46f345e44d782ded12c63 = $(`<div id="html_0dcfb091fdf46f345e44d782ded12c63" style="width: 100.0%; height: 100.0%;"><b>Sar-e Pol</b><br>Country: Afghanistan<br>Risk probability: 0.100<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.133, spillover_w14d: -0.323, events_w14d: -0.251<br>Recent events (7d): 1<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_d5a5c329fc3dcb08c82a882452c7caef.setContent(html_0dcfb091fdf46f345e44d782ded12c63);
+            
+        
+
+        circle_marker_680ba4a96bb1b9e1a1301179d248935a.bindPopup(popup_d5a5c329fc3dcb08c82a882452c7caef)
+        ;
+
+        
+    
+    
+            circle_marker_680ba4a96bb1b9e1a1301179d248935a.bindTooltip(
+                `<div>
+                     Sar-e Pol (0.10)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c2edb7d2c1bf3120bcf767c2a814780 = L.circleMarker(
+                [12.909, 34.082],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.361076921224594, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_f9293d159a57ca903360c865f3b920d1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fc5c2bced5c7b915f5c04288bc227728 = $(`<div id="html_fc5c2bced5c7b915f5c04288bc227728" style="width: 100.0%; height: 100.0%;"><b>Sennar</b><br>Country: Sudan<br>Risk probability: 0.097<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.886, events_w14d: -0.377, events_w7d: -0.333<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_f9293d159a57ca903360c865f3b920d1.setContent(html_fc5c2bced5c7b915f5c04288bc227728);
+            
+        
+
+        circle_marker_6c2edb7d2c1bf3120bcf767c2a814780.bindPopup(popup_f9293d159a57ca903360c865f3b920d1)
+        ;
+
+        
+    
+    
+            circle_marker_6c2edb7d2c1bf3120bcf767c2a814780.bindTooltip(
+                `<div>
+                     Sennar (0.10)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8728d7cf03f390969daa84f3bbf87ca5 = L.circleMarker(
+                [20.94, 99.508],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.654895067214966, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_efcca62a3b9142cfc8234557ff4bebb1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c2dbeb56ae0670e76ce590dad6e43db7 = $(`<div id="html_c2dbeb56ae0670e76ce590dad6e43db7" style="width: 100.0%; height: 100.0%;"><b>Shan-East</b><br>Country: Myanmar<br>Risk probability: 0.261<br>Predicted class: 1<br>Top SHAP: events_w30d: -0.368, events_w14d: -0.245, fatalities_w30d: -0.194<br>Recent events (7d): 2<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_efcca62a3b9142cfc8234557ff4bebb1.setContent(html_c2dbeb56ae0670e76ce590dad6e43db7);
+            
+        
+
+        circle_marker_8728d7cf03f390969daa84f3bbf87ca5.bindPopup(popup_efcca62a3b9142cfc8234557ff4bebb1)
+        ;
+
+        
+    
+    
+            circle_marker_8728d7cf03f390969daa84f3bbf87ca5.bindTooltip(
+                `<div>
+                     Shan-East (0.26)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec085493276582fab5f69e517ee24cd5 = L.circleMarker(
+                [22.822, 98.007],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.08403789997101, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_8bb95c5e0ee5e5a07b9ec2935da54343 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c79870ea3f57e485a164bec03b2a7123 = $(`<div id="html_c79870ea3f57e485a164bec03b2a7123" style="width: 100.0%; height: 100.0%;"><b>Shan-North</b><br>Country: Myanmar<br>Risk probability: 0.792<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.603, velocity_fatalities_w30d: +0.443, events_w30d: +0.368<br>Recent events (7d): 6<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_8bb95c5e0ee5e5a07b9ec2935da54343.setContent(html_c79870ea3f57e485a164bec03b2a7123);
+            
+        
+
+        circle_marker_ec085493276582fab5f69e517ee24cd5.bindPopup(popup_8bb95c5e0ee5e5a07b9ec2935da54343)
+        ;
+
+        
+    
+    
+            circle_marker_ec085493276582fab5f69e517ee24cd5.bindTooltip(
+                `<div>
+                     Shan-North (0.79)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d54fa9ba45366d13c2aa2517d8b703bf = L.circleMarker(
+                [20.807, 97.53],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.502978444099426, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_24fc5347fe298c9ea6fe28e00a58d4fa = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8be94b8e05162707303f3695ee586c06 = $(`<div id="html_8be94b8e05162707303f3695ee586c06" style="width: 100.0%; height: 100.0%;"><b>Shan-South</b><br>Country: Myanmar<br>Risk probability: 0.464<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.628, admin1_code: -0.305, velocity_events_w30d: -0.258<br>Recent events (7d): 4<br>Recent fatalities (7d): 12</div>`)[0];
+                popup_24fc5347fe298c9ea6fe28e00a58d4fa.setContent(html_8be94b8e05162707303f3695ee586c06);
+            
+        
+
+        circle_marker_d54fa9ba45366d13c2aa2517d8b703bf.bindPopup(popup_24fc5347fe298c9ea6fe28e00a58d4fa)
+        ;
+
+        
+    
+    
+            circle_marker_d54fa9ba45366d13c2aa2517d8b703bf.bindTooltip(
+                `<div>
+                     Shan-South (0.46)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b55e251d4a368e4d8fe0a6992c99ea3f = L.circleMarker(
+                [27.598, 88.451],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.580126702785492, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_0c73d1f86c1ebfc1fa4c190315fd9077 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_100c6706ee0dca562917abc2308473c4 = $(`<div id="html_100c6706ee0dca562917abc2308473c4" style="width: 100.0%; height: 100.0%;"><b>Sikkim</b><br>Country: India<br>Risk probability: 0.113<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.901, admin1_code: -0.475, velocity_events_w30d: -0.218<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_0c73d1f86c1ebfc1fa4c190315fd9077.setContent(html_100c6706ee0dca562917abc2308473c4);
+            
+        
+
+        circle_marker_b55e251d4a368e4d8fe0a6992c99ea3f.bindPopup(popup_0c73d1f86c1ebfc1fa4c190315fd9077)
+        ;
+
+        
+    
+    
+            circle_marker_b55e251d4a368e4d8fe0a6992c99ea3f.bindTooltip(
+                `<div>
+                     Sikkim (0.11)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_754fad9e847b595c55aa1c10d3022575 = L.circleMarker(
+                [26.108, 68.75],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.79881465435028, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_cbd9343229e0c1019477657a1e78f90d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_190fa4ca0503825f301c3e8157fa4fa8 = $(`<div id="html_190fa4ca0503825f301c3e8157fa4fa8" style="width: 100.0%; height: 100.0%;"><b>Sindh</b><br>Country: Pakistan<br>Risk probability: 0.986<br>Predicted class: 1<br>Top SHAP: events_w7d: +0.899, events_w30d: +0.807, spillover_w14d: +0.620<br>Recent events (7d): 145<br>Recent fatalities (7d): 3</div>`)[0];
+                popup_cbd9343229e0c1019477657a1e78f90d.setContent(html_190fa4ca0503825f301c3e8157fa4fa8);
+            
+        
+
+        circle_marker_754fad9e847b595c55aa1c10d3022575.bindPopup(popup_cbd9343229e0c1019477657a1e78f90d)
+        ;
+
+        
+    
+    
+            circle_marker_754fad9e847b595c55aa1c10d3022575.bindTooltip(
+                `<div>
+                     Sindh (0.99)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_264135c6ab948c0e1f304e7789b33e1d = L.circleMarker(
+                [10.9, 24.302],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.91019380092621, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_7fbc9bd596e22de8e377090c5869c20a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ce7d4a02a8d9ea5f6f0f0f2b19852184 = $(`<div id="html_ce7d4a02a8d9ea5f6f0f0f2b19852184" style="width: 100.0%; height: 100.0%;"><b>South Darfur</b><br>Country: Sudan<br>Risk probability: 0.779<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.429, events_w30d: +0.370, admin1_code: +0.312<br>Recent events (7d): 7<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_7fbc9bd596e22de8e377090c5869c20a.setContent(html_ce7d4a02a8d9ea5f6f0f0f2b19852184);
+            
+        
+
+        circle_marker_264135c6ab948c0e1f304e7789b33e1d.bindPopup(popup_7fbc9bd596e22de8e377090c5869c20a)
+        ;
+
+        
+    
+    
+            circle_marker_264135c6ab948c0e1f304e7789b33e1d.bindTooltip(
+                `<div>
+                     South Darfur (0.78)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e6d6238ecda2e36484e8e157f17116e = L.circleMarker(
+                [11.229, 30.913999999999998],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.89772605895996, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_334e5420ceb40d510f0e9758715b6a1f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_77d907f12e11ed7dfaac0d2c0cb3b636 = $(`<div id="html_77d907f12e11ed7dfaac0d2c0cb3b636" style="width: 100.0%; height: 100.0%;"><b>South Kordofan</b><br>Country: Sudan<br>Risk probability: 0.778<br>Predicted class: 1<br>Top SHAP: country_code: -0.468, velocity_events_w30d: +0.360, admin1_code: +0.353<br>Recent events (7d): 3<br>Recent fatalities (7d): 5</div>`)[0];
+                popup_334e5420ceb40d510f0e9758715b6a1f.setContent(html_77d907f12e11ed7dfaac0d2c0cb3b636);
+            
+        
+
+        circle_marker_5e6d6238ecda2e36484e8e157f17116e.bindPopup(popup_334e5420ceb40d510f0e9758715b6a1f)
+        ;
+
+        
+    
+    
+            circle_marker_5e6d6238ecda2e36484e8e157f17116e.bindTooltip(
+                `<div>
+                     South Kordofan (0.78)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c693288ae38fa3b84b942c605e958b6 = L.circleMarker(
+                [36.7, 69.631],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.462511047720909, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_faeb504590c60fd05e89564242284a5f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ef16c0c9937bab2a54ba7da0c91dd7c7 = $(`<div id="html_ef16c0c9937bab2a54ba7da0c91dd7c7" style="width: 100.0%; height: 100.0%;"><b>Takhar</b><br>Country: Afghanistan<br>Risk probability: 0.104<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.024, spillover_w14d: -0.383, events_w7d: -0.365<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_faeb504590c60fd05e89564242284a5f.setContent(html_ef16c0c9937bab2a54ba7da0c91dd7c7);
+            
+        
+
+        circle_marker_7c693288ae38fa3b84b942c605e958b6.bindPopup(popup_faeb504590c60fd05e89564242284a5f)
+        ;
+
+        
+    
+    
+            circle_marker_7c693288ae38fa3b84b942c605e958b6.bindTooltip(
+                `<div>
+                     Takhar (0.10)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64cfc5648997e03b786867c89fa4b74b = L.circleMarker(
+                [10.821, 78.342],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.539254188537598, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_8efa038f10bf5f4551395a2d48b709f3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0bac89139ea006256d64e3007e114b50 = $(`<div id="html_0bac89139ea006256d64e3007e114b50" style="width: 100.0%; height: 100.0%;"><b>Tamil Nadu</b><br>Country: India<br>Risk probability: 0.610<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: -0.373, events_w30d: +0.328, admin1_code: +0.279<br>Recent events (7d): 28<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_8efa038f10bf5f4551395a2d48b709f3.setContent(html_0bac89139ea006256d64e3007e114b50);
+            
+        
+
+        circle_marker_64cfc5648997e03b786867c89fa4b74b.bindPopup(popup_8efa038f10bf5f4551395a2d48b709f3)
+        ;
+
+        
+    
+    
+            circle_marker_64cfc5648997e03b786867c89fa4b74b.bindTooltip(
+                `<div>
+                     Tamil Nadu (0.61)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54e28dffe936542304bb8bad9b05afc0 = L.circleMarker(
+                [12.541, 99.066],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.71239459514618, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_0e82e673bc66155e458947876710e467 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_42cea315fecc4d9ce3648963c2216ec7 = $(`<div id="html_42cea315fecc4d9ce3648963c2216ec7" style="width: 100.0%; height: 100.0%;"><b>Tanintharyi</b><br>Country: Myanmar<br>Risk probability: 0.908<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.746, events_w30d: +0.512, fatalities_w30d: +0.255<br>Recent events (7d): 19<br>Recent fatalities (7d): 5</div>`)[0];
+                popup_0e82e673bc66155e458947876710e467.setContent(html_42cea315fecc4d9ce3648963c2216ec7);
+            
+        
+
+        circle_marker_54e28dffe936542304bb8bad9b05afc0.bindPopup(popup_0e82e673bc66155e458947876710e467)
+        ;
+
+        
+    
+    
+            circle_marker_54e28dffe936542304bb8bad9b05afc0.bindTooltip(
+                `<div>
+                     Tanintharyi (0.91)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b63e370bb5e6383dd3c8d0ccdcc63545 = L.circleMarker(
+                [17.875, 79.306],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.350210309028625, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_122f62dfd669fb1a7b8b8f532cd0bb08 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1e0566ed5667bc98ba1b8e6cd8eb335e = $(`<div id="html_1e0566ed5667bc98ba1b8e6cd8eb335e" style="width: 100.0%; height: 100.0%;"><b>Telangana</b><br>Country: India<br>Risk probability: 0.596<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: +0.501, fatalities_w30d: -0.342, events_w7d: +0.256<br>Recent events (7d): 33<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_122f62dfd669fb1a7b8b8f532cd0bb08.setContent(html_1e0566ed5667bc98ba1b8e6cd8eb335e);
+            
+        
+
+        circle_marker_b63e370bb5e6383dd3c8d0ccdcc63545.bindPopup(popup_122f62dfd669fb1a7b8b8f532cd0bb08)
+        ;
+
+        
+    
+    
+            circle_marker_b63e370bb5e6383dd3c8d0ccdcc63545.bindTooltip(
+                `<div>
+                     Telangana (0.60)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cfa51d1a9c156214ecdfc43bb4bfee28 = L.circleMarker(
+                [23.735, 91.554],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.602273941040039, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_e3c413ff2cfb5717462a51babef14fa4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_55d060d561b363463a97453b92a7cb8e = $(`<div id="html_55d060d561b363463a97453b92a7cb8e" style="width: 100.0%; height: 100.0%;"><b>Tripura</b><br>Country: India<br>Risk probability: 0.472<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.377, fatalities_w30d: -0.337, velocity_events_w30d: -0.268<br>Recent events (7d): 12<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_e3c413ff2cfb5717462a51babef14fa4.setContent(html_55d060d561b363463a97453b92a7cb8e);
+            
+        
+
+        circle_marker_cfa51d1a9c156214ecdfc43bb4bfee28.bindPopup(popup_e3c413ff2cfb5717462a51babef14fa4)
+        ;
+
+        
+    
+    
+            circle_marker_cfa51d1a9c156214ecdfc43bb4bfee28.bindTooltip(
+                `<div>
+                     Tripura (0.47)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5308f348b6e6f8a8dc9cdaa6ccb17030 = L.circleMarker(
+                [8.664, 29.800999999999995],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.281365752220154, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_2155c9b4b44a25165c111de0999dae06 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_cee3ea704982f1c984bd0e9f57b894cf = $(`<div id="html_cee3ea704982f1c984bd0e9f57b894cf" style="width: 100.0%; height: 100.0%;"><b>Unity</b><br>Country: South Sudan<br>Risk probability: 0.520<br>Predicted class: 1<br>Top SHAP: events_w30d: +0.159, velocity_events_w30d: +0.152, fatalities_w30d: -0.142<br>Recent events (7d): 2<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_2155c9b4b44a25165c111de0999dae06.setContent(html_cee3ea704982f1c984bd0e9f57b894cf);
+            
+        
+
+        circle_marker_5308f348b6e6f8a8dc9cdaa6ccb17030.bindPopup(popup_2155c9b4b44a25165c111de0999dae06)
+        ;
+
+        
+    
+    
+            circle_marker_5308f348b6e6f8a8dc9cdaa6ccb17030.bindTooltip(
+                `<div>
+                     Unity (0.52)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_932efaf91fe6f887172387f509e88432 = L.circleMarker(
+                [10.112, 32.797],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.178323030471802, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_a16f52fb23b8f8ad0640e4a17b902591 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_860f059896c807e08cb32f2544cb7128 = $(`<div id="html_860f059896c807e08cb32f2544cb7128" style="width: 100.0%; height: 100.0%;"><b>Upper Nile</b><br>Country: South Sudan<br>Risk probability: 0.584<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.320, events_w30d: +0.198, spillover_w14d: +0.128<br>Recent events (7d): 2<br>Recent fatalities (7d): 6</div>`)[0];
+                popup_a16f52fb23b8f8ad0640e4a17b902591.setContent(html_860f059896c807e08cb32f2544cb7128);
+            
+        
+
+        circle_marker_932efaf91fe6f887172387f509e88432.bindPopup(popup_a16f52fb23b8f8ad0640e4a17b902591)
+        ;
+
+        
+    
+    
+            circle_marker_932efaf91fe6f887172387f509e88432.bindTooltip(
+                `<div>
+                     Upper Nile (0.58)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_36f5093b1f69c375603d3ee6a2129dfd = L.circleMarker(
+                [32.801, 66.008],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.893697753548622, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_6ecda3b1196a9690d83e6aff7484ad14 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c63a0eae4fd47db5c56dfde3d6da312b = $(`<div id="html_c63a0eae4fd47db5c56dfde3d6da312b" style="width: 100.0%; height: 100.0%;"><b>Urozgan</b><br>Country: Afghanistan<br>Risk probability: 0.064<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.887, spillover_w14d: -0.459, events_w7d: -0.427<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_6ecda3b1196a9690d83e6aff7484ad14.setContent(html_c63a0eae4fd47db5c56dfde3d6da312b);
+            
+        
+
+        circle_marker_36f5093b1f69c375603d3ee6a2129dfd.bindPopup(popup_6ecda3b1196a9690d83e6aff7484ad14)
+        ;
+
+        
+    
+    
+            circle_marker_36f5093b1f69c375603d3ee6a2129dfd.bindTooltip(
+                `<div>
+                     Urozgan (0.06)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_589a158a9321bc1010a9f2b80d9a77fd = L.circleMarker(
+                [27.133, 80.782],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.355103850364685, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_bb17afefc02f621afc2c5581af2f34f6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_068da6aacdced4758f03f8d76f773ed5 = $(`<div id="html_068da6aacdced4758f03f8d76f773ed5" style="width: 100.0%; height: 100.0%;"><b>Uttar Pradesh</b><br>Country: India<br>Risk probability: 0.311<br>Predicted class: 1<br>Top SHAP: velocity_events_w14d: -0.375, fatalities_w30d: -0.331, velocity_events_w30d: -0.207<br>Recent events (7d): 14<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_bb17afefc02f621afc2c5581af2f34f6.setContent(html_068da6aacdced4758f03f8d76f773ed5);
+            
+        
+
+        circle_marker_589a158a9321bc1010a9f2b80d9a77fd.bindPopup(popup_bb17afefc02f621afc2c5581af2f34f6)
+        ;
+
+        
+    
+    
+            circle_marker_589a158a9321bc1010a9f2b80d9a77fd.bindTooltip(
+                `<div>
+                     Uttar Pradesh (0.31)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7e6761f51f8c853fcd569675b8cb01b = L.circleMarker(
+                [29.996, 79.237],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.258992969989777, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_7ca3f9599cadfa5728114f6cbf5897d7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a13b061767820f23c78bdb4158ddc404 = $(`<div id="html_a13b061767820f23c78bdb4158ddc404" style="width: 100.0%; height: 100.0%;"><b>Uttarakhand</b><br>Country: India<br>Risk probability: 0.447<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: -0.327, events_w30d: +0.249, fatalities_w14d: -0.121<br>Recent events (7d): 7<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_7ca3f9599cadfa5728114f6cbf5897d7.setContent(html_a13b061767820f23c78bdb4158ddc404);
+            
+        
+
+        circle_marker_b7e6761f51f8c853fcd569675b8cb01b.bindPopup(popup_7ca3f9599cadfa5728114f6cbf5897d7)
+        ;
+
+        
+    
+    
+            circle_marker_b7e6761f51f8c853fcd569675b8cb01b.bindTooltip(
+                `<div>
+                     Uttarakhand (0.45)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b4ba55495ef7754f71461dcdc3f0248 = L.circleMarker(
+                [34.237, 68.16],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.587608993053436, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_8395bacb2f4267991de47fe9ef8bd19f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_93d97aeebeea66a8d8f189d206f08d8d = $(`<div id="html_93d97aeebeea66a8d8f189d206f08d8d" style="width: 100.0%; height: 100.0%;"><b>Wardak</b><br>Country: Afghanistan<br>Risk probability: 0.042<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.514, events_w14d: -0.414, events_w7d: -0.407<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_8395bacb2f4267991de47fe9ef8bd19f.setContent(html_93d97aeebeea66a8d8f189d206f08d8d);
+            
+        
+
+        circle_marker_2b4ba55495ef7754f71461dcdc3f0248.bindPopup(popup_8395bacb2f4267991de47fe9ef8bd19f)
+        ;
+
+        
+    
+    
+            circle_marker_2b4ba55495ef7754f71461dcdc3f0248.bindTooltip(
+                `<div>
+                     Wardak (0.04)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8415554689778dda1b3377057f637334 = L.circleMarker(
+                [7.927999999999999, 28.954],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.041131973266602, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_4a980830c16b86b21d26566984b232e1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b35e32ad6c00c9e7ac27d0fd9c30819e = $(`<div id="html_b35e32ad6c00c9e7ac27d0fd9c30819e" style="width: 100.0%; height: 100.0%;"><b>Warrap</b><br>Country: South Sudan<br>Risk probability: 0.574<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.494, velocity_fatalities_w7d: -0.206, fat_std_w14d: -0.190<br>Recent events (7d): 3<br>Recent fatalities (7d): 57</div>`)[0];
+                popup_4a980830c16b86b21d26566984b232e1.setContent(html_b35e32ad6c00c9e7ac27d0fd9c30819e);
+            
+        
+
+        circle_marker_8415554689778dda1b3377057f637334.bindPopup(popup_4a980830c16b86b21d26566984b232e1)
+        ;
+
+        
+    
+    
+            circle_marker_8415554689778dda1b3377057f637334.bindTooltip(
+                `<div>
+                     Warrap (0.57)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a0cf8c466541a2c409350ec8a5f5483 = L.circleMarker(
+                [24.39, 88.099],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.419739842414856, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_6b9c08a7312628015404559f3a5b6a38 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_979455c941492b977263caa5f99bd951 = $(`<div id="html_979455c941492b977263caa5f99bd951" style="width: 100.0%; height: 100.0%;"><b>West Bengal</b><br>Country: India<br>Risk probability: 0.816<br>Predicted class: 1<br>Top SHAP: events_w7d: +0.401, velocity_events_w14d: +0.308, admin1_code: +0.295<br>Recent events (7d): 35<br>Recent fatalities (7d): 4</div>`)[0];
+                popup_6b9c08a7312628015404559f3a5b6a38.setContent(html_979455c941492b977263caa5f99bd951);
+            
+        
+
+        circle_marker_1a0cf8c466541a2c409350ec8a5f5483.bindPopup(popup_6b9c08a7312628015404559f3a5b6a38)
+        ;
+
+        
+    
+    
+            circle_marker_1a0cf8c466541a2c409350ec8a5f5483.bindTooltip(
+                `<div>
+                     West Bengal (0.82)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7adb68169c42c46fcc0f496f0fcde5a = L.circleMarker(
+                [13.508, 22.703],
+                {"bubblingMouseEvents": true, "color": "#E76F51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#E76F51", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.265586853027344, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_aa6bb45a7c9915e72d59e568ae8a18fb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8f1024577afd0745eb74708a631e0d01 = $(`<div id="html_8f1024577afd0745eb74708a631e0d01" style="width: 100.0%; height: 100.0%;"><b>West Darfur</b><br>Country: Sudan<br>Risk probability: 0.519<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.501, velocity_events_w30d: -0.466, country_code: -0.342<br>Recent events (7d): 15<br>Recent fatalities (7d): 28</div>`)[0];
+                popup_aa6bb45a7c9915e72d59e568ae8a18fb.setContent(html_8f1024577afd0745eb74708a631e0d01);
+            
+        
+
+        circle_marker_d7adb68169c42c46fcc0f496f0fcde5a.bindPopup(popup_aa6bb45a7c9915e72d59e568ae8a18fb)
+        ;
+
+        
+    
+    
+            circle_marker_d7adb68169c42c46fcc0f496f0fcde5a.bindTooltip(
+                `<div>
+                     West Darfur (0.52)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a8aefc13bf4e433395fd09bfae862de9 = L.circleMarker(
+                [11.868999999999998, 28.220999999999997],
+                {"bubblingMouseEvents": true, "color": "#C1121F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C1121F", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.776639461517334, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_24188a6554563b4c3186db74671f9f89 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_942473e505ba85d95554731e7ceb5f55 = $(`<div id="html_942473e505ba85d95554731e7ceb5f55" style="width: 100.0%; height: 100.0%;"><b>West Kordofan</b><br>Country: Sudan<br>Risk probability: 0.627<br>Predicted class: 1<br>Top SHAP: fatalities_w30d: +0.704, country_code: -0.513, velocity_events_w30d: +0.470<br>Recent events (7d): 7<br>Recent fatalities (7d): 43</div>`)[0];
+                popup_24188a6554563b4c3186db74671f9f89.setContent(html_942473e505ba85d95554731e7ceb5f55);
+            
+        
+
+        circle_marker_a8aefc13bf4e433395fd09bfae862de9.bindPopup(popup_24188a6554563b4c3186db74671f9f89)
+        ;
+
+        
+    
+    
+            circle_marker_a8aefc13bf4e433395fd09bfae862de9.bindTooltip(
+                `<div>
+                     West Kordofan (0.63)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb052a2231c7fd3a3d825310c2f00f3c = L.circleMarker(
+                [8.539, 25.218999999999998],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.811185002326965, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_d439dffbc25acd9c6eefd5106e513f6c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5632d89503dd52f87660b7683607b4bd = $(`<div id="html_5632d89503dd52f87660b7683607b4bd" style="width: 100.0%; height: 100.0%;"><b>Western Bahr el Ghazal</b><br>Country: South Sudan<br>Risk probability: 0.201<br>Predicted class: 0<br>Top SHAP: admin1_code: -0.344, velocity_events_w30d: -0.332, spillover_w14d: -0.285<br>Recent events (7d): 2<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_d439dffbc25acd9c6eefd5106e513f6c.setContent(html_5632d89503dd52f87660b7683607b4bd);
+            
+        
+
+        circle_marker_fb052a2231c7fd3a3d825310c2f00f3c.bindPopup(popup_d439dffbc25acd9c6eefd5106e513f6c)
+        ;
+
+        
+    
+    
+            circle_marker_fb052a2231c7fd3a3d825310c2f00f3c.bindTooltip(
+                `<div>
+                     Western Bahr el Ghazal (0.20)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_83764a9318f7aea99efd36abc05b0ada = L.circleMarker(
+                [5.54, 29.146],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.429852992296219, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_cf8d1b93e797c63666453772a9df75e1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_64d2af4c5de0aa50bbe08ce37bae399a = $(`<div id="html_64d2af4c5de0aa50bbe08ce37bae399a" style="width: 100.0%; height: 100.0%;"><b>Western Equatoria</b><br>Country: South Sudan<br>Risk probability: 0.245<br>Predicted class: 0<br>Top SHAP: events_w30d: -0.446, admin1_code: -0.445, fatalities_w30d: -0.273<br>Recent events (7d): 1<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_cf8d1b93e797c63666453772a9df75e1.setContent(html_64d2af4c5de0aa50bbe08ce37bae399a);
+            
+        
+
+        circle_marker_83764a9318f7aea99efd36abc05b0ada.bindPopup(popup_cf8d1b93e797c63666453772a9df75e1)
+        ;
+
+        
+    
+    
+            circle_marker_83764a9318f7aea99efd36abc05b0ada.bindTooltip(
+                `<div>
+                     Western Equatoria (0.24)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7a0dc482c66796dabcb9bee16a59eee = L.circleMarker(
+                [13.59, 32.352],
+                {"bubblingMouseEvents": true, "color": "#F5A623", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#F5A623", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.29587596654892, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_d3b3f3c16173528763f69f6326f10120 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_166ebf46ca4e54c0caa578e86df34474 = $(`<div id="html_166ebf46ca4e54c0caa578e86df34474" style="width: 100.0%; height: 100.0%;"><b>White Nile</b><br>Country: Sudan<br>Risk probability: 0.378<br>Predicted class: 1<br>Top SHAP: velocity_events_w30d: -0.395, fatalities_w30d: +0.304, admin1_code: -0.237<br>Recent events (7d): 2<br>Recent fatalities (7d): 1</div>`)[0];
+                popup_d3b3f3c16173528763f69f6326f10120.setContent(html_166ebf46ca4e54c0caa578e86df34474);
+            
+        
+
+        circle_marker_f7a0dc482c66796dabcb9bee16a59eee.bindPopup(popup_d3b3f3c16173528763f69f6326f10120)
+        ;
+
+        
+    
+    
+            circle_marker_f7a0dc482c66796dabcb9bee16a59eee.bindTooltip(
+                `<div>
+                     White Nile (0.38)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2056eb3c625f66e28451fc07d35014f0 = L.circleMarker(
+                [17.053, 96.115],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.55968663096428, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_ecc274d027c86cac0f213bd393b8983f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_68e29bf8eabdecc39e18e6d585396cb5 = $(`<div id="html_68e29bf8eabdecc39e18e6d585396cb5" style="width: 100.0%; height: 100.0%;"><b>Yangon</b><br>Country: Myanmar<br>Risk probability: 0.183<br>Predicted class: 0<br>Top SHAP: velocity_events_w30d: -0.479, admin1_code: -0.372, fatalities_w30d: -0.353<br>Recent events (7d): 15<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_ecc274d027c86cac0f213bd393b8983f.setContent(html_68e29bf8eabdecc39e18e6d585396cb5);
+            
+        
+
+        circle_marker_2056eb3c625f66e28451fc07d35014f0.bindPopup(popup_ecc274d027c86cac0f213bd393b8983f)
+        ;
+
+        
+    
+    
+            circle_marker_2056eb3c625f66e28451fc07d35014f0.bindTooltip(
+                `<div>
+                     Yangon (0.18)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6c50084d430d110996ae72cfa6f0130 = L.circleMarker(
+                [32.277, 67.019],
+                {"bubblingMouseEvents": true, "color": "#2E86AB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2E86AB", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.363245129585266, "stroke": true, "weight": 3}
+            ).addTo(map_6e9e32b2c8f0dbf7a018d1ba570c8937);
+        
+    
+        var popup_fb10bd67b0ac0541f7567bd60953761b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6b5fe7a670eb3708b4025b2787394e0a = $(`<div id="html_6b5fe7a670eb3708b4025b2787394e0a" style="width: 100.0%; height: 100.0%;"><b>Zabul</b><br>Country: Afghanistan<br>Risk probability: 0.026<br>Predicted class: 0<br>Top SHAP: events_w30d: -1.791, events_w7d: -0.461, spillover_w14d: -0.368<br>Recent events (7d): 0<br>Recent fatalities (7d): 0</div>`)[0];
+                popup_fb10bd67b0ac0541f7567bd60953761b.setContent(html_6b5fe7a670eb3708b4025b2787394e0a);
+            
+        
+
+        circle_marker_a6c50084d430d110996ae72cfa6f0130.bindPopup(popup_fb10bd67b0ac0541f7567bd60953761b)
+        ;
+
+        
+    
+    
+            circle_marker_a6c50084d430d110996ae72cfa6f0130.bindTooltip(
+                `<div>
+                     Zabul (0.03)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

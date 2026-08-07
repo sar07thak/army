@@ -22,10 +22,12 @@ from src import (
     data_validation,
     explainability,
     feature_engineer,
+    forecast,
     label_engineer,
     logging_config,
     pipeline,
     split,
+    visualization,
 )
 from src.exceptions import ConflictForecastError, DataLoadError
 
@@ -238,6 +240,74 @@ def run_explain_stage() -> dict[str, object]:
     return summary
 
 
+def run_visualize_stage() -> dict[str, object]:
+    """Run risk-map and visualization generation on the winning model.
+
+    Delegates to :func:`src.visualization.visualize_stage` (plan M12 → M11):
+    loads ``escalation_best.pkl`` + the test window, computes predictions and
+    SHAP values, and writes the interactive risk map, country dashboard,
+    hotspot analysis, temporal trends, importance/density charts, and
+    ``reports/risk_summary.md``.
+
+    Raises:
+        ConflictForecastError: if the model/split is missing or a plot fails.
+    """
+    logger = logging_config.get_logger("run_pipeline")
+    logger.info("=== Stage: visualize ===")
+    summary = visualization.visualize_stage()
+    logger.info("Visualize stage summary: %s", summary)
+    return summary
+
+
+def run_forecast_stage() -> dict[str, object]:
+    """Run the live 14-day forecast on the winning model.
+
+    Delegates to :func:`src.forecast.forecast_stage`: loads
+    ``escalation_best.pkl`` + the latest feature row per geo unit, computes
+    predictions + SHAP, and writes ``reports/forecast_next_14_days.csv``,
+    ``reports/maps/forecast_risk_map.html`` and
+    ``reports/forecast_summary.md``.
+
+    Raises:
+        ConflictForecastError: if the model/features are missing.
+    """
+    logger = logging_config.get_logger("run_pipeline")
+    logger.info("=== Stage: forecast ===")
+    summary = forecast.forecast_stage()
+    logger.info("Forecast stage summary: %s", summary)
+    return summary
+
+
+def run_all_stages() -> dict[str, object]:
+    """Run every pipeline stage in dependency order (``--stage all``).
+
+    Equivalent to running ingest → features → labels → split → train →
+    compare → explain → visualize → forecast back to back. Stops at the
+    first failing stage with a descriptive error.
+
+    Returns:
+        A summary dict keyed by stage name.
+    """
+    logger = logging_config.get_logger("run_pipeline")
+    logger.info("=== Stage: all (9 stages in dependency order) ===")
+    runners = {
+        "ingest": run_ingest_stage,
+        "features": run_features_stage,
+        "labels": run_labels_stage,
+        "split": run_split_stage,
+        "train": run_train_stage,
+        "compare": run_compare_stage,
+        "explain": run_explain_stage,
+        "visualize": run_visualize_stage,
+        "forecast": run_forecast_stage,
+    }
+    results: dict[str, object] = {}
+    for name, runner in runners.items():
+        logger.info("--- running stage: %s ---", name)
+        results[name] = runner()
+    return results
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
@@ -245,9 +315,20 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument(
         "--stage",
-        choices=("ingest", "features", "labels", "split", "train", "compare", "explain"),
+        choices=(
+            "ingest",
+            "features",
+            "labels",
+            "split",
+            "train",
+            "compare",
+            "explain",
+            "visualize",
+            "forecast",
+            "all",
+        ),
         default="ingest",
-        help="Pipeline stage to run",
+        help="Pipeline stage to run (or 'all' for the full pipeline)",
     )
     return parser.parse_args(argv)
 
@@ -274,6 +355,12 @@ def main(argv: list[str] | None = None) -> int:
             summary = run_compare_stage()
         elif args.stage == "explain":
             summary = run_explain_stage()
+        elif args.stage == "visualize":
+            summary = run_visualize_stage()
+        elif args.stage == "forecast":
+            summary = run_forecast_stage()
+        elif args.stage == "all":
+            summary = run_all_stages()
         else:
             summary = run_train_stage()
         if args.stage == "train":
@@ -295,6 +382,28 @@ def main(argv: list[str] | None = None) -> int:
                 f"Pipeline stage 'explain' complete: {len(summary['plots'])} plots + "
                 f"{summary['summary_report']}; top driver = "
                 f"{top1['feature']} (mean |SHAP| {top1['mean_abs_shap']:.4f})."
+            )
+        elif args.stage == "visualize":
+            print(
+                f"Pipeline stage 'visualize' complete: {summary['geo_units']} geo units "
+                f"across {summary['countries']} countries; map = "
+                f"{summary['risk_map']}; highest risk = "
+                f"{summary['highest_risk']['geo_unit']} "
+                f"({summary['highest_risk']['probability']:.3f}); top driver = "
+                f"{summary['top_driver']['feature']}. Summary: {summary['summary_report']}"
+            )
+        elif args.stage == "forecast":
+            print(
+                f"Pipeline stage 'forecast' complete: {summary['geo_units']} geo units "
+                f"as of {summary['as_of_date']}; highest risk = "
+                f"{summary['highest_risk']['geo_unit']} "
+                f"({summary['highest_risk']['probability']:.3f}); CSV = "
+                f"{summary['forecast_csv']}; map = {summary['risk_map']}."
+            )
+        elif args.stage == "all":
+            print(
+                "Pipeline stage 'all' complete: "
+                + ", ".join(f"{k}={v.get('geo_units', 'ok')}" for k, v in summary.items())
             )
         else:
             row_key = {
