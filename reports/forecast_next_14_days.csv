@@ -1,125 +1,84 @@
 geo_unit,country,admin1,event_date,proba,predicted_class,risk_category,top_drivers,events_w7d,fatalities_w7d
-Abyei,Sudan,Abyei,2026-07-11,0.03707728162407875,0,Low,"events_w30d: -1.507, events_w7d: -0.413, events_w14d: -0.386",0.0,0.0
-Al Jazirah,Sudan,Al Jazirah,2026-07-25,0.19731935858726501,0,Low,"events_w30d: -0.552, events_w14d: -0.257, admin1_code: -0.231",1.0,0.0
-Andaman and Nicobar Islands,India,Andaman and Nicobar Islands,2026-07-25,0.21952195465564728,0,Medium,"admin1_code: -0.629, velocity_events_w30d: -0.381, fatalities_w30d: -0.259",2.0,0.0
-Andhra Pradesh,India,Andhra Pradesh,2026-07-25,0.5717852115631104,1,High,"velocity_events_w30d: +0.393, fatalities_w30d: -0.317, events_w7d: +0.226",25.0,0.0
-Arunachal Pradesh,India,Arunachal Pradesh,2026-07-18,0.3600918650627136,1,Medium,"velocity_events_w30d: -0.297, fatalities_w30d: -0.287, admin1_code: -0.239",4.0,0.0
-Assam,India,Assam,2026-07-25,0.33333948254585266,1,Medium,"velocity_events_w30d: -0.761, fatalities_w30d: -0.445, spillover_w14d: +0.204",30.0,0.0
-Ayeyarwady,Myanmar,Ayeyarwady,2026-07-25,0.4170403778553009,1,High,"admin1_code: -0.659, events_w30d: +0.435, velocity_fatalities_w30d: +0.153",9.0,2.0
-Azad Jammu and Kashmir,Pakistan,Azad Jammu and Kashmir,2026-07-25,0.580295741558075,1,High,"admin1_code: -0.822, events_w30d: +0.444, events_w7d: -0.352",0.0,0.0
-Badakhshan,Afghanistan,Badakhshan,2026-07-25,0.48172682523727417,1,High,"spillover_w14d: -0.340, events_w30d: +0.333, velocity_events_w30d: -0.330",7.0,3.0
-Badghis,Afghanistan,Badghis,2026-07-04,0.06357934325933456,0,Low,"events_w30d: -1.035, events_w7d: -0.411, spillover_w14d: -0.329",0.0,0.0
-Baghlan,Afghanistan,Baghlan,2026-07-25,0.09282118082046509,0,Low,"events_w30d: -1.075, spillover_w14d: -0.367, events_w7d: -0.313",0.0,0.0
-Bago-East,Myanmar,Bago-East,2026-07-25,0.7245404124259949,1,Critical,"velocity_events_w30d: +0.825, velocity_fatalities_w30d: +0.463, events_w7d: -0.456",0.0,0.0
-Bago-West,Myanmar,Bago-West,2026-07-25,0.8792563676834106,1,Critical,"fatalities_w30d: +0.716, velocity_events_w30d: +0.522, velocity_fatalities_w30d: +0.284",8.0,16.0
-Balkh,Afghanistan,Balkh,2026-07-11,0.21974313259124756,0,Medium,"spillover_w14d: -0.641, events_w30d: -0.544, admin1_code: +0.256",3.0,0.0
-Balochistan,Pakistan,Balochistan,2026-07-25,0.9984239339828491,1,Critical,"fatalities_w30d: +1.756, events_w30d: +1.135, events_w7d: +0.824",73.0,100.0
-Bamyan,Afghanistan,Bamyan,2026-06-20,0.23523446917533875,0,Medium,"events_w30d: -1.113, velocity_events_w30d: +0.618, spillover_w14d: -0.283",1.0,0.0
-Bihar,India,Bihar,2026-07-25,0.7178710699081421,1,Critical,"events_w30d: +0.324, fatalities_w30d: -0.263, velocity_events_w30d: +0.224",16.0,0.0
-Blue Nile,Sudan,Blue Nile,2026-07-18,0.8116638660430908,1,Critical,"fatalities_w30d: +0.783, events_w30d: +0.530, velocity_events_w30d: -0.348",6.0,10.0
-Central Darfur,Sudan,Central Darfur,2026-07-18,0.5509867072105408,1,High,"velocity_fatalities_w30d: +0.233, spillover_w14d: +0.211, country_code: -0.199",5.0,3.0
-Central Equatoria,South Sudan,Central Equatoria,2026-07-25,0.4052557051181793,1,High,"events_w30d: +0.282, fatalities_w30d: -0.158, spillover_w14d: -0.151",2.0,0.0
-Chandigarh,India,Chandigarh,2026-07-25,0.7034019827842712,1,Critical,"spillover_w14d: +0.724, fatalities_w30d: -0.307, velocity_events_w30d: -0.217",9.0,0.0
-Chhattisgarh,India,Chhattisgarh,2026-07-25,0.8437405824661255,1,Critical,"velocity_events_w7d: +0.907, events_w30d: +0.464, velocity_events_w14d: +0.426",44.0,0.0
-Chin,Myanmar,Chin,2026-07-25,0.8869081735610962,1,Critical,"velocity_fatalities_w30d: +0.661, velocity_events_w30d: +0.377, events_w30d: +0.363",7.0,6.0
-Dadra and Nagar Haveli and Daman and Diu,India,Dadra and Nagar Haveli and Daman and Diu,2019-04-20,0.040016427636146545,0,Low,"events_w30d: -1.342, events_w7d: -0.386, events_w14d: -0.335",0.0,0.0
-Daykundi,Afghanistan,Daykundi,2026-07-18,0.08651577681303024,0,Low,"events_w30d: -0.895, spillover_w14d: -0.591, velocity_events_w30d: -0.270",2.0,1.0
-Delhi,India,Delhi,2026-07-25,0.4876759648323059,1,High,"events_w30d: +0.387, fatalities_w30d: -0.338, velocity_events_w30d: -0.304",17.0,0.0
-East Darfur,Sudan,East Darfur,2026-07-25,0.12727783620357513,0,Low,"events_w30d: -0.419, events_w7d: -0.412, events_w14d: -0.305",0.0,0.0
-Eastern Equatoria,South Sudan,Eastern Equatoria,2026-07-25,0.7337636947631836,1,Critical,"velocity_events_w30d: +0.290, events_w30d: +0.233, velocity_fatalities_w30d: +0.220",2.0,2.0
-FATA,Pakistan,FATA,2018-05-26,0.6589559316635132,1,Critical,"events_w30d: +0.214, fatalities_w30d: +0.175, fatalities_w14d: +0.120",4.0,2.0
-Farah,Afghanistan,Farah,2026-06-20,0.08067856729030609,0,Low,"events_w30d: -1.512, events_w14d: -0.389, events_w7d: -0.357",0.0,0.0
-Faryab,Afghanistan,Faryab,2026-07-18,0.0247428510338068,0,Low,"events_w30d: -1.751, spillover_w14d: -0.569, events_w14d: -0.378",0.0,0.0
-Federal Capital Territory,Pakistan,Federal Capital Territory,2026-07-25,0.6739195585250854,1,Critical,"velocity_events_w30d: +0.631, admin1_code: +0.310, fatalities_w30d: -0.175",1.0,0.0
-Gedaref,Sudan,Gedaref,2026-07-25,0.1177707388997078,0,Low,"events_w30d: -0.831, events_w7d: -0.312, events_w14d: -0.308",0.0,0.0
-Ghazni,Afghanistan,Ghazni,2026-07-11,0.09470789134502411,0,Low,"events_w30d: -0.985, spillover_w14d: -0.427, events_w7d: -0.389",0.0,0.0
-Ghor,Afghanistan,Ghor,2026-07-11,0.05535520240664482,0,Low,"events_w30d: -1.201, spillover_w14d: -0.648, events_w14d: -0.298",1.0,0.0
-Gilgit-Baltistan,Pakistan,Gilgit-Baltistan,2026-06-27,0.2458169311285019,0,Medium,"events_w30d: -0.302, fatalities_w30d: -0.212, events_w14d: -0.189",1.0,0.0
-Goa,India,Goa,2026-07-25,0.5028442740440369,1,High,"admin1_code: -0.300, fatalities_w30d: -0.285, velocity_events_w30d: +0.265",8.0,0.0
-Gujarat,India,Gujarat,2026-07-25,0.8218587636947632,1,Critical,"velocity_events_w30d: +0.779, events_w30d: +0.457, fatalities_w30d: -0.213",9.0,0.0
-Haryana,India,Haryana,2026-07-25,0.5682435631752014,1,High,"fatalities_w30d: -0.411, velocity_events_w14d: +0.333, velocity_events_w30d: -0.268",48.0,1.0
-Helmand,Afghanistan,Helmand,2026-06-27,0.06054002419114113,0,Low,"events_w30d: -0.998, spillover_w14d: -0.471, events_w7d: -0.381",0.0,0.0
-Herat,Afghanistan,Herat,2026-07-25,0.7102710604667664,1,Critical,"velocity_events_w30d: +0.850, velocity_fatalities_w30d: +0.310, spillover_w14d: -0.237",3.0,1.0
-Himachal Pradesh,India,Himachal Pradesh,2026-07-25,0.43623077869415283,1,High,"velocity_events_w30d: -0.510, events_w30d: +0.377, fatalities_w30d: -0.368",9.0,0.0
-Jammu and Kashmir,India,Jammu and Kashmir,2026-07-25,0.9045228958129883,1,Critical,"events_w7d: +1.012, events_w30d: +0.671, velocity_events_w14d: +0.554",83.0,1.0
-Jharkhand,India,Jharkhand,2026-07-25,0.3833443820476532,1,Medium,"fatalities_w30d: -0.339, velocity_events_w30d: -0.338, events_w30d: +0.289",8.0,0.0
-Jonglei,South Sudan,Jonglei,2026-07-25,0.9019087553024292,1,Critical,"fatalities_w30d: +1.460, events_w30d: +0.622, velocity_fatalities_w30d: -0.528",7.0,24.0
-Jowzjan,Afghanistan,Jowzjan,2026-06-13,0.1059643030166626,0,Low,"events_w30d: -0.941, spillover_w14d: -0.455, events_w7d: -0.371",0.0,0.0
-Kabul,Afghanistan,Kabul,2026-07-25,0.9111785888671875,1,Critical,"velocity_events_w30d: +1.052, events_w30d: +0.465, velocity_fatalities_w30d: +0.220",3.0,0.0
-Kachin,Myanmar,Kachin,2026-07-25,0.6982367038726807,1,Critical,"fatalities_w30d: +0.830, events_w30d: +0.594, fatalities_w7d: -0.378",8.0,0.0
-Kandahar,Afghanistan,Kandahar,2026-07-25,0.26711320877075195,1,Medium,"events_w30d: -0.489, spillover_w14d: -0.414, fatalities_w30d: -0.188",2.0,0.0
-Kapisa,Afghanistan,Kapisa,2026-06-13,0.06727869063615799,0,Low,"events_w30d: -1.569, events_w14d: -0.382, events_w7d: -0.380",0.0,0.0
-Karnataka,India,Karnataka,2026-07-25,0.8128879070281982,1,Critical,"events_w7d: +1.404, fatalities_w30d: -0.412, velocity_events_w14d: +0.284",58.0,0.0
-Kassala,Sudan,Kassala,2026-07-11,0.3294418454170227,1,Medium,"events_w30d: -0.710, velocity_events_w30d: +0.461, velocity_fatalities_w30d: +0.350",0.0,0.0
-Kayah,Myanmar,Kayah,2026-07-25,0.5860517621040344,1,High,"velocity_events_w30d: +0.389, velocity_fatalities_w30d: -0.152, country_code: -0.124",5.0,8.0
-Kayin,Myanmar,Kayin,2026-07-25,0.8133609294891357,1,Critical,"fatalities_w30d: +0.949, events_w30d: +0.776, velocity_fatalities_w30d: -0.649",11.0,18.0
-Kerala,India,Kerala,2026-07-25,0.5641270875930786,1,High,"events_w7d: +0.519, velocity_events_w30d: -0.493, fatalities_w30d: -0.360",40.0,0.0
-Khartoum,Sudan,Khartoum,2026-07-25,0.4464901089668274,1,High,"events_w30d: +0.320, velocity_events_w30d: -0.298, spillover_w14d: -0.183",9.0,3.0
-Khost,Afghanistan,Khost,2026-07-18,0.28518179059028625,1,Medium,"velocity_events_w30d: -0.337, velocity_fatalities_w30d: +0.272, events_w30d: -0.250",4.0,0.0
-Khyber Pakhtunkhwa,Pakistan,Khyber Pakhtunkhwa,2026-07-25,0.9960159659385681,1,Critical,"fatalities_w30d: +1.487, events_w30d: +0.959, events_w7d: +0.545",38.0,66.0
-Kunar,Afghanistan,Kunar,2026-07-18,0.07539348304271698,0,Low,"events_w30d: -1.035, events_w14d: -0.353, events_w7d: -0.339",0.0,0.0
-Kunduz,Afghanistan,Kunduz,2026-07-25,0.08809844404459,0,Low,"events_w30d: -1.222, spillover_w14d: -0.379, events_w14d: -0.223",1.0,2.0
-Ladakh,India,Ladakh,2026-07-18,0.18475089967250824,0,Low,"events_w7d: -0.415, velocity_events_w30d: -0.320, fatalities_w30d: -0.246",0.0,0.0
-Laghman,Afghanistan,Laghman,2026-07-25,0.035475268959999084,0,Low,"events_w30d: -1.769, events_w7d: -0.413, events_w14d: -0.393",0.0,0.0
-Lakes,South Sudan,Lakes,2026-07-25,0.38880839943885803,1,Medium,"events_w7d: -0.381, velocity_fatalities_w30d: +0.359, events_w30d: -0.333",0.0,0.0
-Lakshadweep,India,Lakshadweep,2026-05-30,0.031995803117752075,0,Low,"events_w30d: -1.616, events_w7d: -0.441, events_w14d: -0.386",0.0,0.0
-Logar,Afghanistan,Logar,2026-07-18,0.08694689720869064,0,Low,"events_w30d: -1.547, events_w7d: -0.396, events_w14d: -0.347",0.0,0.0
-Madhya Pradesh,India,Madhya Pradesh,2026-07-25,0.597693145275116,1,High,"events_w30d: +0.360, fatalities_w30d: -0.349, velocity_events_w30d: +0.217",16.0,0.0
-Magway,Myanmar,Magway,2026-07-25,0.9970818161964417,1,Critical,"fatalities_w30d: +1.379, events_w30d: +0.967, events_w7d: +0.747",40.0,18.0
-Maharashtra,India,Maharashtra,2026-07-25,0.5884537100791931,1,High,"fatalities_w30d: -0.356, velocity_events_w30d: -0.326, velocity_events_w14d: +0.277",49.0,0.0
-Mandalay,Myanmar,Mandalay,2026-07-25,0.9572562575340271,1,Critical,"fatalities_w30d: +1.248, events_w30d: +0.681, fat_std_w14d: +0.285",18.0,24.0
-Manipur,India,Manipur,2026-07-25,0.6663718223571777,1,Critical,"velocity_events_w30d: +0.552, velocity_fatalities_w30d: +0.320, fatalities_w30d: -0.303",19.0,0.0
-Meghalaya,India,Meghalaya,2026-07-25,0.48576557636260986,1,High,"fatalities_w30d: -0.326, events_w30d: +0.316, admin1_code: -0.167",7.0,0.0
-Mizoram,India,Mizoram,2026-07-25,0.29073140025138855,1,Medium,"fatalities_w30d: -0.289, admin1_code: -0.280, velocity_events_w30d: -0.254",6.0,0.0
-Mon,Myanmar,Mon,2026-07-25,0.5822931528091431,1,High,"velocity_events_w30d: +0.593, admin1_code: -0.208, fatalities_w30d: -0.159",2.0,0.0
-Nagaland,India,Nagaland,2026-07-25,0.418565571308136,1,High,"fatalities_w30d: -0.331, events_w30d: +0.253, admin1_code: -0.219",2.0,0.0
-Nangarhar,Afghanistan,Nangarhar,2026-07-25,0.33331581950187683,1,Medium,"spillover_w14d: -0.420, fatalities_w30d: -0.236, events_w30d: +0.235",2.0,0.0
-Nay Pyi Taw,Myanmar,Nay Pyi Taw,2026-07-25,0.3033903241157532,1,Medium,"velocity_events_w30d: -0.382, fatalities_w30d: -0.290, admin1_code: -0.178",8.0,0.0
-Nimruz,Afghanistan,Nimruz,2026-07-25,0.16468653082847595,0,Low,"events_w30d: -0.441, spillover_w14d: -0.331, events_w7d: -0.299",0.0,0.0
-North Darfur,Sudan,North Darfur,2026-07-25,0.8826639652252197,1,Critical,"fatalities_w30d: +1.053, events_w30d: +0.603, velocity_fatalities_w30d: +0.295",7.0,4.0
-North Kordofan,Sudan,North Kordofan,2026-07-25,0.9712802767753601,1,Critical,"fatalities_w30d: +1.201, events_w30d: +0.945, velocity_events_w30d: +0.447",18.0,48.0
-Northern,Sudan,Northern,2026-07-25,0.32531997561454773,1,Medium,"events_w7d: -0.440, events_w30d: -0.422, admin1_code: -0.275",0.0,0.0
-Northern Bahr el Ghazal,South Sudan,Northern Bahr el Ghazal,2026-06-27,0.13360589742660522,0,Low,"events_w30d: -1.229, velocity_fatalities_w30d: +0.466, admin1_code: -0.329",0.0,0.0
-Nuristan,Afghanistan,Nuristan,2026-06-20,0.05010732263326645,0,Low,"events_w30d: -0.917, events_w7d: -0.423, events_w14d: -0.394",0.0,0.0
-Odisha,India,Odisha,2026-07-25,0.602536141872406,1,Critical,"velocity_events_w30d: +0.575, events_w30d: +0.310, fatalities_w30d: -0.240",8.0,0.0
-Paktia,Afghanistan,Paktia,2026-07-18,0.26440244913101196,1,Medium,"events_w30d: -0.702, fatalities_w30d: +0.238, spillover_w14d: -0.232",1.0,0.0
-Paktika,Afghanistan,Paktika,2026-07-18,0.21498949825763702,0,Medium,"events_w30d: -0.510, spillover_w14d: -0.253, velocity_events_w30d: -0.193",1.0,0.0
-Panjshir,Afghanistan,Panjshir,2026-07-25,0.38179048895835876,1,Medium,"spillover_w14d: -0.499, events_w30d: +0.239, fatalities_w14d: -0.104",2.0,0.0
-Parwan,Afghanistan,Parwan,2026-05-30,0.13367225229740143,0,Low,"events_w30d: -0.803, events_w7d: -0.388, events_w14d: -0.300",0.0,0.0
-Puducherry,India,Puducherry,2026-07-18,0.22764363884925842,0,Medium,"admin1_code: -0.309, fatalities_w30d: -0.233, velocity_events_w30d: -0.223",1.0,0.0
-Punjab,India,Punjab,2026-07-25,0.9369747042655945,1,Critical,"events_w30d: +0.711, events_w7d: +0.580, velocity_fatalities_w30d: +0.543",119.0,2.0
-Rajasthan,India,Rajasthan,2026-07-25,0.6634191870689392,1,Critical,"events_w7d: +0.550, velocity_events_w30d: -0.397, fatalities_w30d: -0.332",41.0,0.0
-Rakhine,Myanmar,Rakhine,2026-07-25,0.9396756887435913,1,Critical,"events_w30d: +0.837, velocity_fatalities_w30d: +0.555, fatalities_w30d: +0.481",23.0,8.0
-Red Sea,Sudan,Red Sea,2026-07-11,0.15609721839427948,0,Low,"velocity_events_w30d: -0.448, fatalities_w30d: +0.345, events_w7d: -0.281",0.0,0.0
-River Nile,Sudan,River Nile,2026-07-11,0.12684153020381927,0,Low,"events_w30d: -0.841, events_w7d: -0.340, velocity_events_w30d: +0.309",0.0,0.0
-Sagaing,Myanmar,Sagaing,2026-07-25,0.9904958009719849,1,Critical,"events_w30d: +1.216, events_w7d: +1.071, fatalities_w30d: +0.563",57.0,3.0
-Samangan,Afghanistan,Samangan,2026-06-27,0.03751464560627937,0,Low,"events_w30d: -0.953, spillover_w14d: -0.495, events_w7d: -0.407",0.0,0.0
-Sar-e Pol,Afghanistan,Sar-e Pol,2026-07-25,0.02536027878522873,0,Low,"events_w30d: -1.551, events_w7d: -0.431, events_w14d: -0.394",0.0,0.0
-Sennar,Sudan,Sennar,2026-05-23,0.09721978008747101,0,Low,"events_w30d: -0.886, events_w14d: -0.377, events_w7d: -0.333",0.0,0.0
-Shan-East,Myanmar,Shan-East,2026-07-18,0.25656476616859436,1,Medium,"events_w30d: -0.715, fatalities_w30d: -0.228, admin1_code: -0.221",1.0,1.0
-Shan-North,Myanmar,Shan-North,2026-07-25,0.7414050102233887,1,Critical,"velocity_events_w30d: +0.456, velocity_fatalities_w30d: +0.286, events_w30d: +0.264",4.0,1.0
-Shan-South,Myanmar,Shan-South,2026-07-25,0.7740451097488403,1,Critical,"fatalities_w30d: +0.647, admin1_code: -0.237, events_w30d: +0.224",11.0,10.0
-Sikkim,India,Sikkim,2026-07-18,0.03379020839929581,0,Low,"events_w30d: -1.532, admin1_code: -0.465, events_w7d: -0.418",0.0,0.0
-Sindh,Pakistan,Sindh,2026-07-25,0.9551246762275696,1,Critical,"events_w7d: +0.854, events_w30d: +0.608, fatalities_w30d: +0.527",163.0,2.0
-South Darfur,Sudan,South Darfur,2026-07-25,0.69992595911026,1,Critical,"velocity_events_w30d: +0.439, events_w30d: +0.375, admin1_code: +0.317",3.0,3.0
-South Kordofan,Sudan,South Kordofan,2026-07-25,0.5862100124359131,1,High,"country_code: -0.251, events_w30d: +0.201, admin1_code: +0.193",3.0,3.0
-Takhar,Afghanistan,Takhar,2026-07-25,0.14026157557964325,0,Low,"events_w30d: -1.106, spillover_w14d: -0.377, admin1_code: +0.349",1.0,1.0
-Tamil Nadu,India,Tamil Nadu,2026-07-25,0.7461027503013611,1,Critical,"events_w7d: +0.881, events_w30d: +0.655, velocity_events_w30d: -0.507",64.0,1.0
-Tanintharyi,Myanmar,Tanintharyi,2026-07-25,0.8462323546409607,1,Critical,"events_w30d: +0.443, velocity_fatalities_w30d: +0.352, spillover_w14d: +0.204",9.0,9.0
-Telangana,India,Telangana,2026-07-25,0.6420887112617493,1,Critical,"events_w7d: +1.216, velocity_events_w30d: -0.437, fatalities_w30d: -0.417",57.0,0.0
-Tripura,India,Tripura,2026-07-25,0.4370304346084595,1,High,"events_w30d: +0.346, fatalities_w30d: -0.326, velocity_events_w30d: -0.247",18.0,0.0
-Unity,South Sudan,Unity,2026-07-11,0.520097553730011,1,High,"events_w30d: +0.159, velocity_events_w30d: +0.152, fatalities_w30d: -0.142",2.0,0.0
-Upper Nile,South Sudan,Upper Nile,2026-07-18,0.6613936424255371,1,Critical,"fatalities_w30d: +0.255, events_w30d: +0.229, spillover_w14d: +0.180",1.0,2.0
-Urozgan,Afghanistan,Urozgan,2026-06-20,0.06383555382490158,0,Low,"events_w30d: -0.887, spillover_w14d: -0.459, events_w7d: -0.427",0.0,0.0
-Uttar Pradesh,India,Uttar Pradesh,2026-07-25,0.7815582752227783,1,Critical,"velocity_events_w30d: +0.899, velocity_events_w14d: +0.301, fatalities_w30d: -0.286",50.0,0.0
-Uttarakhand,India,Uttarakhand,2026-07-25,0.5472638010978699,1,High,"fatalities_w30d: -0.317, events_w30d: +0.267, events_w14d: +0.198",14.0,0.0
-Wardak,Afghanistan,Wardak,2026-06-13,0.041972070932388306,0,Low,"events_w30d: -1.514, events_w14d: -0.414, events_w7d: -0.407",0.0,0.0
-Warrap,South Sudan,Warrap,2026-07-18,0.562874972820282,1,High,"fatalities_w30d: +0.527, velocity_fatalities_w30d: +0.304, fat_std_w14d: -0.217",3.0,0.0
-West Bengal,India,West Bengal,2026-07-25,0.3844021260738373,1,Medium,"velocity_events_w30d: +0.351, velocity_events_w14d: -0.313, admin1_code: -0.223",19.0,0.0
-West Darfur,Sudan,West Darfur,2026-07-25,0.2951585650444031,1,Medium,"velocity_events_w30d: -0.731, fatalities_w30d: +0.660, events_w30d: +0.508",6.0,0.0
-West Kordofan,Sudan,West Kordofan,2026-07-25,0.47257474064826965,1,High,"fatalities_w30d: +0.910, country_code: -0.508, admin1_code: -0.273",10.0,11.0
-Western Bahr el Ghazal,South Sudan,Western Bahr el Ghazal,2026-07-18,0.26101604104042053,1,Medium,"events_w30d: -0.517, admin1_code: -0.256, velocity_events_w30d: -0.239",1.0,3.0
-Western Equatoria,South Sudan,Western Equatoria,2026-07-04,0.24498949944972992,0,Medium,"events_w30d: -0.446, admin1_code: -0.445, fatalities_w30d: -0.273",1.0,0.0
-White Nile,Sudan,White Nile,2026-07-11,0.37827685475349426,1,Medium,"velocity_events_w30d: -0.395, fatalities_w30d: +0.304, admin1_code: -0.237",2.0,1.0
-Yangon,Myanmar,Yangon,2026-07-25,0.5062760710716248,1,High,"fatalities_w30d: -0.348, events_w30d: +0.325, admin1_code: -0.293",7.0,0.0
-Zabul,Afghanistan,Zabul,2026-07-04,0.025946080684661865,0,Low,"events_w30d: -1.791, events_w7d: -0.461, spillover_w14d: -0.368",0.0,0.0
+Abyei,Sudan,Abyei,2026-07-11,0.04286666214466095,0,Low,"events_w30d: -1.472, events_w14d: -0.581, admin1_code: -0.445",0.0,0.0
+Al Jazirah,Sudan,Al Jazirah,2026-07-25,0.20755134522914886,1,Medium,"events_w14d: -0.475, events_w30d: -0.403, admin1_code: -0.273",1.0,0.0
+Andaman and Nicobar Islands,India,Andaman and Nicobar Islands,2026-07-25,0.27337178587913513,1,Medium,"admin1_code: -0.622, velocity_events_w30d: -0.398, events_w14d: +0.198",2.0,0.0
+Andhra Pradesh,India,Andhra Pradesh,2026-07-25,0.6028290390968323,1,Critical,"velocity_events_w30d: +0.452, events_w7d: +0.291, events_w30d: -0.262",25.0,0.0
+Arunachal Pradesh,India,Arunachal Pradesh,2026-07-18,0.4453061521053314,1,High,"velocity_events_w30d: -0.308, events_w30d: +0.202, admin1_code: -0.183",4.0,0.0
+Assam,India,Assam,2026-07-25,0.546574056148529,1,High,"velocity_events_w30d: -0.792, events_w7d: +0.388, fatalities_w30d: -0.327",30.0,0.0
+Ayeyarwady,Myanmar,Ayeyarwady,2026-07-25,0.6785956621170044,1,Critical,"events_w30d: +0.275, fatalities_w30d: +0.247, admin1_code: -0.163",9.0,2.0
+Bago-East,Myanmar,Bago-East,2026-07-25,0.7806971669197083,1,Critical,"velocity_events_w30d: +0.899, events_w7d: -0.464, events_w30d: +0.301",0.0,0.0
+Bago-West,Myanmar,Bago-West,2026-07-25,0.7918305993080139,1,Critical,"fatalities_w30d: +0.710, velocity_events_w30d: +0.387, velocity_fatalities_w30d: +0.302",8.0,16.0
+Bihar,India,Bihar,2026-07-25,0.7950879335403442,1,Critical,"velocity_events_w30d: +0.283, events_w30d: +0.261, events_w14d: +0.233",16.0,0.0
+Blue Nile,Sudan,Blue Nile,2026-07-18,0.8904199600219727,1,Critical,"fatalities_w30d: +1.304, velocity_fatalities_w30d: +0.449, events_w30d: +0.395",6.0,10.0
+Central Darfur,Sudan,Central Darfur,2026-07-18,0.5092068910598755,1,High,"events_w30d: +0.299, velocity_events_w30d: -0.193, country_code: -0.174",5.0,3.0
+Central Equatoria,South Sudan,Central Equatoria,2026-07-25,0.4855743646621704,1,High,"events_w30d: +0.163, fatalities_w30d: -0.152, admin1_code: +0.136",2.0,0.0
+Chandigarh,India,Chandigarh,2026-07-25,0.714952290058136,1,Critical,"spillover_w14d: +0.441, velocity_events_w14d: +0.367, events_w30d: +0.318",9.0,0.0
+Chhattisgarh,India,Chhattisgarh,2026-07-25,0.8049420118331909,1,Critical,"velocity_events_w7d: +0.567, events_w30d: +0.337, velocity_events_w14d: +0.287",44.0,0.0
+Chin,Myanmar,Chin,2026-07-25,0.8873979449272156,1,Critical,"velocity_events_w30d: +0.507, velocity_fatalities_w30d: +0.458, fatalities_w30d: +0.299",7.0,6.0
+Dadra and Nagar Haveli and Daman and Diu,India,Dadra and Nagar Haveli and Daman and Diu,2019-04-20,0.036582447588443756,0,Low,"events_w30d: -1.236, month: -0.461, events_w7d: -0.442",0.0,0.0
+Delhi,India,Delhi,2026-07-25,0.4790727496147156,1,High,"events_w30d: +0.292, velocity_events_w30d: -0.229, fatalities_w30d: -0.187",17.0,0.0
+East Darfur,Sudan,East Darfur,2026-07-25,0.1469414234161377,0,Low,"events_w7d: -0.445, velocity_events_w30d: -0.354, events_w14d: -0.348",0.0,0.0
+Eastern Equatoria,South Sudan,Eastern Equatoria,2026-07-25,0.7743018269538879,1,Critical,"events_w30d: +0.432, velocity_events_w30d: +0.395, velocity_fatalities_w30d: +0.209",2.0,2.0
+Gedaref,Sudan,Gedaref,2026-07-25,0.11435563862323761,0,Low,"events_w30d: -0.591, events_w14d: -0.407, events_w7d: -0.397",0.0,0.0
+Goa,India,Goa,2026-07-25,0.510067343711853,1,High,"velocity_events_w30d: +0.279, velocity_events_w14d: +0.208, admin1_code: -0.174",8.0,0.0
+Gujarat,India,Gujarat,2026-07-25,0.7590360045433044,1,Critical,"velocity_events_w30d: +0.697, events_w30d: +0.284, spillover_w14d: -0.237",9.0,0.0
+Haryana,India,Haryana,2026-07-25,0.6604475378990173,1,Critical,"velocity_events_w14d: +0.284, velocity_events_w30d: -0.248, fatalities_w30d: -0.236",48.0,1.0
+Himachal Pradesh,India,Himachal Pradesh,2026-07-25,0.4161407947540283,1,High,"velocity_events_w30d: -0.487, events_w30d: +0.322, fatalities_w30d: -0.187",9.0,0.0
+Jammu and Kashmir,India,Jammu and Kashmir,2026-07-25,0.9326601028442383,1,Critical,"events_w7d: +1.194, velocity_events_w14d: +0.391, velocity_events_w7d: +0.373",83.0,1.0
+Jharkhand,India,Jharkhand,2026-07-25,0.4723666310310364,1,High,"velocity_events_w30d: -0.325, events_w30d: +0.208, fatalities_w30d: -0.173",8.0,0.0
+Jonglei,South Sudan,Jonglei,2026-07-25,0.9383025765419006,1,Critical,"fatalities_w30d: +2.115, velocity_fatalities_w30d: -0.687, events_w30d: +0.520",7.0,24.0
+Kachin,Myanmar,Kachin,2026-07-25,0.619931697845459,1,Critical,"fatalities_w30d: +0.515, events_w30d: +0.357, velocity_events_w30d: -0.353",8.0,0.0
+Karnataka,India,Karnataka,2026-07-25,0.9250373840332031,1,Critical,"events_w7d: +1.477, events_w14d: +0.499, velocity_events_w7d: +0.274",58.0,0.0
+Kassala,Sudan,Kassala,2026-07-11,0.3263905644416809,1,Medium,"events_w30d: -0.580, velocity_events_w30d: +0.449, velocity_fatalities_w30d: +0.306",0.0,0.0
+Kayah,Myanmar,Kayah,2026-07-25,0.6268580555915833,1,Critical,"velocity_events_w30d: +0.346, admin1_code: +0.155, velocity_fatalities_w30d: -0.137",5.0,8.0
+Kayin,Myanmar,Kayin,2026-07-25,0.8582602143287659,1,Critical,"fatalities_w30d: +1.065, velocity_fatalities_w30d: -0.692, events_w30d: +0.448",11.0,18.0
+Kerala,India,Kerala,2026-07-25,0.38847285509109497,1,Medium,"velocity_events_w30d: -0.591, fatalities_w30d: -0.292, events_w7d: +0.273",40.0,0.0
+Khartoum,Sudan,Khartoum,2026-07-25,0.6509814262390137,1,Critical,"events_w30d: +0.279, admin1_code: +0.199, fatalities_w7d: +0.147",9.0,3.0
+Ladakh,India,Ladakh,2026-07-18,0.14307475090026855,0,Low,"events_w7d: -0.500, velocity_events_w30d: -0.346, spillover_w14d: -0.290",0.0,0.0
+Lakes,South Sudan,Lakes,2026-07-25,0.4110730290412903,1,High,"events_w7d: -0.345, events_w14d: -0.237, velocity_events_w30d: +0.133",0.0,0.0
+Lakshadweep,India,Lakshadweep,2026-05-30,0.03035825677216053,0,Low,"events_w30d: -1.469, events_w7d: -0.503, events_w14d: -0.477",0.0,0.0
+Madhya Pradesh,India,Madhya Pradesh,2026-07-25,0.5929035544395447,1,High,"events_w30d: +0.259, spillover_w14d: -0.244, velocity_events_w30d: +0.228",16.0,0.0
+Magway,Myanmar,Magway,2026-07-25,0.9984366297721863,1,Critical,"fatalities_w30d: +1.921, events_w7d: +0.678, events_w14d: +0.562",40.0,18.0
+Maharashtra,India,Maharashtra,2026-07-25,0.771906316280365,1,Critical,"spillover_w14d: +0.399, events_w14d: +0.358, events_w30d: +0.315",49.0,0.0
+Mandalay,Myanmar,Mandalay,2026-07-25,0.9608033895492554,1,Critical,"fatalities_w30d: +1.484, events_w30d: +0.388, admin1_code: +0.316",18.0,24.0
+Manipur,India,Manipur,2026-07-25,0.7144637107849121,1,Critical,"velocity_fatalities_w30d: +0.364, velocity_events_w30d: +0.358, events_w7d: +0.217",19.0,0.0
+Meghalaya,India,Meghalaya,2026-07-25,0.4118480384349823,1,High,"events_w30d: +0.353, spillover_w14d: -0.254, admin1_code: -0.188",7.0,0.0
+Mizoram,India,Mizoram,2026-07-25,0.25324490666389465,1,Medium,"admin1_code: -0.332, velocity_events_w30d: -0.305, events_w30d: -0.201",6.0,0.0
+Mon,Myanmar,Mon,2026-07-25,0.6245426535606384,1,Critical,"velocity_events_w30d: +0.584, admin1_code: -0.263, events_w30d: +0.169",2.0,0.0
+Nagaland,India,Nagaland,2026-07-25,0.3860558569431305,1,Medium,"admin1_code: -0.442, events_w30d: +0.259, fatalities_w30d: -0.126",2.0,0.0
+Nay Pyi Taw,Myanmar,Nay Pyi Taw,2026-07-25,0.35059604048728943,1,Medium,"admin1_code: -0.349, velocity_events_w30d: -0.322, fatalities_w30d: -0.199",8.0,0.0
+North Darfur,Sudan,North Darfur,2026-07-25,0.8786523342132568,1,Critical,"fatalities_w30d: +1.207, velocity_fatalities_w30d: +0.465, events_w30d: +0.380",7.0,4.0
+North Kordofan,Sudan,North Kordofan,2026-07-25,0.9912238121032715,1,Critical,"fatalities_w30d: +2.040, velocity_fatalities_w30d: +0.748, events_w30d: +0.670",18.0,48.0
+Northern,Sudan,Northern,2026-07-25,0.46377453207969666,1,High,"events_w7d: -0.575, fat_mean_w14d: +0.328, fatalities_w30d: +0.324",0.0,0.0
+Northern Bahr el Ghazal,South Sudan,Northern Bahr el Ghazal,2026-06-27,0.22728723287582397,1,Medium,"events_w30d: -0.936, velocity_fatalities_w30d: +0.725, admin1_code: -0.481",0.0,0.0
+Odisha,India,Odisha,2026-07-25,0.686733067035675,1,Critical,"velocity_events_w30d: +0.641, spillover_w14d: -0.379, events_w30d: +0.198",8.0,0.0
+Puducherry,India,Puducherry,2026-07-18,0.2617010772228241,1,Medium,"spillover_w14d: -0.362, events_w14d: -0.269, events_w30d: +0.231",1.0,0.0
+Punjab,India,Punjab,2026-07-25,0.8651199340820312,1,Critical,"events_w7d: +1.181, fatalities_w30d: -0.307, velocity_events_w14d: +0.263",95.0,1.0
+Rajasthan,India,Rajasthan,2026-07-25,0.5540172457695007,1,High,"events_w7d: +0.342, velocity_events_w30d: -0.335, fatalities_w30d: -0.242",41.0,0.0
+Rakhine,Myanmar,Rakhine,2026-07-25,0.9622327089309692,1,Critical,"fatalities_w30d: +0.891, events_w7d: +0.510, velocity_fatalities_w30d: +0.504",23.0,8.0
+Red Sea,Sudan,Red Sea,2026-07-11,0.09753430634737015,0,Low,"events_w7d: -0.574, velocity_events_w30d: -0.351, fatalities_w30d: +0.341",0.0,0.0
+River Nile,Sudan,River Nile,2026-07-11,0.17455606162548065,0,Low,"events_w30d: -0.685, velocity_events_w30d: +0.404, events_w7d: -0.322",0.0,0.0
+Sagaing,Myanmar,Sagaing,2026-07-25,0.9918888211250305,1,Critical,"events_w7d: +1.533, fatalities_w30d: +1.287, events_w14d: +0.737",57.0,3.0
+Sennar,Sudan,Sennar,2026-05-23,0.10620090365409851,0,Low,"events_w30d: -0.793, events_w7d: -0.446, events_w14d: -0.410",0.0,0.0
+Shan-East,Myanmar,Shan-East,2026-07-18,0.3081001341342926,1,Medium,"events_w30d: -0.731, fatalities_w30d: -0.130, spillover_w14d: +0.125",1.0,1.0
+Shan-North,Myanmar,Shan-North,2026-07-25,0.673358142375946,1,Critical,"velocity_events_w30d: +0.392, velocity_fatalities_w30d: +0.186, events_w30d: +0.157",4.0,1.0
+Shan-South,Myanmar,Shan-South,2026-07-25,0.9326151013374329,1,Critical,"fatalities_w30d: +0.906, events_w7d: +0.302, events_w30d: +0.230",11.0,10.0
+Sikkim,India,Sikkim,2026-07-18,0.02252051793038845,0,Low,"events_w30d: -1.539, spillover_w14d: -0.594, events_w7d: -0.481",0.0,0.0
+South Darfur,Sudan,South Darfur,2026-07-25,0.6538534760475159,1,Critical,"velocity_events_w30d: +0.497, admin1_code: +0.196, events_w30d: +0.169",3.0,3.0
+South Kordofan,Sudan,South Kordofan,2026-07-25,0.7057502269744873,1,Critical,"admin1_code: +0.332, fat_std_w30d: +0.319, fatalities_w30d: +0.244",3.0,3.0
+Tamil Nadu,India,Tamil Nadu,2026-07-25,0.5550612211227417,1,High,"velocity_events_w30d: -0.830, events_w7d: +0.545, events_w14d: +0.283",64.0,1.0
+Tanintharyi,Myanmar,Tanintharyi,2026-07-25,0.7364997267723083,1,Critical,"events_w30d: +0.308, fatalities_w14d: +0.165, admin1_code: +0.154",9.0,9.0
+Telangana,India,Telangana,2026-07-25,0.8460077047348022,1,Critical,"events_w7d: +1.097, velocity_events_w30d: -0.568, events_w14d: +0.498",57.0,0.0
+Tripura,India,Tripura,2026-07-25,0.34698939323425293,1,Medium,"velocity_events_w30d: -0.310, fatalities_w30d: -0.188, events_w14d: -0.140",18.0,0.0
+Unity,South Sudan,Unity,2026-07-11,0.5794906616210938,1,High,"events_w30d: +0.278, velocity_events_w30d: +0.237, month: -0.106",2.0,0.0
+Upper Nile,South Sudan,Upper Nile,2026-07-18,0.6080479025840759,1,Critical,"events_w30d: +0.324, fatalities_w30d: +0.298, admin1_code: -0.163",1.0,2.0
+Uttar Pradesh,India,Uttar Pradesh,2026-07-25,0.7871626615524292,1,Critical,"velocity_events_w30d: +0.666, velocity_fatalities_w30d: +0.308, fatalities_w30d: -0.219",50.0,0.0
+Uttarakhand,India,Uttarakhand,2026-07-25,0.6371316909790039,1,Critical,"events_w14d: +0.305, events_w7d: +0.215, velocity_fatalities_w30d: +0.196",14.0,0.0
+Warrap,South Sudan,Warrap,2026-07-18,0.7395505905151367,1,Critical,"fatalities_w30d: +0.736, fat_mean_w14d: +0.224, velocity_events_w30d: +0.219",3.0,0.0
+West Bengal,India,West Bengal,2026-07-25,0.5176465511322021,1,High,"velocity_events_w30d: +0.357, velocity_events_w14d: -0.324, events_w7d: +0.256",19.0,0.0
+West Darfur,Sudan,West Darfur,2026-07-25,0.19873225688934326,0,Low,"velocity_events_w30d: -1.117, fatalities_w30d: +0.570, admin1_code: -0.541",6.0,0.0
+West Kordofan,Sudan,West Kordofan,2026-07-25,0.5633110404014587,1,High,"fatalities_w30d: +0.833, admin1_code: -0.450, fatalities_w14d: +0.187",10.0,11.0
+Western Bahr el Ghazal,South Sudan,Western Bahr el Ghazal,2026-07-18,0.2577943503856659,1,Medium,"events_w30d: -0.452, admin1_code: -0.337, velocity_events_w30d: -0.298",1.0,3.0
+Western Equatoria,South Sudan,Western Equatoria,2026-07-04,0.29821497201919556,1,Medium,"admin1_code: -0.608, events_w30d: -0.230, velocity_fatalities_w30d: +0.200",1.0,0.0
+White Nile,Sudan,White Nile,2026-07-11,0.37515056133270264,1,Medium,"admin1_code: -0.458, fat_std_w30d: +0.449, velocity_events_w30d: -0.429",2.0,1.0
+Yangon,Myanmar,Yangon,2026-07-25,0.647315502166748,1,Critical,"velocity_fatalities_w30d: +0.317, fatalities_w30d: -0.205, events_w30d: +0.188",7.0,0.0
