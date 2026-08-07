@@ -1,0 +1,35 @@
+# Raw and processed data (ACLED exports can be large; never commit)
+data/raw/
+data/processed/
+
+# Model artifacts and manifests (binary, regenerable)
+models/*.pkl
+models/manifest.json
+!models/.gitkeep
+
+# Logs
+logs/
+
+# Environment & secrets (API keys must never be committed)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.python-version
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db

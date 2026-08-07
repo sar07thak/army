@@ -1,0 +1,24 @@
+# Conflict Escalation Forecasting — dependencies
+# Exact versions frozen on 2026-08-07 after a successful install on Python 3.14.3
+# (see IMPLEMENTATION_PLAN.md §4 M1 and PRD FR-11 — reproducibility).
+
+# Runtime
+numpy==2.4.6
+pandas==3.0.5
+scikit-learn==1.9.0
+lightgbm==4.7.0
+xgboost==3.4.0
+shap==0.52.0
+matplotlib==3.11.1
+plotly==6.9.0
+folium==0.20.0
+requests==2.34.2
+python-dotenv==1.2.2
+pyarrow==25.0.0
+
+# Notebooks
+jupyter==1.1.1
+
+# Development / testing
+pytest==9.1.1
+pytest-cov==7.1.0
