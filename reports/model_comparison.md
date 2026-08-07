@@ -1,6 +1,6 @@
 # Model Comparison — LightGBM vs XGBoost
 
-- Generated: 2026-08-07T21:19:56
+- Generated: 2026-08-07T23:31:04
 - Seed: 42 · Imbalance: scale_pos_weight
 - Split: train 30790 rows (2016-12-31 → 2023-09-02) · val 6522 rows (2023-09-09 → 2025-02-01)
 

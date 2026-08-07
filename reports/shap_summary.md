@@ -1,6 +1,6 @@
 # SHAP Explainability Summary — Winning Model
 
-- Generated: 2026-08-07T21:20:07
+- Generated: 2026-08-07T23:31:14
 - Model: escalation_best.pkl · operating threshold: 0.25
 - SHAP: TreeExplainer · positive class: escalation within 14 days
 

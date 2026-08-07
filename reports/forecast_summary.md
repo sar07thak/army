@@ -1,6 +1,6 @@
 # Live 14-Day Forecast Summary
 
-- Generated: 2026-08-07T21:55:27
+- Generated: 2026-08-07T23:31:23
 - Model: escalation_best.pkl · operating threshold: 0.25
 - As-of date: 2026-07-25 (prediction window: next 14 days)
 - Scope: 124 geo units across 6 countries

@@ -1,6 +1,6 @@
 # Risk Summary — 14-Day Conflict Escalation Forecast
 
-- Generated: 2026-08-07T21:20:16
+- Generated: 2026-08-07T23:31:23
 - Model: escalation_best.pkl · operating threshold: 0.25
 - Scope: 122 geo units · snapshot dates: 2026-05-02 .. 2026-07-11
 
