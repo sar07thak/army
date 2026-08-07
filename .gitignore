@@ -1,35 +1,112 @@
-# Raw and processed data (ACLED exports can be large; never commit)
+# =============================================================================
+#  .gitignore — Conflict Escalation Forecasting
+#  Hackathon submission: keeps source code, docs, and showcase assets.
+#  Excludes: large binaries, raw data, virtual envs, and generated cache.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# DATA — ACLED exports can be 100MB+; regenerable via pipeline
+# -----------------------------------------------------------------------------
 data/raw/
 data/processed/
 
-# Model artifacts and manifests (binary, regenerable)
+# -----------------------------------------------------------------------------
+# MODEL BINARIES — large .pkl files (~1.7 MB each); regenerable via pipeline
+# -----------------------------------------------------------------------------
 models/*.pkl
 models/manifest.json
 !models/.gitkeep
 
-# Logs
-logs/
-
-# Environment & secrets (API keys must never be committed)
-.env
-
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
+# -----------------------------------------------------------------------------
+# VIRTUAL ENVIRONMENT — local Python env; never share
+# -----------------------------------------------------------------------------
 .venv/
 venv/
+env/
+ENV/
 .python-version
 
-# Notebooks
-.ipynb_checkpoints/
+# -----------------------------------------------------------------------------
+# PYTHON CACHE — bytecode and build artifacts
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.spec
 
-# Testing / coverage
+# -----------------------------------------------------------------------------
+# LOGS — runtime logs; not useful for reviewers
+# -----------------------------------------------------------------------------
+logs/
+*.log
+
+# -----------------------------------------------------------------------------
+# SECRETS & ENVIRONMENT — never commit credentials or API keys
+# -----------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+secrets.json
+credentials.json
+
+# -----------------------------------------------------------------------------
+# TESTING & COVERAGE — generated locally; not part of submission
+# -----------------------------------------------------------------------------
 .pytest_cache/
 .coverage
+.coverage.*
 coverage.xml
 htmlcov/
+nosetests.xml
+test-results/
 
-# OS
+# -----------------------------------------------------------------------------
+# JUPYTER NOTEBOOKS — checkpoint files are auto-generated noise
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# -----------------------------------------------------------------------------
+# OS-SPECIFIC FILES — macOS, Windows, Linux trash
+# -----------------------------------------------------------------------------
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# -----------------------------------------------------------------------------
+# IDE & EDITOR FILES — local settings shouldn't be committed
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# -----------------------------------------------------------------------------
+# TEMPORARY & SCRATCH FILES
+# -----------------------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+scratch/
+tmp/
