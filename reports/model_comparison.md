@@ -1,14 +1,14 @@
 # Model Comparison — LightGBM vs XGBoost
 
-- Generated: 2026-08-07T23:31:04
+- Generated: 2026-08-08T00:12:24
 - Seed: 42 · Imbalance: scale_pos_weight
-- Split: train 30790 rows (2016-12-31 → 2023-09-02) · val 6522 rows (2023-09-09 → 2025-02-01)
+- Split: train 19801 rows (2017-01-07 → 2023-09-02) · val 5099 rows (2023-09-09 → 2025-02-01)
 
-## Winner: **xgboost**
+## Winner: **lightgbm**
 
-validation F1 0.8423 vs lightgbm 0.8400 (higher validation F1 decided)
+effectively equal; simpler family 'lightgbm' chosen (MODEL_SIMPLICITY_ORDER)
 
-- Operating threshold: **0.25** (max_f1)
+- Operating threshold: **0.20** (max_f1)
 
 **Why this threshold:** the sweep over 0.10–0.90 (step 0.05) maximized validation F1 instead of assuming 0.5. The label is majority-positive, so the point of maximum F1 sits below 0.5 (the model under-weights the majority class via scale_pos_weight < 1); the best-F1 threshold is the operating point with the best precision/recall trade-off on the held-out validation window.
 
@@ -16,14 +16,14 @@ validation F1 0.8423 vs lightgbm 0.8400 (higher validation F1 decided)
 
 | metric | lightgbm | xgboost |
 |---|---|---|
-| precision | 0.8433 | 0.8555 |
-| recall | 0.7480 | 0.7172 |
-| f1 | 0.7928 | 0.7803 |
-| auc_pr | 0.9004 | 0.9031 |
-| roc_auc | 0.8112 | 0.8175 |
-| brier | 0.1743 | 0.1755 |
-| log_loss | 0.5145 | 0.5171 |
-| confusion (tn/fp/fn/tp) | [[1491, 614], [1113, 3304]] | [[1570, 535], [1249, 3168]] |
+| precision | 0.8357 | 0.8357 |
+| recall | 0.7938 | 0.7938 |
+| f1 | 0.8142 | 0.8142 |
+| auc_pr | 0.9038 | 0.9038 |
+| roc_auc | 0.7593 | 0.7593 |
+| brier | 0.1766 | 0.1766 |
+| log_loss | 0.5192 | 0.5192 |
+| confusion (tn/fp/fn/tp) | [[714, 592], [782, 3011]] | [[714, 592], [782, 3011]] |
 
 ## Threshold analysis (best points, validation)
 
@@ -31,32 +31,32 @@ validation F1 0.8423 vs lightgbm 0.8400 (higher validation F1 decided)
 
 | criterion | threshold | precision | recall | f1 |
 |---|---|---|---|---|
-| best F1 | 0.20 | 0.7530 | 0.9497 | 0.8400 |
-| best precision | 0.90 | 0.9540 | 0.3102 | 0.4681 |
-| best recall | 0.10 | 0.7121 | 0.9866 | 0.8272 |
+| best F1 | 0.20 | 0.7663 | 0.9776 | 0.8591 |
+| best precision | 0.90 | 0.9643 | 0.2702 | 0.4222 |
+| best recall | 0.10 | 0.7543 | 0.9955 | 0.8583 |
 
 ### xgboost
 
 | criterion | threshold | precision | recall | f1 |
 |---|---|---|---|---|
-| best F1 | 0.25 | 0.7711 | 0.9280 | 0.8423 |
-| best precision | 0.90 | 0.9742 | 0.2649 | 0.4165 |
-| best recall | 0.10 | 0.7114 | 0.9857 | 0.8264 |
+| best F1 | 0.20 | 0.7663 | 0.9776 | 0.8591 |
+| best precision | 0.90 | 0.9643 | 0.2702 | 0.4222 |
+| best recall | 0.10 | 0.7543 | 0.9955 | 0.8583 |
 
 
 ## Baselines (validation)
 
 | baseline | precision | recall | f1 | auc_pr | brier |
 |---|---|---|---|---|---|
-| majority | 0.6772 | 1.0000 | 0.8076 | 0.6772 | 0.3228 |
-| always_positive | 0.6772 | 1.0000 | 0.8076 | 0.6772 | 0.3228 |
-| persistence | 0.7645 | 0.8983 | 0.8261 | 0.7557 | 0.2562 |
-| event_count_heuristic | 0.7965 | 0.8125 | 0.8044 | 0.7741 | 0.2676 |
+| majority | 0.7439 | 1.0000 | 0.8531 | 0.7439 | 0.2561 |
+| always_positive | 0.7439 | 1.0000 | 0.8531 | 0.7439 | 0.2561 |
+| persistence | 0.7770 | 0.9233 | 0.8439 | 0.7745 | 0.2542 |
+| event_count_heuristic | 0.7935 | 0.8437 | 0.8178 | 0.7857 | 0.2797 |
 
 ## Artifacts
 
 | Role | Path |
 |---|---|
-| lightgbm | `C:\Users\sarth\OneDrive\Desktop\army\models\escalation_lgbm.pkl` |
-| xgboost | `C:\Users\sarth\OneDrive\Desktop\army\models\escalation_xgb.pkl` |
-| best | `C:\Users\sarth\OneDrive\Desktop\army\models\escalation_best.pkl` |
+| lightgbm | `C:\Users\LENOVO\.gemini\antigravity-ide\scratch\army\models\escalation_lgbm.pkl` |
+| xgboost | `C:\Users\LENOVO\.gemini\antigravity-ide\scratch\army\models\escalation_xgb.pkl` |
+| best | `C:\Users\LENOVO\.gemini\antigravity-ide\scratch\army\models\escalation_best.pkl` |

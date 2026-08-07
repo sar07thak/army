@@ -1,33 +1,33 @@
 # SHAP Explainability Summary — Winning Model
 
-- Generated: 2026-08-07T23:31:14
-- Model: escalation_best.pkl · operating threshold: 0.25
+- Generated: 2026-08-08T00:13:21
+- Model: escalation_best.pkl · operating threshold: 0.20
 - SHAP: TreeExplainer · positive class: escalation within 14 days
 
 ## Top 20 features by mean |SHAP|
 
 | rank | feature | mean |SHAP| | share | interpretation |
 |---|---|---|---|---|
-| 1 | events_w30d | 0.4778 | 16.67% | Total events in the trailing 30-day window — recent activity volume. |
-| 2 | fatalities_w30d | 0.4140 | 14.44% | Total fatalities in the trailing 30-day window — recent lethality. |
-| 3 | velocity_events_w30d | 0.3173 | 11.07% | Event-count velocity: current 30-day count minus the preceding 30-day count. |
-| 4 | events_w7d | 0.1766 | 6.16% | Total events in the trailing 7-day window — recent activity volume. |
-| 5 | spillover_w14d | 0.1561 | 5.45% | Events in the trailing 14-day window across the K nearest same-country units — spatial spillover. |
-| 6 | admin1_code | 0.1540 | 5.37% | Deterministic numeric admin-1 / geo-unit identifier (unit-level baselines). |
-| 7 | velocity_fatalities_w30d | 0.1484 | 5.18% | Fatality velocity: current 30-day count minus the preceding 30-day count. |
-| 8 | events_w14d | 0.1481 | 5.17% | Total events in the trailing 14-day window — recent activity volume. |
-| 9 | fatalities_w14d | 0.1267 | 4.42% | Total fatalities in the trailing 14-day window — recent lethality. |
-| 10 | month | 0.1137 | 3.97% | Calendar month of the prediction date (seasonality). |
-| 11 | fat_std_w14d | 0.1025 | 3.58% | Std-dev of daily fatalities over 14 days — volatility/spikiness. |
-| 12 | fatalities_w7d | 0.0831 | 2.90% | Total fatalities in the trailing 7-day window — recent lethality. |
-| 13 | fat_std_w30d | 0.0775 | 2.71% | Std-dev of daily fatalities over 30 days — volatility/spikiness. |
-| 14 | velocity_events_w14d | 0.0773 | 2.70% | Event-count velocity: current 14-day count minus the preceding 14-day count. |
-| 15 | country_code | 0.0745 | 2.60% | Deterministic numeric country identifier (captures cross-country baselines). |
-| 16 | velocity_fatalities_w14d | 0.0481 | 1.68% | Fatality velocity: current 14-day count minus the preceding 14-day count. |
-| 17 | fat_mean_w30d | 0.0460 | 1.61% | Mean daily fatalities over 30 days — average intensity. |
-| 18 | velocity_events_w7d | 0.0451 | 1.57% | Event-count velocity: current 7-day count minus the preceding 7-day count. |
-| 19 | velocity_fatalities_w7d | 0.0443 | 1.55% | Fatality velocity: current 7-day count minus the preceding 7-day count. |
-| 20 | fat_mean_w14d | 0.0300 | 1.05% | Mean daily fatalities over 14 days — average intensity. |
+| 1 | fatalities_w30d | 0.5386 | 18.88% | Total fatalities in the trailing 30-day window — recent lethality. |
+| 2 | velocity_events_w30d | 0.3251 | 11.40% | Event-count velocity: current 30-day count minus the preceding 30-day count. |
+| 3 | events_w30d | 0.2755 | 9.66% | Total events in the trailing 30-day window — recent activity volume. |
+| 4 | events_w7d | 0.2036 | 7.14% | Total events in the trailing 7-day window — recent activity volume. |
+| 5 | admin1_code | 0.1927 | 6.76% | Deterministic numeric admin-1 / geo-unit identifier (unit-level baselines). |
+| 6 | velocity_fatalities_w30d | 0.1840 | 6.45% | Fatality velocity: current 30-day count minus the preceding 30-day count. |
+| 7 | events_w14d | 0.1599 | 5.61% | Total events in the trailing 14-day window — recent activity volume. |
+| 8 | month | 0.1424 | 4.99% | Calendar month of the prediction date (seasonality). |
+| 9 | spillover_w14d | 0.1405 | 4.93% | Events in the trailing 14-day window across the K nearest same-country units — spatial spillover. |
+| 10 | fatalities_w14d | 0.1014 | 3.55% | Total fatalities in the trailing 14-day window — recent lethality. |
+| 11 | fat_std_w30d | 0.0965 | 3.38% | Std-dev of daily fatalities over 30 days — volatility/spikiness. |
+| 12 | velocity_events_w14d | 0.0847 | 2.97% | Event-count velocity: current 14-day count minus the preceding 14-day count. |
+| 13 | fatalities_w7d | 0.0664 | 2.33% | Total fatalities in the trailing 7-day window — recent lethality. |
+| 14 | velocity_events_w7d | 0.0644 | 2.26% | Event-count velocity: current 7-day count minus the preceding 7-day count. |
+| 15 | velocity_fatalities_w14d | 0.0556 | 1.95% | Fatality velocity: current 14-day count minus the preceding 14-day count. |
+| 16 | fat_mean_w14d | 0.0531 | 1.86% | Mean daily fatalities over 14 days — average intensity. |
+| 17 | velocity_fatalities_w7d | 0.0530 | 1.86% | Fatality velocity: current 7-day count minus the preceding 7-day count. |
+| 18 | country_code | 0.0505 | 1.77% | Deterministic numeric country identifier (captures cross-country baselines). |
+| 19 | fat_mean_w30d | 0.0345 | 1.21% | Mean daily fatalities over 30 days — average intensity. |
+| 20 | fat_std_w14d | 0.0268 | 0.94% | Std-dev of daily fatalities over 14 days — volatility/spikiness. |
 
 ## Most influential risk drivers
 
@@ -37,39 +37,39 @@ computed directly from the ranking. Dependence plots live under
 
 ## Model behaviour observations
 
-- The single strongest driver is **events_w30d** (mean |SHAP| 0.4778, 16.7% of total).
-- Window emphasis: **30-day** windows carry the most volume/fatality signal (mean |SHAP| sums: 30d=1.015, 14d=0.563, 7d=0.260).
-- Event velocity (14d) contributes 0.077 in mean |SHAP| — secondary to absolute volume.
-- Fatality volatility (std) contributes 0.103 — spiky/irregular violence is a visible risk signal.
-- Spillover ranks #5 (mean |SHAP| 0.1561) — spatial contagion matters (FR-13).
-- Identity codes (admin1/geo-unit/country) contribute 0.228 and calendar features 0.114 — unit-level baselines shape the estimate.
+- The single strongest driver is **fatalities_w30d** (mean |SHAP| 0.5386, 18.9% of total).
+- Window emphasis: **30-day** windows carry the most volume/fatality signal (mean |SHAP| sums: 30d=0.945, 14d=0.482, 7d=0.270).
+- Event velocity (14d) contributes 0.085 in mean |SHAP| — secondary to absolute volume.
+- Fatality volatility (std) contributes 0.027 — a minor factor here.
+- Spillover ranks #9 (mean |SHAP| 0.1405) — spatial contagion matters (FR-13).
+- Identity codes (admin1/geo-unit/country) contribute 0.243 and calendar features 0.142 — unit-level baselines shape the estimate.
 - The operating threshold (max-F1, below 0.5) reflects the majority-positive label; SHAP is computed on the held-out test window, so these are out-of-sample explanations.
 
 ## Local explanations (representative predictions)
 
 ### correctly predicted POSITIVE cases
 
-- **Sagaing** (Myanmar, Sagaing) on 2025-03-29: predicted 1.000, true label 1 · waterfall `waterfall_pos_001.png`
-  - Top drivers: fatalities_w30d: +1.463, events_w30d: +1.064, events_w7d: +0.885
-- **Balochistan** (Pakistan, Balochistan) on 2026-03-07: predicted 1.000, true label 1 · waterfall `waterfall_pos_002.png`
-  - Top drivers: fatalities_w30d: +1.457, events_w7d: +1.029, events_w30d: +1.015
-- **Sagaing** (Myanmar, Sagaing) on 2026-02-14: predicted 1.000, true label 1 · waterfall `waterfall_pos_003.png`
-  - Top drivers: fatalities_w30d: +1.309, events_w30d: +1.198, events_w14d: +0.722
+- **Mandalay** (Myanmar, Mandalay) on 2026-01-10: predicted 1.000, true label 1 · waterfall `waterfall_pos_001.png`
+  - Top drivers: fatalities_w30d: +3.149, velocity_fatalities_w30d: +0.790, events_w30d: +0.737
+- **Magway** (Myanmar, Magway) on 2026-02-14: predicted 1.000, true label 1 · waterfall `waterfall_pos_002.png`
+  - Top drivers: fatalities_w30d: +3.231, velocity_fatalities_w30d: +0.740, events_w7d: +0.715
+- **Magway** (Myanmar, Magway) on 2026-01-24: predicted 1.000, true label 1 · waterfall `waterfall_pos_003.png`
+  - Top drivers: fatalities_w30d: +3.173, events_w7d: +1.224, velocity_fatalities_w30d: +0.835
 
 ### correctly predicted NEGATIVE cases
 
-- **Samangan** (Afghanistan, Samangan) on 2026-05-30: predicted 0.017, true label 0 · waterfall `waterfall_neg_004.png`
-  - Top drivers: events_w30d: -1.619, events_w7d: -0.432, spillover_w14d: -0.429
-- **Nuristan** (Afghanistan, Nuristan) on 2025-04-05: predicted 0.019, true label 0 · waterfall `waterfall_neg_005.png`
-  - Top drivers: events_w30d: -1.555, events_w7d: -0.421, events_w14d: -0.390
-- **Laghman** (Afghanistan, Laghman) on 2026-06-13: predicted 0.020, true label 0 · waterfall `waterfall_neg_006.png`
-  - Top drivers: events_w30d: -1.633, events_w7d: -0.443, events_w14d: -0.417
+- **Northern Bahr el Ghazal** (South Sudan, Northern Bahr el Ghazal) on 2025-04-26: predicted 0.021, true label 0 · waterfall `waterfall_neg_004.png`
+  - Top drivers: events_w30d: -1.381, admin1_code: -0.603, events_w14d: -0.490
+- **Ladakh** (India, Ladakh) on 2026-06-20: predicted 0.026, true label 0 · waterfall `waterfall_neg_005.png`
+  - Top drivers: events_w30d: -1.401, events_w7d: -0.517, events_w14d: -0.449
+- **Assam** (India, Assam) on 2026-03-07: predicted 0.026, true label 0 · waterfall `waterfall_neg_006.png`
+  - Top drivers: velocity_events_w14d: -0.971, velocity_events_w7d: -0.935, velocity_events_w30d: -0.757
 
 ### difficult / borderline predictions
 
-- **Gedaref** (Sudan, Gedaref) on 2025-08-09: predicted 0.250, true label 0 · waterfall `waterfall_border_007.png`
-  - Top drivers: spillover_w14d: -0.437, month: -0.316, events_w30d: -0.309
-- **Kunduz** (Afghanistan, Kunduz) on 2026-02-28: predicted 0.250, true label 0 · waterfall `waterfall_border_008.png`
-  - Top drivers: events_w30d: -0.577, spillover_w14d: -0.257, velocity_events_w30d: -0.253
-- **Andaman and Nicobar Islands** (India, Andaman and Nicobar Islands) on 2025-08-02: predicted 0.250, true label 1 · waterfall `waterfall_border_009.png`
-  - Top drivers: admin1_code: -0.451, velocity_events_w30d: -0.418, fatalities_w30d: -0.222
+- **Yangon** (Myanmar, Yangon) on 2026-07-11: predicted 0.200, true label 0 · waterfall `waterfall_border_007.png`
+  - Top drivers: velocity_events_w30d: -0.554, admin1_code: -0.451, fatalities_w30d: -0.259
+- **Northern** (Sudan, Northern) on 2026-03-14: predicted 0.200, true label 0 · waterfall `waterfall_border_008.png`
+  - Top drivers: events_w30d: -0.575, admin1_code: -0.500, events_w14d: -0.275
+- **Gedaref** (Sudan, Gedaref) on 2025-09-20: predicted 0.200, true label 0 · waterfall `waterfall_border_009.png`
+  - Top drivers: events_w30d: -0.594, spillover_w14d: -0.387, velocity_fatalities_w30d: +0.283

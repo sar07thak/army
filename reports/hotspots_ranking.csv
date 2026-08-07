@@ -1,21 +1,21 @@
 geo_unit,country,proba,predicted_class,risk_category,top_drivers,rank
-Khyber Pakhtunkhwa,Pakistan,0.9990174770355225,1,Critical,"events_w30d: +1.901, fatalities_w30d: +1.517, events_w14d: +0.834",1
-Sagaing,Myanmar,0.9979674220085144,1,Critical,"events_w30d: +1.399, fatalities_w30d: +1.044, events_w7d: +0.955",2
-Balochistan,Pakistan,0.9934240579605103,1,Critical,"fatalities_w30d: +1.409, events_w30d: +1.103, events_w7d: +0.922",3
-North Kordofan,Sudan,0.9909082651138306,1,Critical,"fatalities_w30d: +1.382, events_w30d: +1.136, velocity_fatalities_w30d: +0.688",4
-Magway,Myanmar,0.9905773401260376,1,Critical,"fatalities_w30d: +1.287, events_w30d: +0.927, events_w7d: +0.638",5
-Sindh,Pakistan,0.9856296181678772,1,Critical,"events_w7d: +0.899, events_w30d: +0.807, spillover_w14d: +0.620",6
-Rakhine,Myanmar,0.9697486758232117,1,Critical,"fatalities_w30d: +0.756, events_w30d: +0.599, velocity_fatalities_w30d: +0.583",7
-Mandalay,Myanmar,0.9431043863296509,1,Critical,"events_w30d: +0.842, fatalities_w30d: +0.755, velocity_fatalities_w30d: +0.580",8
-Punjab,India,0.9380152225494385,1,Critical,"events_w7d: +0.910, events_w30d: +0.599, velocity_events_w30d: +0.531",9
-Manipur,India,0.9353734850883484,1,Critical,"events_w30d: +1.194, events_w7d: +0.645, velocity_fatalities_w30d: +0.349",10
-Bago-West,Myanmar,0.9309505224227905,1,Critical,"fatalities_w30d: +0.704, events_w30d: +0.444, velocity_events_w30d: +0.392",11
-Tanintharyi,Myanmar,0.9080281853675842,1,Critical,"velocity_events_w30d: +0.746, events_w30d: +0.512, fatalities_w30d: +0.255",12
-Kayin,Myanmar,0.8701184988021851,1,Critical,"events_w30d: +0.872, fatalities_w30d: +0.715, velocity_fatalities_w7d: -0.291",13
-Jammu and Kashmir,India,0.8535409569740295,1,Critical,"velocity_events_w30d: +0.795, events_w7d: +0.321, spillover_w14d: +0.256",14
-Kachin,Myanmar,0.8480427265167236,1,Critical,"fatalities_w30d: +0.927, events_w30d: +0.798, velocity_fatalities_w7d: -0.331",15
-Kabul,Afghanistan,0.8181172013282776,1,Critical,"velocity_events_w30d: +0.705, events_w30d: +0.384, admin1_code: +0.245",16
-West Bengal,India,0.8156957030296326,1,Critical,"events_w7d: +0.401, velocity_events_w14d: +0.308, admin1_code: +0.295",17
-Chin,Myanmar,0.8146874904632568,1,Critical,"velocity_events_w30d: +0.474, spillover_w14d: +0.253, events_w30d: +0.228",18
-Shan-North,Myanmar,0.791716992855072,1,Critical,"velocity_events_w30d: +0.603, velocity_fatalities_w30d: +0.443, events_w30d: +0.368",19
-South Darfur,Sudan,0.7792995572090149,1,Critical,"velocity_events_w30d: +0.429, events_w30d: +0.370, admin1_code: +0.312",20
+Sagaing,Myanmar,0.9990043044090271,1,Critical,"fatalities_w30d: +2.495, events_w7d: +1.233, events_w30d: +0.848",1
+Magway,Myanmar,0.9944019913673401,1,Critical,"fatalities_w30d: +2.085, events_w7d: +0.761, velocity_fatalities_w30d: +0.501",2
+North Kordofan,Sudan,0.9931702613830566,1,Critical,"fatalities_w30d: +2.361, velocity_fatalities_w30d: +0.901, events_w30d: +0.761",3
+Rakhine,Myanmar,0.9902004599571228,1,Critical,"fatalities_w30d: +1.362, velocity_fatalities_w30d: +0.470, fatalities_w14d: +0.446",4
+Mandalay,Myanmar,0.9839714765548706,1,Critical,"fatalities_w30d: +1.269, velocity_fatalities_w30d: +0.925, events_w30d: +0.493",5
+Tanintharyi,Myanmar,0.9260134696960449,1,Critical,"velocity_events_w30d: +0.663, fatalities_w30d: +0.440, spillover_w14d: +0.334",6
+Assam,India,0.8868765830993652,1,Critical,"events_w7d: +1.350, events_w14d: +0.601, fatalities_w30d: -0.270",7
+Jonglei,South Sudan,0.8335899114608765,1,Critical,"fatalities_w30d: +1.779, velocity_fatalities_w30d: -0.543, fat_std_w14d: +0.379",8
+West Bengal,India,0.8311559557914734,1,Critical,"events_w7d: +0.418, events_w14d: +0.383, admin1_code: +0.330",9
+Kayin,Myanmar,0.8280706405639648,1,Critical,"fatalities_w30d: +0.899, events_w7d: +0.595, events_w30d: +0.349",10
+Odisha,India,0.8256440758705139,1,Critical,"events_w30d: +0.497, admin1_code: +0.354, events_w7d: +0.182",11
+Jammu and Kashmir,India,0.8222602605819702,1,Critical,"velocity_events_w30d: +0.949, events_w7d: +0.294, fatalities_w30d: -0.182",12
+Kachin,Myanmar,0.8084162473678589,1,Critical,"fatalities_w30d: +0.956, events_w30d: +0.387, velocity_fatalities_w7d: -0.374",13
+Chin,Myanmar,0.7987185716629028,1,Critical,"velocity_events_w30d: +0.469, fatalities_w30d: +0.351, events_w7d: +0.230",14
+Madhya Pradesh,India,0.7949046492576599,1,Critical,"velocity_events_w30d: +0.424, events_w7d: +0.199, events_w30d: +0.177",15
+South Kordofan,Sudan,0.7943370938301086,1,Critical,"fatalities_w30d: +0.566, admin1_code: +0.482, velocity_events_w30d: +0.248",16
+Lakes,South Sudan,0.7884641885757446,1,Critical,"velocity_events_w30d: +0.314, fatalities_w30d: +0.303, velocity_fatalities_w30d: +0.298",17
+Bago-West,Myanmar,0.7853860855102539,1,Critical,"fatalities_w30d: +0.779, events_w30d: +0.272, events_w7d: -0.264",18
+Andhra Pradesh,India,0.7762267589569092,1,Critical,"velocity_events_w30d: +0.693, velocity_events_w14d: +0.268, admin1_code: +0.251",19
+Blue Nile,Sudan,0.7732246518135071,1,Critical,"fatalities_w30d: +1.310, events_w30d: +0.341, velocity_fatalities_w30d: +0.309",20
