@@ -4,11 +4,11 @@
 
 | File | Source | Format | Pull date | Rows |
 |---|---|---|---|---|
-| `ACLED Data_2026-08-07_event_date_from_2017-01-01_event_date_to_2026-08-07.csv` | ACLED (acleddata.com) — manual Data Export Tool download | Weekly aggregated count file (`week x country x admin1 x event_type` with `events`, `fatalities`, centroids) | 2026-08-07 | 127,353 |
+| `ACLED Data_2026-08-07_event_date_from_2017-01-07_event_date_to_2026-08-07 (1).csv` | ACLED (acleddata.com) — manual Data Export Tool download | Weekly aggregated count file (`week x country x admin1 x event_type` with `events`, `fatalities`, centroids) | 2026-08-07 | 108,945 |
 
 ### Scope handling (applied by `src/data_validation.py`)
-- **Study window:** 2016-12-31 → 2026-07-25 (all rows kept; `DATE_START`/`DATE_END` in `config.py` are the configurable window).
-- **Country filter:** scope is the six countries selected in the Data Export Tool — India, Pakistan, Afghanistan, Myanmar, Sudan, South Sudan. Only the **301 `Indian Ocean` region rows** (a region, not a selected country) are filtered out, leaving **127,052 rows** across **124 admin-1 units**.
+- **Study window:** 2017-01-07 → 2026-08-07 (all rows kept; `DATE_START`/`DATE_END` in `config.py` are the configurable window).
+- **Country filter:** file contains India, Myanmar, Sudan, South Sudan, Ukraine, plus two maritime entries (`Indian Ocean`: 259 rows, `Mediterranean Sea`: 173 rows). Maritime/non-country rows are filtered out by `src/data_validation.py`, leaving **108,513 rows** across **111 admin-1 units** for the four conflict-focus countries used in the pipeline (India, Myanmar, Sudan, South Sudan; Ukraine present in raw but excluded from labeled training scope).
 - **Duplicates:** 0 composite-key duplicate rows found in this file.
 - **Quality:** no missing values, no negative counts, no coordinate violations, no whitespace anomalies.
 
